@@ -455,6 +455,7 @@ tr:hover:not(.history-row) { background:var(--surface2); cursor:pointer; }
     <div class="pig-subnav-btn active" id="psnav-summary" onclick="switchPigSub('summary')">📊 현황요약</div>
     <div class="pig-subnav-btn" id="psnav-groups" onclick="switchPigSub('groups')">🐷 군별두수관리</div>
     <div class="pig-subnav-btn" id="psnav-vaccine" onclick="switchPigSub('vaccine')">💉 백신일정</div>
+    <div class="pig-subnav-btn" id="psnav-herdboard" onclick="switchPigSub('herdboard')">📋 군별현황대시보드</div>
   </div>
 
   <!-- ─── 서브탭 1: 현황요약 ─── -->
@@ -3933,6 +3934,17 @@ tr:hover:not(.history-row) { background:var(--surface2); cursor:pointer; }
   </div><!-- /pig-group-wrap (vaccine) -->
   </div><!-- /pssub-vaccine -->
 
+  <!-- ─── 서브탭 4: 군별현황대시보드 (iframe) ─── -->
+  <div class="pig-subpage" id="pssub-herdboard">
+    <iframe
+      id="herdboard-iframe"
+      src="https://dbenergy21.github.io/dobang/dashboard.html"
+      style="width:100%;height:calc(100vh - 120px);border:none;border-radius:10px;display:block;"
+      loading="lazy"
+      title="도방육종 군별 현황 대시보드">
+    </iframe>
+  </div><!-- /pssub-herdboard -->
+
 </div><!-- /container -->
 </div><!-- /page-pig -->
 
@@ -4869,7 +4881,7 @@ setInterval(()=>detectAPI().then(refresh), 5000);
 
 // ── 도방육종 서브탭 전환 ──
 function switchPigSub(name) {
-  ['summary','groups','vaccine'].forEach(function(p) {
+  ['summary','groups','vaccine','herdboard'].forEach(function(p) {
     var el = document.getElementById('pssub-'+p);
     var btn = document.getElementById('psnav-'+p);
     if (el) el.classList.toggle('active', p===name);
@@ -4878,6 +4890,13 @@ function switchPigSub(name) {
   // 군별두수 탭 활성화 시 날짜 초기화
   if (name === 'groups') {
     setTimeout(pigInitDateQuery, 50);
+  }
+  // 군별현황대시보드 탭 활성화 시 iframe 리로드 (최신 데이터 반영)
+  if (name === 'herdboard') {
+    var iframe = document.getElementById('herdboard-iframe');
+    if (iframe && !iframe.dataset.loaded) {
+      iframe.dataset.loaded = '1';
+    }
   }
 }
 
