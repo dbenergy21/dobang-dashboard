@@ -1,1 +1,505 @@
-{"messages": [], "updated": ""}
+{
+  "messages": [
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "c3221a1b",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:55:21",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "f5de51eb",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:55:21",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "62cf826d",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:55:21",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "216f3eb1",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:54:19",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "4fad0780",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:54:19",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "039c3f94",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:54:19",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "b3ea2317",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:50:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "7affacad",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:50:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "9af9c520",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:50:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "d554c9a7",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:49:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "8604fa12",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:49:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "943c50cc",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:49:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "86007aa7",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:48:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "47db45cb",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:48:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "0e5f574a",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:48:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "581671a0",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:47:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "bba29e2e",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:47:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "5d079681",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:47:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "1d310305",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:46:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "cf1f4507",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:46:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "1df32efd",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:46:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "e703b47f",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:45:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "4fb86fa5",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:45:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "da43b041",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:45:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "df01e79b",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:44:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "2c02a1e2",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:44:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "6f712bc4",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:44:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "22d6a6d1",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:43:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "69967e6f",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:43:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "fb85fe39",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:43:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "d9576ed4",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:42:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "d145d542",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:42:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "2ad9a393",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:42:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "1c0a0bf5",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:41:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "a71d11e9",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:41:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "49f533d9",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:41:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "1ec07b38",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:40:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "a0652834",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:40:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "4971e8d6",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:40:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "921b8f0b",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:39:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "cd3ae180",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:39:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "860afa10",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:39:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "7e89dbba",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:38:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "3f523fbd",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:38:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "ffc51263",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:38:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "fa11af67",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:37:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "b76322be",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:37:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "da04ea0d",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:37:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "255e67ee",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:36:47",
+      "type": "alert"
+    },
+    {
+      "body": "🔴 scada 오류: ",
+      "from": "서버3",
+      "id": "1ab3af01",
+      "read": false,
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:36:47",
+      "type": "alert"
+    }
+  ],
+  "_synced": "2026-04-25 14:50:43"
+}

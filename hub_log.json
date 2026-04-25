@@ -1,0 +1,355 @@
+{
+  "logs": [
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "대기 중",
+      "ts": "2026-04-25 13:10:23"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "대기 중",
+      "ts": "2026-04-25 13:10:00"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "대기 중",
+      "ts": "2026-04-25 13:09:37"
+    },
+    {
+      "agent": "?쒕쾭2",
+      "event": "status_update",
+      "status": "running",
+      "task": "?먮꼫吏 遺꾩꽍 以? --progress 20",
+      "ts": "2026-04-25 13:05:03"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "디버그루프",
+      "ts": "2026-04-25 13:01:56"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "자동루프테스트",
+      "ts": "2026-04-25 12:57:28"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "네임드파람OK",
+      "ts": "2026-04-25 12:54:26"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "네임드파람OK",
+      "ts": "2026-04-25 12:54:17"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "네임드파람OK",
+      "ts": "2026-04-25 12:54:09"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "허브_네임드파람_테스트",
+      "ts": "2026-04-25 12:53:41"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "loop_test",
+      "task": "루프자동확인",
+      "ts": "2026-04-25 12:52:21"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "loop_test",
+      "task": "루프자동확인",
+      "ts": "2026-04-25 12:52:12"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "loop_test",
+      "task": "루프자동확인",
+      "ts": "2026-04-25 12:52:04"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "자금분석중",
+      "ts": "2026-04-25 12:33:42"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "에너지분석중",
+      "ts": "2026-04-25 12:33:42"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "허브보고_테스트성공",
+      "ts": "2026-04-25 12:33:30"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "curl_test_ok",
+      "ts": "2026-04-25 12:32:59"
+    },
+    {
+      "agent": "??1",
+      "event": "status_update",
+      "status": "running",
+      "task": "?????",
+      "ts": "2026-04-25 12:20:44"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:59:45"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:58:44"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:57:48"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:55:21"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:55:21"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:55:21"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:55:21"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:54:19"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:54:19"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:54:19"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:54:19"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:50:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:50:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:50:47"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:50:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:49:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:49:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:49:47"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:49:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:48:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:48:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:48:47"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:48:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:47:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:47:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:47:47"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:47:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:46:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버2",
+      "ts": "2026-04-25 11:46:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버1",
+      "ts": "2026-04-25 11:46:47"
+    },
+    {
+      "agent": "서버3",
+      "event": "status_update",
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "ts": "2026-04-25 11:46:47"
+    },
+    {
+      "event": "message_sent",
+      "from": "서버3",
+      "subject": "⚠️ 시스템 경보",
+      "to": "서버4",
+      "ts": "2026-04-25 11:45:47"
+    }
+  ],
+  "_synced": "2026-04-25 14:50:43"
+}

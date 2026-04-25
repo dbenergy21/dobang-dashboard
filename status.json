@@ -1,10 +1,47 @@
 {
-  "updated": "2026-04-25T00:00:00",
   "agents": {
-    "서버1": {"status": "idle", "task": "대기 중", "progress": 0, "loop_count": 0, "emoji": "🐷", "updated": ""},
-    "서버2": {"status": "idle", "task": "대기 중", "progress": 0, "loop_count": 0, "emoji": "⚡", "updated": ""},
-    "서버3": {"status": "idle", "task": "대기 중", "progress": 0, "loop_count": 0, "emoji": "🧭", "updated": ""},
-    "서버4": {"status": "idle", "task": "대기 중", "progress": 0, "loop_count": 0, "emoji": "📋", "updated": ""}
+    "서버1": {
+      "agent": "서버1",
+      "emoji": "🐷",
+      "last_report": "",
+      "loop_count": 5,
+      "progress": 0,
+      "status": "idle",
+      "task": "대기 중",
+      "updated": "2026-04-25 13:09:37"
+    },
+    "서버2": {
+      "agent": "서버2",
+      "emoji": "⚡",
+      "last_report": "",
+      "loop_count": 3,
+      "progress": 0,
+      "status": "idle",
+      "task": "대기 중",
+      "updated": "2026-04-25 13:10:00"
+    },
+    "서버3": {
+      "agent": "서버3",
+      "emoji": "🧭",
+      "last_report": "",
+      "loop_count": 93,
+      "progress": 77,
+      "status": "running",
+      "task": "오케스트레이터 동작 중",
+      "updated": "2026-04-25 13:13:25"
+    },
+    "서버4": {
+      "agent": "서버4",
+      "emoji": "📋",
+      "last_report": "",
+      "loop_count": 3,
+      "progress": 0,
+      "status": "idle",
+      "task": "대기 중",
+      "updated": "2026-04-25 13:10:23"
+    }
   },
-  "note": "이 파일은 GitHub 정적 폴백입니다. 실시간 데이터는 LAN(192.168.0.13:5001) 연결 시 표시됩니다."
+  "server_time": "2026-04-25 14:50:45",
+  "today": "2026-04-25",
+  "_synced": "2026-04-25 14:50:43"
 }

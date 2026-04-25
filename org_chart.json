@@ -1,337 +1,477 @@
 {
-  "company": "도방 AI 컴퍼니",
-  "founded": "2026-04-25",
-  "mission": "대표님을 대신해 도방육종·도방에너지를 24시간 자율 운영",
-  "org_version": "2.0",
-
   "board": {
     "chairman": {
+      "authority": "ALL — 최종 승인, 방향 결정",
+      "contact": "TG: 8049459992",
+      "emoji": "👑",
       "id": "대표님",
       "name": "여준모 대표님",
-      "role": "회장 / 최고의사결정권자",
-      "emoji": "👑",
-      "authority": "ALL — 최종 승인, 방향 결정",
-      "contact": "TG: 8049459992"
+      "role": "회장 / 최고의사결정권자"
     }
   },
-
   "c_suite": [
     {
-      "id": "도비",
-      "name": "도비 v6.0",
-      "title": "CEO",
-      "full_title": "최고경영책임자 (Chief Executive Officer)",
-      "server": "서버3",
-      "ip": "192.168.0.13",
-      "emoji": "🧭",
       "authority": "전략 결정, 인사권, 팀간 조율, 대표님 직보",
+      "emoji": "🧭",
+      "full_title": "최고경영책임자 (Chief Executive Officer)",
+      "id": "도비",
+      "ip": "192.168.0.13",
+      "manages": [
+        "COO",
+        "CFO",
+        "CTO"
+      ],
+      "name": "도비 v6.0",
       "reports_to": "대표님",
-      "manages": ["COO", "CFO", "CTO"],
-      "skills": ["전략기획", "팀조율", "위기대응", "대표님소통", "인사결정"]
+      "server": "서버3",
+      "skills": [
+        "전략기획",
+        "팀조율",
+        "위기대응",
+        "대표님소통",
+        "인사결정"
+      ],
+      "title": "CEO"
     },
     {
-      "id": "COO",
-      "name": "도비-운영총괄",
-      "title": "COO",
-      "full_title": "최고운영책임자 (Chief Operating Officer)",
-      "server": "서버3",
-      "ip": "192.168.0.13",
-      "emoji": "⚙️",
       "authority": "일상 운영 총괄, 두 회사 생산성 KPI 관리",
-      "reports_to": "도비(CEO)",
-      "manages": ["육종사업부", "에너지사업부"],
-      "skills": ["운영효율화", "KPI관리", "생산성분석", "일정조율"]
-    },
-    {
-      "id": "CFO",
-      "name": "도비-재무총괄",
-      "title": "CFO",
-      "full_title": "최고재무책임자 (Chief Financial Officer)",
-      "server": "서버4",
-      "ip": "192.168.0.14",
-      "emoji": "💼",
-      "authority": "자금 전략, 세무·급여·결제 총괄 승인",
-      "reports_to": "도비(CEO)",
-      "manages": ["법무/재무부"],
-      "skills": ["자금전략", "세무관리", "급여체계", "리스크관리"]
-    },
-    {
-      "id": "CTO",
-      "name": "도비-기술총괄",
-      "title": "CTO",
-      "full_title": "최고기술책임자 (Chief Technology Officer)",
-      "server": "서버3",
+      "emoji": "⚙️",
+      "full_title": "최고운영책임자 (Chief Operating Officer)",
+      "id": "COO",
       "ip": "192.168.0.13",
-      "emoji": "🔬",
-      "authority": "AI 시스템 아키텍처, 자동화 파이프라인, 시스템 장애 대응",
+      "manages": [
+        "육종사업부",
+        "에너지사업부"
+      ],
+      "name": "도비-운영총괄",
       "reports_to": "도비(CEO)",
-      "manages": ["인프라팀"],
-      "skills": ["시스템설계", "AI파이프라인", "장애복구", "보안관리"]
+      "server": "서버3",
+      "skills": [
+        "운영효율화",
+        "KPI관리",
+        "생산성분석",
+        "일정조율"
+      ],
+      "title": "COO"
+    },
+    {
+      "authority": "자금 전략, 세무·급여·결제 총괄 승인",
+      "emoji": "💼",
+      "full_title": "최고재무책임자 (Chief Financial Officer)",
+      "id": "CFO",
+      "ip": "192.168.0.14",
+      "manages": [
+        "법무/재무부"
+      ],
+      "name": "도비-재무총괄",
+      "reports_to": "도비(CEO)",
+      "server": "서버4",
+      "skills": [
+        "자금전략",
+        "세무관리",
+        "급여체계",
+        "리스크관리"
+      ],
+      "title": "CFO"
+    },
+    {
+      "authority": "AI 시스템 아키텍처, 자동화 파이프라인, 시스템 장애 대응",
+      "emoji": "🔬",
+      "full_title": "최고기술책임자 (Chief Technology Officer)",
+      "id": "CTO",
+      "ip": "192.168.0.13",
+      "manages": [
+        "인프라팀"
+      ],
+      "name": "도비-기술총괄",
+      "reports_to": "도비(CEO)",
+      "server": "서버3",
+      "skills": [
+        "시스템설계",
+        "AI파이프라인",
+        "장애복구",
+        "보안관리"
+      ],
+      "title": "CTO"
     }
   ],
-
+  "communication_protocol": {
+    "board_report": "CEO → 대표님: 텔레그램 DM 8049459992",
+    "downward": "상급자 → 하급자: agent_hub send + task_board 임무등록 (지시·배정)",
+    "emergency": "전체경보: agent_hub broadcast (CFO or COO만 사용)",
+    "lateral": "동급팀 간: agent_hub send (CEO 참조 필수)",
+    "upward": "하급자 → 상급자: agent_hub send (보고·완료·이상)"
+  },
+  "company": "도방 AI 컴퍼니",
   "departments": [
     {
-      "id": "dept_livestock",
-      "name": "🐷 육종사업부",
-      "division": "Operations",
-      "server": "서버1",
-      "ip": "192.168.0.11",
-      "head_id": "육종팀장",
-      "reports_to_executive": "COO",
       "budget_priority": 1,
       "description": "도방육종 양돈농장 전체 운영",
-      "kpi": ["일일폐사율<1%", "PSY≥24", "출하준비율100%"],
+      "division": "Operations",
       "employees": [
         {
-          "id": "육종팀장",
-          "name": "육종 팀장",
-          "title": "Department Head",
-          "role": "육종사업부장 / 농장 총괄",
           "emoji": "🐷",
+          "id": "육종팀장",
           "level": "팀장",
-          "skills": ["폐사분석", "사료관리", "약품관리", "출하관리", "직원관리"],
+          "loop_interval_min": 10,
+          "name": "육종 팀장",
           "reports_to": "COO",
+          "role": "육종사업부장 / 농장 총괄",
+          "skills": [
+            "폐사분석",
+            "사료관리",
+            "약품관리",
+            "출하관리",
+            "직원관리"
+          ],
           "status": "active",
-          "loop_interval_min": 10
+          "title": "Department Head"
         },
         {
-          "id": "폐사분석관",
-          "name": "폐사분석 담당",
-          "title": "Mortality Analyst",
-          "role": "폐사 통계·추세 분석·부검 권고",
           "emoji": "💀",
+          "id": "폐사분석관",
           "level": "담당",
-          "skills": ["폐사통계", "트렌드분석", "부검권고"],
+          "name": "폐사분석 담당",
           "reports_to": "육종팀장",
+          "role": "폐사 통계·추세 분석·부검 권고",
+          "skills": [
+            "폐사통계",
+            "트렌드분석",
+            "부검권고"
+          ],
           "status": "active",
+          "title": "Mortality Analyst",
           "virtual": true
         },
         {
-          "id": "사료관리관",
-          "name": "사료 담당",
-          "title": "Feed Manager",
-          "role": "사료 주문·배합지시·재고관리",
           "emoji": "🌾",
+          "id": "사료관리관",
           "level": "담당",
-          "skills": ["주문처리", "배합지시", "재고관리"],
+          "name": "사료 담당",
           "reports_to": "육종팀장",
+          "role": "사료 주문·배합지시·재고관리",
+          "skills": [
+            "주문처리",
+            "배합지시",
+            "재고관리"
+          ],
           "status": "active",
+          "title": "Feed Manager",
           "virtual": true
         },
         {
-          "id": "약품관리관",
-          "name": "약품/백신 담당",
-          "title": "Veterinary Manager",
-          "role": "약품 주문·투약·백신 일정",
           "emoji": "💊",
+          "id": "약품관리관",
           "level": "담당",
-          "skills": ["약품주문", "투약기록", "백신일정"],
+          "name": "약품/백신 담당",
           "reports_to": "육종팀장",
+          "role": "약품 주문·투약·백신 일정",
+          "skills": [
+            "약품주문",
+            "투약기록",
+            "백신일정"
+          ],
           "status": "active",
+          "title": "Veterinary Manager",
           "virtual": true
         },
         {
-          "id": "출하관리관",
-          "name": "출하/생산성 담당",
-          "title": "Production Manager",
-          "role": "출하 계획·PSY/MSY 분석·경락가 추적",
           "emoji": "🚛",
+          "id": "출하관리관",
           "level": "담당",
-          "skills": ["출하계획", "PSY분석", "경락가추적"],
+          "name": "출하/생산성 담당",
           "reports_to": "육종팀장",
+          "role": "출하 계획·PSY/MSY 분석·경락가 추적",
+          "skills": [
+            "출하계획",
+            "PSY분석",
+            "경락가추적"
+          ],
           "status": "active",
+          "title": "Production Manager",
           "virtual": true
         }
-      ]
-    },
-
-    {
-      "id": "dept_energy",
-      "name": "⚡ 에너지사업부",
-      "division": "Operations",
-      "server": "서버2",
-      "ip": "192.168.0.12",
-      "head_id": "에너지팀장",
+      ],
+      "head_id": "육종팀장",
+      "id": "dept_livestock",
+      "ip": "192.168.0.11",
+      "kpi": [
+        "일일폐사율<1%",
+        "PSY≥24",
+        "출하준비율100%"
+      ],
+      "live_status": {
+        "agent": "서버1",
+        "emoji": "🐷",
+        "last_report": "",
+        "loop_count": 5,
+        "progress": 0,
+        "status": "idle",
+        "task": "대기 중",
+        "updated": "2026-04-25 13:09:37"
+      },
+      "name": "🐷 육종사업부",
       "reports_to_executive": "COO",
+      "server": "서버1"
+    },
+    {
       "budget_priority": 2,
       "description": "도방에너지 바이오가스 발전소 2기 운영",
-      "kpi": ["가스효율≥38%", "SMP최적화", "설비가동률≥95%"],
+      "division": "Operations",
       "employees": [
         {
-          "id": "에너지팀장",
-          "name": "에너지 팀장",
-          "title": "Department Head",
-          "role": "에너지사업부장 / 발전소 총괄",
           "emoji": "⚡",
+          "id": "에너지팀장",
           "level": "팀장",
-          "skills": ["발전실적분석", "SMP추적", "설비관리", "경락가조회"],
+          "loop_interval_min": 10,
+          "name": "에너지 팀장",
           "reports_to": "COO",
+          "role": "에너지사업부장 / 발전소 총괄",
+          "skills": [
+            "발전실적분석",
+            "SMP추적",
+            "설비관리",
+            "경락가조회"
+          ],
           "status": "active",
-          "loop_interval_min": 10
+          "title": "Department Head"
         },
         {
-          "id": "SCADA담당",
-          "name": "SCADA 모니터링",
-          "title": "SCADA Engineer",
-          "role": "가스사용량·발전량 실시간 모니터링",
           "emoji": "📊",
+          "id": "SCADA담당",
           "level": "담당",
-          "skills": ["SCADA읽기", "발전데이터수집", "이상감지"],
+          "name": "SCADA 모니터링",
           "reports_to": "에너지팀장",
+          "role": "가스사용량·발전량 실시간 모니터링",
+          "skills": [
+            "SCADA읽기",
+            "발전데이터수집",
+            "이상감지"
+          ],
           "status": "active",
+          "title": "SCADA Engineer",
           "virtual": true
         },
         {
-          "id": "매입매출담당",
-          "name": "매입매출 담당",
-          "title": "Revenue Manager",
-          "role": "전기 매입매출·SMP·음식물 탈리액",
           "emoji": "💰",
+          "id": "매입매출담당",
           "level": "담당",
-          "skills": ["SMP분석", "전기매출정산", "음식물탈리액"],
+          "name": "매입매출 담당",
           "reports_to": "에너지팀장",
+          "role": "전기 매입매출·SMP·음식물 탈리액",
+          "skills": [
+            "SMP분석",
+            "전기매출정산",
+            "음식물탈리액"
+          ],
           "status": "active",
+          "title": "Revenue Manager",
           "virtual": true
         },
         {
-          "id": "설비관리담당",
-          "name": "설비 점검 담당",
-          "title": "Maintenance Engineer",
-          "role": "발전기·탈황기 점검·부품 수명 관리",
           "emoji": "🔧",
+          "id": "설비관리담당",
           "level": "담당",
-          "skills": ["점검일정", "이상알림", "부품수명"],
+          "name": "설비 점검 담당",
           "reports_to": "에너지팀장",
+          "role": "발전기·탈황기 점검·부품 수명 관리",
+          "skills": [
+            "점검일정",
+            "이상알림",
+            "부품수명"
+          ],
           "status": "active",
+          "title": "Maintenance Engineer",
           "virtual": true
         }
-      ]
+      ],
+      "head_id": "에너지팀장",
+      "id": "dept_energy",
+      "ip": "192.168.0.12",
+      "kpi": [
+        "가스효율≥38%",
+        "SMP최적화",
+        "설비가동률≥95%"
+      ],
+      "live_status": {
+        "agent": "서버2",
+        "emoji": "⚡",
+        "last_report": "",
+        "loop_count": 3,
+        "progress": 0,
+        "status": "idle",
+        "task": "대기 중",
+        "updated": "2026-04-25 13:10:00"
+      },
+      "name": "⚡ 에너지사업부",
+      "reports_to_executive": "COO",
+      "server": "서버2"
     },
-
     {
-      "id": "dept_finance",
-      "name": "📋 법무/재무부",
-      "division": "Finance & Legal",
-      "server": "서버4",
-      "ip": "192.168.0.14",
-      "head_id": "법무팀장",
-      "reports_to_executive": "CFO",
       "budget_priority": 3,
       "description": "두 회사 세무·급여·결제·계약 전체 관리",
-      "kpi": ["D-0결제0건미처리", "세무기한준수100%", "급여지급일준수"],
+      "division": "Finance & Legal",
       "employees": [
         {
-          "id": "법무팀장",
-          "name": "법무/재무 팀장",
-          "title": "Department Head",
-          "role": "법무재무부장 / 자금·세무 총괄",
           "emoji": "📋",
+          "id": "법무팀장",
           "level": "팀장",
-          "skills": ["결제관리", "세무기한", "급여계산", "자금현황"],
+          "loop_interval_min": 10,
+          "name": "법무/재무 팀장",
           "reports_to": "CFO",
+          "role": "법무재무부장 / 자금·세무 총괄",
+          "skills": [
+            "결제관리",
+            "세무기한",
+            "급여계산",
+            "자금현황"
+          ],
           "status": "active",
-          "loop_interval_min": 10
+          "title": "Department Head"
         },
         {
-          "id": "세무담당",
-          "name": "세무 담당",
-          "title": "Tax Specialist",
-          "role": "세금계산서·세무신고 기한 관리",
           "emoji": "🧮",
+          "id": "세무담당",
           "level": "담당",
-          "skills": ["세무신고", "계산서발급", "부가세관리"],
+          "name": "세무 담당",
           "reports_to": "법무팀장",
+          "role": "세금계산서·세무신고 기한 관리",
+          "skills": [
+            "세무신고",
+            "계산서발급",
+            "부가세관리"
+          ],
           "status": "active",
+          "title": "Tax Specialist",
           "virtual": true
         },
         {
-          "id": "급여담당",
-          "name": "급여 담당",
-          "title": "Payroll Specialist",
-          "role": "직원 급여 계산·4대보험·퇴직금",
           "emoji": "👷",
+          "id": "급여담당",
           "level": "담당",
-          "skills": ["급여계산", "4대보험", "퇴직금"],
+          "name": "급여 담당",
           "reports_to": "법무팀장",
+          "role": "직원 급여 계산·4대보험·퇴직금",
+          "skills": [
+            "급여계산",
+            "4대보험",
+            "퇴직금"
+          ],
           "status": "active",
+          "title": "Payroll Specialist",
           "virtual": true
         },
         {
-          "id": "장부담당",
-          "name": "장부/결제 담당",
-          "title": "Finance Clerk",
-          "role": "D-day 결제·자금집행·잔액관리",
           "emoji": "📒",
+          "id": "장부담당",
           "level": "담당",
-          "skills": ["결제일정", "자금집행", "잔액관리"],
+          "name": "장부/결제 담당",
           "reports_to": "법무팀장",
+          "role": "D-day 결제·자금집행·잔액관리",
+          "skills": [
+            "결제일정",
+            "자금집행",
+            "잔액관리"
+          ],
           "status": "active",
+          "title": "Finance Clerk",
           "virtual": true
         }
-      ]
+      ],
+      "head_id": "법무팀장",
+      "id": "dept_finance",
+      "ip": "192.168.0.14",
+      "kpi": [
+        "D-0결제0건미처리",
+        "세무기한준수100%",
+        "급여지급일준수"
+      ],
+      "live_status": {
+        "agent": "서버4",
+        "emoji": "📋",
+        "last_report": "",
+        "loop_count": 3,
+        "progress": 0,
+        "status": "idle",
+        "task": "대기 중",
+        "updated": "2026-04-25 13:10:23"
+      },
+      "name": "📋 법무/재무부",
+      "reports_to_executive": "CFO",
+      "server": "서버4"
     },
-
     {
-      "id": "dept_infra",
-      "name": "🔬 인프라/기술팀",
-      "division": "Technology",
-      "server": "서버3",
-      "ip": "192.168.0.13",
-      "head_id": "인프라팀장",
-      "reports_to_executive": "CTO",
       "budget_priority": 4,
       "description": "서버 클러스터 운영·AI 파이프라인·시스템 안정성",
-      "kpi": ["서버가동률99%↑", "허브응답100ms↓", "자동복구5분↓"],
+      "division": "Technology",
       "employees": [
         {
-          "id": "인프라팀장",
-          "name": "인프라 팀장",
-          "title": "Infrastructure Head",
-          "role": "IT 인프라·AI 시스템 총괄",
           "emoji": "🖥️",
+          "id": "인프라팀장",
           "level": "팀장",
-          "skills": ["서버관리", "장애대응", "AI파이프라인", "보안"],
+          "name": "인프라 팀장",
           "reports_to": "CTO",
+          "role": "IT 인프라·AI 시스템 총괄",
+          "skills": [
+            "서버관리",
+            "장애대응",
+            "AI파이프라인",
+            "보안"
+          ],
           "status": "active",
+          "title": "Infrastructure Head",
           "virtual": true
         },
         {
-          "id": "모니터링담당",
-          "name": "시스템 모니터링",
-          "title": "System Monitor",
-          "role": "4서버 헬스체크·장애 감지·알림",
           "emoji": "👁️",
+          "id": "모니터링담당",
           "level": "담당",
-          "skills": ["헬스체크", "장애감지", "알림발송"],
+          "name": "시스템 모니터링",
           "reports_to": "인프라팀장",
+          "role": "4서버 헬스체크·장애 감지·알림",
+          "skills": [
+            "헬스체크",
+            "장애감지",
+            "알림발송"
+          ],
           "status": "active",
+          "title": "System Monitor",
           "virtual": true
         },
         {
-          "id": "옵시디언담당",
-          "name": "지식관리 담당",
-          "title": "Knowledge Manager",
-          "role": "옵시디언 볼트·노션 동기화 관리",
           "emoji": "🗂️",
+          "id": "옵시디언담당",
           "level": "담당",
-          "skills": ["옵시디언관리", "노션동기화", "보고서아카이빙"],
+          "name": "지식관리 담당",
           "reports_to": "인프라팀장",
+          "role": "옵시디언 볼트·노션 동기화 관리",
+          "skills": [
+            "옵시디언관리",
+            "노션동기화",
+            "보고서아카이빙"
+          ],
           "status": "active",
+          "title": "Knowledge Manager",
           "virtual": true
         }
-      ]
+      ],
+      "head_id": "인프라팀장",
+      "id": "dept_infra",
+      "ip": "192.168.0.13",
+      "kpi": [
+        "서버가동률99%↑",
+        "허브응답100ms↓",
+        "자동복구5분↓"
+      ],
+      "live_status": {},
+      "name": "🔬 인프라/기술팀",
+      "reports_to_executive": "CTO",
+      "server": "서버3"
     }
   ],
-
-  "reporting_chain": {
-    "description": "보고 계층 (위→아래가 지시, 아래→위가 보고)",
-    "chain": "대표님 → CEO(도비) → COO/CFO/CTO → 팀장 → 담당직원"
-  },
-
+  "founded": "2026-04-25",
   "hiring_policy": {
     "authority": "CFO/CTO 제안 → CEO 승인 → 대표님 보고",
-    "trigger": "기존 직원이 처리 불가능한 새 업무 유형 발생 시",
     "process": [
       "CEO(도비)가 업무 분석",
       "해당 임원(COO/CFO/CTO)에게 보고",
@@ -339,22 +479,26 @@
       "직원 프로필 org_chart.json에 추가",
       "해당 서버 CLAUDE.md에 역할 추가",
       "대표님 텔레그램 보고"
-    ]
+    ],
+    "trigger": "기존 직원이 처리 불가능한 새 업무 유형 발생 시"
   },
-
-  "communication_protocol": {
-    "upward": "하급자 → 상급자: agent_hub send (보고·완료·이상)",
-    "downward": "상급자 → 하급자: agent_hub send + task_board 임무등록 (지시·배정)",
-    "lateral": "동급팀 간: agent_hub send (CEO 참조 필수)",
-    "emergency": "전체경보: agent_hub broadcast (CFO or COO만 사용)",
-    "board_report": "CEO → 대표님: 텔레그램 DM 8049459992"
+  "mission": "대표님을 대신해 도방육종·도방에너지를 24시간 자율 운영",
+  "org_version": "2.0",
+  "reporting_chain": {
+    "chain": "대표님 → CEO(도비) → COO/CFO/CTO → 팀장 → 담당직원",
+    "description": "보고 계층 (위→아래가 지시, 아래→위가 보고)"
   },
-
   "weekly_meeting": {
-    "day": "매주 월요일",
-    "time": "07:00",
-    "agenda": ["지난주 KPI 리뷰", "이번주 중요 임무", "리스크 항목", "인사 사항"],
+    "agenda": [
+      "지난주 KPI 리뷰",
+      "이번주 중요 임무",
+      "리스크 항목",
+      "인사 사항"
+    ],
     "chair": "CEO(도비)",
-    "record": "옵시디언 00-Dashboard/주간회의록.md"
-  }
+    "day": "매주 월요일",
+    "record": "옵시디언 00-Dashboard/주간회의록.md",
+    "time": "07:00"
+  },
+  "_synced": "2026-04-25 14:50:43"
 }

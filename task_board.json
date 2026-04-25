@@ -1,0 +1,13 @@
+{
+  "board": "도방 AI 컴퍼니 임무판",
+  "columns": [
+    "backlog",
+    "assigned",
+    "in_progress",
+    "review",
+    "done"
+  ],
+  "tasks": [],
+  "updated": "2026-04-25",
+  "_synced": "2026-04-25 14:50:43"
+}
