@@ -1,6 +1,13 @@
 {
   "logs": [
     {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (18:03)",
+      "ts": "2026-04-25 18:03:09"
+    },
+    {
       "agent": "서버2",
       "event": "status_update",
       "status": "running",
@@ -342,14 +349,7 @@
       "status": "loop_test",
       "task": "루프자동확인",
       "ts": "2026-04-25 12:52:21"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "loop_test",
-      "task": "루프자동확인",
-      "ts": "2026-04-25 12:52:12"
     }
   ],
-  "_synced": "2026-04-25 18:01:01"
+  "_synced": "2026-04-25 18:11:01"
 }
