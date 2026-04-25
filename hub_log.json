@@ -4,6 +4,41 @@
       "agent": "서버2",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (22:09)",
+      "ts": "2026-04-25 22:09:58"
+    },
+    {
+      "agent": "CEO",
+      "event": "status_update",
+      "status": "idle",
+      "task": "사이클#3 완료 (다음:22:18)",
+      "ts": "2026-04-25 22:09:23"
+    },
+    {
+      "agent": "CEO",
+      "event": "status_update",
+      "status": "running",
+      "task": "CEO 사이클#3 22:08",
+      "ts": "2026-04-25 22:08:19"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (22:07)",
+      "ts": "2026-04-25 22:07:00"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (22:02)",
+      "ts": "2026-04-25 22:02:14"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (21:59)",
       "ts": "2026-04-25 21:59:35"
     },
@@ -314,42 +349,7 @@
       "status": "running",
       "task": "원격 claude 실행 중 (19:59)",
       "ts": "2026-04-25 19:59:38"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (19:57)",
-      "ts": "2026-04-25 19:57:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (19:43)",
-      "ts": "2026-04-25 19:43:22"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (19:40)",
-      "ts": "2026-04-25 19:40:01"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (19:37)",
-      "ts": "2026-04-25 19:37:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (19:23)",
-      "ts": "2026-04-25 19:23:40"
     }
   ],
-  "_synced": "2026-04-25 22:01:00"
+  "_synced": "2026-04-25 22:11:00"
 }
