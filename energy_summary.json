@@ -1,0 +1,12 @@
+{
+  "updated": "",
+  "plants": [
+    {"kwh": 0, "gas_rate": 38.72},
+    {"kwh": 0, "gas_rate": 46.11}
+  ],
+  "smp": 0,
+  "slaughter_price": 0,
+  "history": [],
+  "maintenance": [],
+  "note": "서버2 루프 실행 후 자동 갱신됩니다"
+}

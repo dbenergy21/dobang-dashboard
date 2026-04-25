@@ -1,0 +1,10 @@
+{
+  "updated": "2026-04-25T00:00:00",
+  "agents": {
+    "서버1": {"status": "idle", "task": "대기 중", "progress": 0, "loop_count": 0, "emoji": "🐷", "updated": ""},
+    "서버2": {"status": "idle", "task": "대기 중", "progress": 0, "loop_count": 0, "emoji": "⚡", "updated": ""},
+    "서버3": {"status": "idle", "task": "대기 중", "progress": 0, "loop_count": 0, "emoji": "🧭", "updated": ""},
+    "서버4": {"status": "idle", "task": "대기 중", "progress": 0, "loop_count": 0, "emoji": "📋", "updated": ""}
+  },
+  "note": "이 파일은 GitHub 정적 폴백입니다. 실시간 데이터는 LAN(192.168.0.13:5001) 연결 시 표시됩니다."
+}

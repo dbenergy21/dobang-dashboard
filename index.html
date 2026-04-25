@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🏢 도방 통합 대시보드</title>
+<style>
+:root {
+  --bg:#0d1117;--surface:#161b22;--surface2:#21262d;
+  --border:#30363d;--text:#e6edf3;--muted:#8b949e;
+  --green:#3fb950;--blue:#58a6ff;--yellow:#d29922;
+  --red:#f85149;--purple:#bc8cff;--orange:#e3b341;
+  --pink:#ff79c6;--cyan:#79c0ff;
+  --s1:#ff7b72;--s2:#ffa657;--s4:#79c0ff;--s3:#a5d6ff;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',sans-serif;min-height:100vh;}
+
+/* ── 헤더 ── */
+header{background:var(--surface);border-bottom:1px solid var(--border);
+  padding:0 24px;position:sticky;top:0;z-index:200;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:52px;}
+.logo{font-size:1.15rem;font-weight:700;white-space:nowrap;}
+.logo span{color:var(--blue);}
+
+/* 메인 탭 내비 */
+.main-tabs{display:flex;gap:4px;margin:0 24px;}
+.main-tab{padding:6px 18px;border-radius:8px 8px 0 0;font-size:.88rem;cursor:pointer;
+  background:transparent;border:1px solid transparent;border-bottom:none;
+  color:var(--muted);transition:all .2s;white-space:nowrap;}
+.main-tab.active{background:var(--bg);border-color:var(--border);color:var(--text);}
+.main-tab:hover:not(.active){color:var(--text);}
+
+.header-right{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+#clock{font-size:.82rem;color:var(--muted);font-family:monospace;}
+#api-badge{font-size:.72rem;}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── 페이지 탭 ── */
+.page{display:none;}
+.page.active{display:block;}
+.container{max-width:1440px;margin:0 auto;padding:20px 24px;}
+
+/* ── 공통 카드 ── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
+.card-header{padding:13px 18px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;}
+.card-header h3{font-size:.92rem;font-weight:600;}
+.card-body{padding:15px 18px;}
+.section-label{font-size:.7rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.8px;color:var(--muted);margin-bottom:8px;}
+
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
+
+/* ── 스탯 카드 ── */
+.stat-row{display:grid;gap:12px;}
+.stat-row.cols4{grid-template-columns:repeat(4,1fr);}
+.stat-row.cols3{grid-template-columns:repeat(3,1fr);}
+.stat-row.cols2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:1000px){.stat-row.cols4{grid-template-columns:repeat(2,1fr);}.stat-row.cols3{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.stat-row.cols4,.stat-row.cols3,.stat-row.cols2{grid-template-columns:1fr;}}
+
+.stat{background:var(--surface2);border:1px solid var(--border);border-radius:10px;
+  padding:14px 16px;position:relative;overflow:hidden;}
+.stat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.stat.pig::before{background:var(--s1);}
+.stat.energy::before{background:var(--s2);}
+.stat.finance::before{background:var(--cyan);}
+.stat.infra::before{background:var(--s3);}
+.stat.green::before{background:var(--green);}
+.stat.red::before{background:var(--red);}
+.stat.yellow::before{background:var(--yellow);}
+.stat.purple::before{background:var(--purple);}
+.stat-icon{font-size:1.6rem;margin-bottom:6px;}
+.stat-value{font-size:1.6rem;font-weight:700;font-family:monospace;}
+.stat-label{font-size:.76rem;color:var(--muted);margin-top:4px;}
+.stat-sub{font-size:.72rem;color:var(--muted);margin-top:2px;}
+.stat-badge{position:absolute;top:10px;right:12px;font-size:.65rem;
+  padding:2px 7px;border-radius:10px;font-weight:600;}
+.stat-badge.up{background:rgba(63,185,80,.15);color:var(--green);}
+.stat-badge.down{background:rgba(248,81,73,.15);color:var(--red);}
+.stat-badge.neutral{background:rgba(139,148,158,.15);color:var(--muted);}
+
+/* ── 그리드 레이아웃 ── */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;}
+.grid-l2{display:grid;grid-template-columns:2fr 1fr;gap:16px;}
+.grid-1l2{display:grid;grid-template-columns:1fr 2fr;gap:16px;}
+@media(max-width:900px){.grid-2,.grid-3,.grid-l2,.grid-1l2{grid-template-columns:1fr;}}
+
+/* ── 돈방 현황 테이블 ── */
+.barn-table{width:100%;border-collapse:collapse;font-size:.82rem;}
+.barn-table th{background:var(--surface2);color:var(--muted);font-weight:600;
+  padding:7px 10px;text-align:left;border-bottom:1px solid var(--border);font-size:.72rem;text-transform:uppercase;}
+.barn-table td{padding:7px 10px;border-bottom:1px solid rgba(48,54,61,.5);}
+.barn-table tr:last-child td{border-bottom:none;}
+.barn-table tr:hover td{background:rgba(255,255,255,.02);}
+.barn-num{font-family:monospace;font-weight:600;}
+.barn-warn{color:var(--yellow);}
+.barn-ok{color:var(--green);}
+.barn-crit{color:var(--red);}
+
+/* ── 폐사 차트 (CSS bar) ── */
+.death-chart{display:flex;flex-direction:column;gap:8px;}
+.death-bar-row{display:flex;align-items:center;gap:10px;}
+.death-bar-label{width:60px;font-size:.75rem;color:var(--muted);text-align:right;flex-shrink:0;}
+.death-bar-track{flex:1;height:18px;background:var(--surface2);border-radius:3px;overflow:hidden;position:relative;}
+.death-bar-fill{height:100%;border-radius:3px;transition:width .6s ease;}
+.death-bar-val{position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:.7rem;font-weight:600;}
+
+/* ── 백신 일정 ── */
+.vaccine-list{display:flex;flex-direction:column;gap:7px;}
+.vaccine-item{display:flex;align-items:center;gap:10px;padding:8px 12px;
+  background:var(--surface2);border-radius:7px;border-left:3px solid var(--border);}
+.vaccine-item.urgent{border-left-color:var(--red);}
+.vaccine-item.soon{border-left-color:var(--yellow);}
+.vaccine-item.ok{border-left-color:var(--green);}
+.vaccine-d{font-size:.75rem;font-weight:700;color:var(--text);width:48px;flex-shrink:0;font-family:monospace;}
+.vaccine-name{font-size:.82rem;flex:1;}
+.vaccine-target{font-size:.72rem;color:var(--muted);}
+.d-badge{font-size:.68rem;padding:2px 7px;border-radius:10px;font-weight:700;flex-shrink:0;}
+.d-badge.d0{background:rgba(248,81,73,.2);color:var(--red);}
+.d-badge.d7{background:rgba(210,153,34,.2);color:var(--yellow);}
+.d-badge.d30{background:rgba(63,185,80,.15);color:var(--green);}
+
+/* ── 직원 카드 ── */
+.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+@media(max-width:700px){.staff-grid{grid-template-columns:repeat(2,1fr);}}
+.staff-card{background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:12px;text-align:center;}
+.staff-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin:0 auto 8px;}
+.staff-name{font-size:.85rem;font-weight:600;}
+.staff-role{font-size:.72rem;color:var(--muted);margin-top:2px;}
+.staff-status{display:inline-block;margin-top:6px;font-size:.68rem;padding:2px 8px;border-radius:10px;}
+.staff-status.present{background:rgba(63,185,80,.15);color:var(--green);}
+.staff-status.off{background:rgba(248,81,73,.12);color:var(--red);}
+.staff-status.unknown{background:rgba(139,148,158,.12);color:var(--muted);}
+
+/* ── 에이전트 카드 (AI 컴퍼니 탭) ── */
+.agents-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.agent-card{background:var(--surface2);border:1px solid var(--border);border-radius:10px;
+  padding:14px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
+.agent-card:hover{border-color:var(--blue);transform:translateY(-2px);box-shadow:0 4px 20px rgba(88,166,255,.15);}
+.agent-card.selected{border-color:var(--blue);background:#1c2433;}
+.agent-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.agent-card[data-agent="서버1"]::before{background:var(--s1);}
+.agent-card[data-agent="서버2"]::before{background:var(--s2);}
+.agent-card[data-agent="서버3"]::before{background:var(--s3);}
+.agent-card[data-agent="서버4"]::before{background:var(--s4);}
+.agent-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.agent-name{display:flex;align-items:center;gap:8px;font-weight:600;}
+.agent-emoji{font-size:1.3rem;}
+.status-badge{font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.5px;}
+.status-badge.running{background:rgba(63,185,80,.2);color:var(--green);}
+.status-badge.idle{background:rgba(139,148,158,.2);color:var(--muted);}
+.status-badge.done{background:rgba(88,166,255,.2);color:var(--blue);}
+.status-badge.error{background:rgba(248,81,73,.2);color:var(--red);}
+.status-badge.offline{background:rgba(48,54,61,.5);color:var(--muted);}
+.status-badge.waiting{background:rgba(210,153,34,.2);color:var(--yellow);}
+.agent-task{font-size:.8rem;color:var(--muted);margin-bottom:8px;min-height:16px;}
+.progress-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:2px;transition:width .5s ease;background:linear-gradient(90deg,var(--blue),var(--purple));}
+.agent-footer{display:flex;justify-content:space-between;align-items:center;margin-top:8px;}
+.loop-count,.updated{font-size:.7rem;color:var(--muted);}
+
+/* ── 조직도 ── */
+.org-tree{display:flex;flex-direction:column;gap:10px;}
+.org-dept-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+@media(max-width:1100px){.org-dept-row{grid-template-columns:repeat(2,1fr);}}
+.org-dept{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;}
+.org-dept:hover{border-color:var(--blue);}
+.org-dept-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.org-dept-name{font-size:.85rem;font-weight:600;}
+.org-member{display:flex;align-items:center;gap:6px;padding:3px 5px;border-radius:4px;
+  font-size:.74rem;background:rgba(255,255,255,.02);margin-bottom:2px;}
+.org-member.head{background:rgba(88,166,255,.08);border:1px solid rgba(88,166,255,.18);}
+.org-member-role{color:var(--muted);font-size:.68rem;}
+.org-connector{text-align:center;color:var(--muted);font-size:.7rem;margin:3px 0;}
+
+/* ── 임무판 ── */
+.task-board{display:grid;grid-template-columns:280px 1fr;gap:14px;}
+@media(max-width:700px){.task-board{grid-template-columns:1fr;}}
+.task-new-form{display:flex;flex-direction:column;gap:7px;}
+.task-list{display:flex;flex-direction:column;gap:6px;max-height:260px;overflow-y:auto;}
+.task-item{background:var(--surface2);border:1px solid var(--border);border-radius:7px;
+  padding:8px 12px;display:flex;gap:10px;align-items:flex-start;}
+.task-item.high{border-left:3px solid var(--red);}
+.task-item.normal{border-left:3px solid var(--blue);}
+.task-item.low{border-left:3px solid var(--muted);}
+.task-title{font-size:.8rem;font-weight:600;}
+.task-meta{font-size:.7rem;color:var(--muted);margin-top:2px;}
+.task-done-btn{background:none;border:1px solid var(--border);color:var(--muted);
+  padding:2px 7px;border-radius:4px;font-size:.7rem;cursor:pointer;}
+.task-done-btn:hover{border-color:var(--green);color:var(--green);}
+
+/* ── 메시지 피드 ── */
+#msg-feed{display:flex;flex-direction:column;gap:6px;max-height:320px;overflow-y:auto;}
+.msg-item{display:flex;gap:8px;padding:8px 10px;background:var(--surface2);
+  border-radius:7px;border-left:3px solid var(--border);animation:fadeIn .3s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.msg-item.alert{border-left-color:var(--red);}
+.msg-item.info{border-left-color:var(--blue);}
+.msg-item.request{border-left-color:var(--yellow);}
+.msg-arrow{color:var(--muted);font-size:.75rem;display:flex;flex-direction:column;align-items:center;gap:2px;padding-top:2px;}
+.msg-from{font-size:.7rem;font-weight:700;}
+.msg-to{font-size:.7rem;color:var(--muted);}
+.msg-content{flex:1;}
+.msg-subject{font-size:.82rem;font-weight:600;margin-bottom:2px;}
+.msg-body{font-size:.76rem;color:var(--muted);}
+.msg-time{font-size:.68rem;color:var(--muted);white-space:nowrap;}
+
+/* ── 옵시디언 패널 ── */
+.obsidian-content{background:var(--bg);border:1px solid var(--border);border-radius:8px;
+  padding:12px;font-size:.78rem;line-height:1.6;max-height:260px;overflow-y:auto;white-space:pre-wrap;}
+
+/* ── 입력 / 버튼 ── */
+input,select,textarea{width:100%;background:var(--surface2);border:1px solid var(--border);
+  color:var(--text);padding:7px 10px;border-radius:6px;font-size:.82rem;outline:none;}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);}
+.btn{padding:8px 14px;border-radius:7px;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s;border:1px solid var(--border);}
+.btn-primary{background:var(--blue);border-color:var(--blue);color:#000;}
+.btn-primary:hover{opacity:.85;}
+.btn-ghost{background:var(--surface2);color:var(--muted);}
+.btn-ghost:hover{border-color:var(--blue);color:var(--text);}
+.cmd-group{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.cmd-btn{background:var(--surface2);border:1px solid var(--border);color:var(--text);
+  padding:9px 12px;border-radius:7px;font-size:.8rem;cursor:pointer;transition:all .2s;text-align:left;}
+.cmd-btn:hover{border-color:var(--blue);background:#1c2433;}
+
+/* ── 알림 배너 ── */
+#alert-banner{display:none;background:rgba(248,81,73,.12);border:1px solid var(--red);
+  border-radius:8px;padding:9px 14px;margin-bottom:14px;font-size:.83rem;color:var(--red);}
+
+/* ── 상세 패널 ── */
+#detail-panel{display:none;}
+#detail-panel.visible{display:block;}
+.sub-tabs{display:flex;gap:4px;margin-bottom:12px;}
+.sub-tab{padding:5px 12px;border-radius:6px;font-size:.8rem;cursor:pointer;
+  background:transparent;border:1px solid transparent;color:var(--muted);transition:all .2s;}
+.sub-tab.active{background:var(--surface2);border-color:var(--border);color:var(--text);}
+.sub-tab-content{display:none;}
+.sub-tab-content.active{display:block;}
+.report-list{display:flex;flex-direction:column;gap:5px;}
+.report-item{background:var(--surface2);border-radius:6px;padding:7px 11px;
+  font-size:.78rem;display:flex;justify-content:space-between;align-items:center;
+  border-left:3px solid var(--border);cursor:pointer;}
+.report-item:hover{border-left-color:var(--blue);}
+
+/* 반응형 추가 */
+@media(max-width:768px){
+  .main-tabs{margin:0 8px;}
+  .main-tab{padding:5px 10px;font-size:.8rem;}
+  .container{padding:14px 12px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── 헤더 ── -->
+<header>
+  <div class="header-inner">
+    <div style="display:flex;align-items:center;gap:0;">
+      <div class="logo">🏢 도방 <span>통합관리</span></div>
+      <nav class="main-tabs">
+        <div class="main-tab active" onclick="switchPage('pig')" id="tab-btn-pig">🐷 도방육종</div>
+        <div class="main-tab" onclick="switchPage('company')" id="tab-btn-company">🤖 AI 컴퍼니</div>
+        <div class="main-tab" onclick="switchPage('energy')" id="tab-btn-energy">⚡ 에너지</div>
+        <div class="main-tab" onclick="switchPage('finance')" id="tab-btn-finance">📋 법무재무</div>
+      </nav>
+    </div>
+    <div class="header-right">
+      <span id="api-badge" style="color:var(--muted)">연결 중...</span>
+      <span id="refresh-status" style="font-size:.7rem;color:var(--muted)"></span>
+      <div class="pulse"></div>
+      <span id="clock"></span>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════════════
+     PAGE 1: 🐷 도방육종
+═══════════════════════════════════════════════ -->
+<div id="page-pig" class="page active">
+<div class="container">
+
+  <div id="alert-banner"></div>
+
+  <!-- 최상단 스탯 4개 -->
+  <div class="stat-row cols4" style="margin-bottom:16px;" id="pig-stats">
+    <div class="stat pig"><div class="stat-icon">🐷</div><div class="stat-value" id="stat-total">-</div><div class="stat-label">총 두수</div><div class="stat-sub" id="stat-total-sub"></div></div>
+    <div class="stat red"><div class="stat-icon">💀</div><div class="stat-value" id="stat-death">-</div><div class="stat-label">오늘 폐사</div><div class="stat-sub" id="stat-death-sub">7일 누적: -</div><span id="stat-death-badge" class="stat-badge"></span></div>
+    <div class="stat yellow"><div class="stat-icon">🍼</div><div class="stat-value" id="stat-born">-</div><div class="stat-label">이번달 이유두수</div><div class="stat-sub" id="stat-born-sub">PSY 추산: -</div></div>
+    <div class="stat green"><div class="stat-icon">🚛</div><div class="stat-value" id="stat-ship">-</div><div class="stat-label">이번달 출하두수</div><div class="stat-sub" id="stat-ship-sub">예상 수익: -</div></div>
+  </div>
+
+  <!-- 돈방 현황 + 폐사 차트 -->
+  <div class="grid-l2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-header">
+        <h3>🏠 돈방별 두수 현황</h3>
+        <button class="btn btn-ghost" style="padding:3px 10px;font-size:.72rem;" onclick="loadPigData()">새로고침</button>
+      </div>
+      <div class="card-body" style="padding:10px 14px;">
+        <table class="barn-table" id="barn-table">
+          <thead>
+            <tr>
+              <th>돈방</th><th>두수</th><th>일령</th><th>상태</th><th>비고</th>
+            </tr>
+          </thead>
+          <tbody id="barn-body">
+            <tr><td colspan="5" style="color:var(--muted);text-align:center;padding:20px;">로딩 중...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><h3>💀 최근 7일 폐사 현황</h3></div>
+      <div class="card-body">
+        <div class="death-chart" id="death-chart">
+          <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+        </div>
+        <div style="margin-top:14px;">
+          <div class="section-label">원인별 분류</div>
+          <div id="death-cause" style="display:flex;flex-wrap:wrap;gap:6px;">
+            <div style="color:var(--muted);font-size:.78rem;">데이터 없음</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 백신 일정 + 사료현황 -->
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-header">
+        <h3>💉 백신 / 투약 일정</h3>
+        <span id="vaccine-count" style="font-size:.72rem;color:var(--muted);"></span>
+      </div>
+      <div class="card-body" style="padding:10px 14px;">
+        <div class="vaccine-list" id="vaccine-list">
+          <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <h3>🌾 사료 현황</h3>
+        <span id="feed-updated" style="font-size:.72rem;color:var(--muted);"></span>
+      </div>
+      <div class="card-body">
+        <div id="feed-content">
+          <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 시설 이상 + 직원 현황 -->
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-header">
+        <h3>🔧 시설 이상 / 점검</h3>
+        <span id="facility-count" style="font-size:.72rem;color:var(--muted);"></span>
+      </div>
+      <div class="card-body" style="padding:10px 14px;">
+        <div id="facility-list" style="display:flex;flex-direction:column;gap:6px;">
+          <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><h3>👷 직원 현황</h3></div>
+      <div class="card-body">
+        <div class="staff-grid" id="staff-grid">
+          <!-- 정적 직원 목록 (실시간 업데이트 추가 가능) -->
+          <div class="staff-card">
+            <div class="staff-avatar">🐷</div>
+            <div class="staff-name">박태식</div>
+            <div class="staff-role">농장장 (분뇨처리과장)</div>
+            <span class="staff-status present">출근</span>
+          </div>
+          <div class="staff-card">
+            <div class="staff-avatar">🌿</div>
+            <div class="staff-name">신기철</div>
+            <div class="staff-role">농무 담당</div>
+            <span class="staff-status present">출근</span>
+          </div>
+          <div class="staff-card">
+            <div class="staff-avatar">🏠</div>
+            <div class="staff-name">여기석</div>
+            <div class="staff-role">번식장장</div>
+            <span class="staff-status present">출근</span>
+          </div>
+          <div class="staff-card">
+            <div class="staff-avatar">🏠</div>
+            <div class="staff-name">마삼이</div>
+            <div class="staff-role">번식장장</div>
+            <span class="staff-status unknown">미확인</span>
+          </div>
+          <div class="staff-card">
+            <div class="staff-avatar">☀️</div>
+            <div class="staff-name">썬 (Jay-G)</div>
+            <div class="staff-role">베트남 직원</div>
+            <span class="staff-status unknown">미확인</span>
+          </div>
+          <div class="staff-card">
+            <div class="staff-avatar">🌊</div>
+            <div class="staff-name">콰 (Haukaka)</div>
+            <div class="staff-role">베트남 직원</div>
+            <span class="staff-status unknown">미확인</span>
+          </div>
+        </div>
+        <div style="margin-top:12px;border-top:1px solid var(--border);padding-top:10px;">
+          <div class="section-label">이번달 휴무 현황</div>
+          <div id="off-summary" style="font-size:.8rem;color:var(--muted);">로딩 중...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 육종 서버1 보고서 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-header">
+      <h3>📋 서버1 최신 보고서</h3>
+      <span style="font-size:.72rem;color:var(--muted);" id="s1-report-time"></span>
+    </div>
+    <div class="card-body" style="padding:10px 14px;">
+      <div class="obsidian-content" id="s1-report">보고서 없음 (서버1 루프 실행 후 갱신)</div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+</div><!-- /page-pig -->
+
+
+<!-- ════════════════════════════════════════════
+     PAGE 2: 🤖 AI 컴퍼니
+═══════════════════════════════════════════════ -->
+<div id="page-company" class="page">
+<div class="container">
+
+  <!-- 상단 에이전트 + 통신 -->
+  <div class="grid-l2" style="margin-bottom:16px;">
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div class="card">
+        <div class="card-header">
+          <h3>🤖 에이전트 실시간 현황</h3>
+          <span style="font-size:.72rem;color:var(--muted)">클릭 → 상세</span>
+        </div>
+        <div class="card-body">
+          <div class="agents-grid" id="agents-grid"></div>
+        </div>
+      </div>
+
+      <!-- 상세 패널 -->
+      <div class="card" id="detail-panel">
+        <div class="card-header">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span id="detail-emoji" style="font-size:1.6rem;"></span>
+            <div>
+              <h3 id="detail-name"></h3>
+              <span id="detail-badge" class="status-badge"></span>
+            </div>
+          </div>
+          <button onclick="closeDetail()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;">✕</button>
+        </div>
+        <div class="card-body">
+          <div class="sub-tabs">
+            <div class="sub-tab active" onclick="switchSubTab('reports')">📋 보고서</div>
+            <div class="sub-tab" onclick="switchSubTab('msgs')">💬 메시지</div>
+          </div>
+          <div id="subtab-reports" class="sub-tab-content active">
+            <div class="report-list" id="detail-reports"></div>
+          </div>
+          <div id="subtab-msgs" class="sub-tab-content">
+            <div id="detail-msgs" style="display:flex;flex-direction:column;gap:6px;max-height:180px;overflow-y:auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 메시지 피드 -->
+    <div class="card">
+      <div class="card-header">
+        <h3>💬 에이전트 통신 피드</h3>
+        <span id="msg-count" style="font-size:.72rem;color:var(--muted)"></span>
+      </div>
+      <div class="card-body" style="padding:10px;">
+        <div id="msg-feed"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 조직도 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-header">
+      <h3>🏢 도방 AI 컴퍼니 — 조직도</h3>
+      <button onclick="loadOrgChart()" class="btn btn-ghost" style="padding:3px 10px;font-size:.72rem;">새로고침</button>
+    </div>
+    <div class="card-body">
+      <div class="org-tree" id="org-tree">
+        <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 임무판 + 빠른 명령 -->
+  <div class="grid-l2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-header">
+        <h3>📋 CEO 임무판</h3>
+        <span id="task-count" style="font-size:.72rem;color:var(--muted)"></span>
+      </div>
+      <div class="card-body">
+        <div class="task-board">
+          <div>
+            <div class="section-label">새 임무 배정</div>
+            <div class="task-new-form">
+              <input id="task-text" placeholder="임무 내용">
+              <select id="task-dept">
+                <option value="">부서 자동 추론</option>
+                <option value="육종부">🐷 육종부</option>
+                <option value="에너지부">⚡ 에너지부</option>
+                <option value="법무부">📋 법무부</option>
+              </select>
+              <select id="task-priority">
+                <option value="normal">📋 보통</option>
+                <option value="high">🚨 긴급</option>
+                <option value="low">📝 낮음</option>
+              </select>
+              <button class="btn btn-primary" onclick="assignTask()" style="width:100%">지시 하달 →</button>
+            </div>
+          </div>
+          <div>
+            <div class="section-label">진행 중 <span id="task-pending-count" style="color:var(--blue)"></span></div>
+            <div class="task-list" id="task-list">
+              <div style="color:var(--muted);font-size:.8rem;">임무 없음</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header"><h3>⚡ 빠른 명령</h3></div>
+      <div class="card-body">
+        <div class="section-label">전체 팀</div>
+        <div class="cmd-group" style="margin-bottom:10px;">
+          <button class="cmd-btn" onclick="broadcastCmd('📊 현황보고 요청','즉시 현황 보고 바람')">📊 전체 현황보고</button>
+          <button class="cmd-btn" onclick="broadcastCmd('🔄 동기화 요청','옵시디언 동기화 즉시 실행')">🔄 전체 동기화</button>
+        </div>
+        <div class="section-label">팀별 명령</div>
+        <div class="cmd-group" style="margin-bottom:10px;">
+          <button class="cmd-btn" onclick="sendCmd('서버1','🐷 폐사현황 보고','즉시 폐사현황 보고 바람')">🐷 육종팀</button>
+          <button class="cmd-btn" onclick="sendCmd('서버2','⚡ 경락가 확인','오늘 경락가 즉시 확인')">⚡ 에너지팀</button>
+          <button class="cmd-btn" onclick="sendCmd('서버4','📋 결제현황 확인','D-7 결제 즉시 확인')">📋 법무팀</button>
+          <button class="cmd-btn" onclick="sendCmd('서버3','🔗 노션동기화','obsidian_sync 즉시')">🔗 노션동기화</button>
+        </div>
+        <div class="section-label">직접 메시지</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <select id="msg-to"><option value="서버1">🐷 서버1 육종팀</option><option value="서버2">⚡ 서버2 에너지팀</option><option value="서버4">📋 서버4 법무팀</option><option value="서버3">🧭 서버3 총괄</option></select>
+          <input id="msg-subj" placeholder="제목">
+          <input id="msg-body" placeholder="내용 (선택)">
+          <button class="btn btn-primary" onclick="sendManual()" style="width:100%">발송 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 옵시디언 종합현황 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-header">
+      <h3>🗂️ 옵시디언 종합현황</h3>
+      <button onclick="loadObsidian()" class="btn btn-ghost" style="padding:3px 10px;font-size:.72rem;">새로고침</button>
+    </div>
+    <div class="card-body" style="padding:10px 14px;">
+      <div class="obsidian-content" id="obsidian-content">불러오는 중...</div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+</div><!-- /page-company -->
+
+
+<!-- ════════════════════════════════════════════
+     PAGE 3: ⚡ 에너지
+═══════════════════════════════════════════════ -->
+<div id="page-energy" class="page">
+<div class="container">
+
+  <div class="stat-row cols4" style="margin-bottom:16px;">
+    <div class="stat energy"><div class="stat-icon">⚡</div><div class="stat-value" id="e-kwh1">-</div><div class="stat-label">발전소1 kWh</div><div class="stat-sub" id="e-gas1">가스: -%</div></div>
+    <div class="stat energy"><div class="stat-icon">⚡</div><div class="stat-value" id="e-kwh2">-</div><div class="stat-label">발전소2 kWh</div><div class="stat-sub" id="e-gas2">가스: -%</div></div>
+    <div class="stat yellow"><div class="stat-icon">💰</div><div class="stat-value" id="e-smp">-</div><div class="stat-label">SMP (원/kWh)</div><div class="stat-sub">오늘 단가</div></div>
+    <div class="stat green"><div class="stat-icon">🥩</div><div class="stat-value" id="e-slaughter">-</div><div class="stat-label">경락가 (원/kg)</div><div class="stat-sub" id="e-slaughter-rec">출하권고: -</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-header"><h3>📊 발전 실적 추이</h3></div>
+      <div class="card-body">
+        <div id="energy-chart" style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><h3>🔧 설비 점검 현황</h3></div>
+      <div class="card-body">
+        <div id="maintenance-list" style="display:flex;flex-direction:column;gap:7px;">
+          <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-header">
+      <h3>📋 서버2 최신 보고서</h3>
+      <span id="s2-report-time" style="font-size:.72rem;color:var(--muted);"></span>
+    </div>
+    <div class="card-body" style="padding:10px 14px;">
+      <div class="obsidian-content" id="s2-report">보고서 없음 (서버2 루프 실행 후 갱신)</div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /page-energy -->
+
+
+<!-- ════════════════════════════════════════════
+     PAGE 4: 📋 법무재무
+═══════════════════════════════════════════════ -->
+<div id="page-finance" class="page">
+<div class="container">
+
+  <div class="stat-row cols4" style="margin-bottom:16px;">
+    <div class="stat red"><div class="stat-icon">🚨</div><div class="stat-value" id="f-d0">-</div><div class="stat-label">D-0 긴급결제</div><div class="stat-sub">오늘 마감</div></div>
+    <div class="stat yellow"><div class="stat-icon">📅</div><div class="stat-value" id="f-d7">-</div><div class="stat-label">D-7 결제예정</div><div class="stat-sub">7일 이내</div></div>
+    <div class="stat yellow"><div class="stat-icon">🧮</div><div class="stat-value" id="f-tax">-</div><div class="stat-label">세무기한 D-30</div><div class="stat-sub">이내 항목수</div></div>
+    <div class="stat green"><div class="stat-icon">👷</div><div class="stat-value" id="f-salary">-</div><div class="stat-label">급여 시즌</div><div class="stat-sub" id="f-salary-sub">지급일: 매달 20일</div></div>
+  </div>
+
+  <div class="grid-2" style="margin-bottom:16px;">
+    <div class="card">
+      <div class="card-header"><h3>💳 결제 예정 현황 (D-day순)</h3></div>
+      <div class="card-body" style="padding:10px 14px;">
+        <div id="payment-list" style="display:flex;flex-direction:column;gap:6px;">
+          <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><h3>🧾 세무 기한 관리</h3></div>
+      <div class="card-body" style="padding:10px 14px;">
+        <div id="tax-list" style="display:flex;flex-direction:column;gap:6px;">
+          <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-header">
+      <h3>📋 서버4 최신 보고서</h3>
+      <span id="s4-report-time" style="font-size:.72rem;color:var(--muted);"></span>
+    </div>
+    <div class="card-body" style="padding:10px 14px;">
+      <div class="obsidian-content" id="s4-report">보고서 없음 (서버4 루프 실행 후 갱신)</div>
+    </div>
+  </div>
+
+</div>
+</div><!-- /page-finance -->
+
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════ -->
+<script>
+// ── API 설정 ──────────────────────────────────────
+const LAN_API = 'http://192.168.0.13:5001/api';
+const GH_RAW  = 'https://raw.githubusercontent.com/dbenergy21/dobang-dashboard/main';
+let API = LAN_API, useGitHub = false, refreshN = 0, lastMsgCount = 0, selectedAgent = null;
+
+const AGENT_COLORS = {'서버1':'var(--s1)','서버2':'var(--s2)','서버3':'var(--s3)','서버4':'var(--s4)'};
+const STATUS_ICON  = {running:'🟢',idle:'⚪',done:'✅',error:'🔴',offline:'⬛',waiting:'🟡'};
+const TEAM = {'서버1':'육종팀','서버2':'에너지팀','서버3':'총괄팀','서버4':'법무팀'};
+
+async function detectAPI(){
+  try{
+    const ctrl=new AbortController(); setTimeout(()=>ctrl.abort(),3000);
+    await fetch(`${LAN_API}/status`,{signal:ctrl.signal});
+    API=LAN_API; useGitHub=false;
+    document.getElementById('api-badge').textContent='🟢 실시간 LAN';
+    document.getElementById('api-badge').style.color='var(--green)';
+  }catch{
+    useGitHub=true;
+    document.getElementById('api-badge').textContent='🟡 GitHub 캐시';
+    document.getElementById('api-badge').style.color='var(--yellow)';
+  }
+}
+
+async function fetchAPI(endpoint, ghFile, def={}){
+  if(!useGitHub){
+    try{
+      const ctrl=new AbortController(); setTimeout(()=>ctrl.abort(),5000);
+      const r=await fetch(`${API}${endpoint}`,{signal:ctrl.signal});
+      if(r.ok) return await r.json();
+    }catch{useGitHub=true;}
+  }
+  if(ghFile){
+    try{
+      const r=await fetch(`${GH_RAW}/${ghFile}?t=${Date.now()}`);
+      if(r.ok) return await r.json();
+    }catch{}
+  }
+  return def;
+}
+
+// ── 탭 전환 ──────────────────────────────────────
+function switchPage(name){
+  ['pig','company','energy','finance'].forEach(p=>{
+    document.getElementById('page-'+p).classList.toggle('active',p===name);
+    document.getElementById('tab-btn-'+p).classList.toggle('active',p===name);
+  });
+  if(name==='company') loadOrgChart();
+}
+
+// ── 시계 ────────────────────────────────────────
+function tick(){
+  const n=new Date();
+  document.getElementById('clock').textContent=
+    `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')} `+
+    `${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}`;
+}
+setInterval(tick,1000); tick();
+
+// ── 에이전트 카드 ─────────────────────────────────
+function renderAgents(agents){
+  const grid=document.getElementById('agents-grid');
+  ['서버1','서버2','서버3','서버4'].forEach(name=>{
+    const a=agents[name]||{status:'offline',task:'',progress:0,updated:'',loop_count:0,emoji:'🤖'};
+    let card=document.querySelector(`.agent-card[data-agent="${name}"]`);
+    if(!card){
+      card=document.createElement('div');
+      card.className='agent-card';
+      card.setAttribute('data-agent',name);
+      card.onclick=()=>selectAgent(name);
+      grid.appendChild(card);
+    }
+    if(selectedAgent===name) card.classList.add('selected'); else card.classList.remove('selected');
+    const prog=a.progress||0, upd=(a.updated||'').substring(11,16)||'--:--';
+    card.innerHTML=`
+      <div class="agent-top">
+        <div class="agent-name">
+          <span class="agent-emoji">${a.emoji||'🤖'}</span>
+          <div><div style="font-size:.88rem">${name}</div><div style="font-size:.68rem;color:var(--muted)">${TEAM[name]||''}</div></div>
+        </div>
+        <span class="status-badge ${a.status||'offline'}">${STATUS_ICON[a.status||'offline']||'⬜'} ${a.status||'offline'}</span>
+      </div>
+      <div class="agent-task">${a.task||'대기 중'}</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${prog}%"></div></div>
+      <div class="agent-footer"><span class="loop-count">루프 ${a.loop_count||0}회</span><span class="updated">${upd}</span></div>`;
+  });
+  const errs=Object.entries(agents).filter(([n,a])=>a.status==='error'&&['서버1','서버2','서버3','서버4'].includes(n)).map(([n])=>n);
+  const b=document.getElementById('alert-banner');
+  if(errs.length){b.style.display='block';b.textContent=`⚠️ 오류 감지: ${errs.join(', ')} — 즉시 확인 필요`;}
+  else{b.style.display='none';}
+}
+
+async function selectAgent(name){
+  selectedAgent=name;
+  document.getElementById('detail-panel').classList.add('visible');
+  document.querySelectorAll('.agent-card').forEach(c=>c.classList.toggle('selected',c.getAttribute('data-agent')===name));
+  try{
+    const ctrl=new AbortController(); setTimeout(()=>ctrl.abort(),4000);
+    const res=await fetch(`${API}/agent/${encodeURIComponent(name)}`,{signal:ctrl.signal});
+    const d=await res.json();
+    const s=d.status||{};
+    document.getElementById('detail-emoji').textContent=s.emoji||'🤖';
+    document.getElementById('detail-name').textContent=`${name} — ${TEAM[name]||''}`;
+    const badge=document.getElementById('detail-badge');
+    badge.textContent=`${STATUS_ICON[s.status||'offline']||''} ${s.status||'offline'}`;
+    badge.className=`status-badge ${s.status||'offline'}`;
+    const rl=document.getElementById('detail-reports'); rl.innerHTML='';
+    (d.recent_reports||[]).forEach(r=>{
+      const el=document.createElement('div'); el.className='report-item';
+      el.innerHTML=`<span>${r.name}</span><span style="color:var(--muted)">${r.time}</span>`;
+      el.onclick=()=>alert(r.preview);
+      rl.appendChild(el);
+    });
+    if(!(d.recent_reports||[]).length) rl.innerHTML='<div style="color:var(--muted);font-size:.8rem">보고서 없음</div>';
+    const ml=document.getElementById('detail-msgs'); ml.innerHTML='';
+    (d.messages||[]).forEach(m=>ml.appendChild(buildMsg(m)));
+  }catch{}
+}
+function closeDetail(){
+  selectedAgent=null;
+  document.getElementById('detail-panel').classList.remove('visible');
+  document.querySelectorAll('.agent-card').forEach(c=>c.classList.remove('selected'));
+}
+function switchSubTab(t){
+  document.querySelectorAll('.sub-tab').forEach((el,i)=>el.classList.toggle('active',['reports','msgs'][i]===t));
+  ['reports','msgs'].forEach(n=>document.getElementById('subtab-'+n)?.classList.toggle('active',n===t));
+}
+
+// ── 메시지 ──────────────────────────────────────
+function buildMsg(m){
+  const el=document.createElement('div');
+  el.className=`msg-item ${m.type||'info'}`;
+  const time=(m.ts||'').substring(11,16);
+  el.innerHTML=`
+    <div class="msg-arrow">
+      <div class="msg-from" style="color:${AGENT_COLORS[m.from]||'var(--muted)'}">${m.from||'?'}</div>
+      <div style="font-size:.6rem">→</div>
+      <div class="msg-to">${m.to||'전체'}</div>
+    </div>
+    <div class="msg-content">
+      <div class="msg-subject">${m.subject||''}</div>
+      ${m.body?`<div class="msg-body">${m.body.substring(0,80)}${m.body.length>80?'…':''}</div>`:''}
+    </div>
+    <div class="msg-time">${time}</div>`;
+  return el;
+}
+
+async function loadMessages(){
+  try{
+    const d=await fetchAPI('/messages?limit=30','messages.json',{messages:[]});
+    const msgs=d.messages||[];
+    if(msgs.length!==lastMsgCount){
+      const feed=document.getElementById('msg-feed'); feed.innerHTML='';
+      msgs.forEach(m=>feed.appendChild(buildMsg(m)));
+      lastMsgCount=msgs.length;
+      document.getElementById('msg-count').textContent=`${msgs.length}건`;
+    }
+  }catch{}
+}
+
+// ── 옵시디언 ──────────────────────────────────────
+async function loadObsidian(){
+  try{
+    const ctrl=new AbortController(); setTimeout(()=>ctrl.abort(),5000);
+    const res=await fetch(`${API}/obsidian/dashboard`,{signal:ctrl.signal});
+    const d=await res.json();
+    let html=(d.content||'')
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/^# (.+)$/gm,'<span style="color:var(--blue);font-weight:700;font-size:1rem">$1</span>')
+      .replace(/^## (.+)$/gm,'<span style="color:var(--purple);font-weight:600">$1</span>')
+      .replace(/\*\*(.+?)\*\*/g,'<b style="color:var(--orange)">$1</b>')
+      .replace(/🚨/g,'<span style="color:var(--red)">🚨</span>');
+    document.getElementById('obsidian-content').innerHTML=html;
+  }catch{document.getElementById('obsidian-content').textContent='로드 실패 (서버 연결 확인)';}
+}
+
+// ── 빠른 명령 ──────────────────────────────────────
+async function sendCmd(to,subject,body){
+  try{
+    await fetch(`${API}/send_message`,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({from:'대시보드',to,subject,body,type:'request'})});
+  }catch{}
+  toast(`${to}에 명령: ${subject}`);
+  setTimeout(loadMessages,600);
+}
+async function broadcastCmd(subject,body){
+  try{
+    await fetch(`${API}/broadcast`,{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({from:'대시보드',subject,body})});
+  }catch{}
+  toast(`전체 브로드캐스트: ${subject}`);
+  setTimeout(loadMessages,600);
+}
+async function sendManual(){
+  const to=document.getElementById('msg-to').value;
+  const subj=document.getElementById('msg-subj').value.trim();
+  const body=document.getElementById('msg-body').value.trim();
+  if(!subj){alert('제목을 입력하세요');return;}
+  await sendCmd(to,subj,body);
+  document.getElementById('msg-subj').value='';
+  document.getElementById('msg-body').value='';
+}
+
+function toast(msg){
+  const t=document.createElement('div');
+  t.style.cssText='position:fixed;bottom:20px;right:20px;background:var(--surface2);border:1px solid var(--border);color:var(--text);padding:10px 18px;border-radius:9px;font-size:.83rem;z-index:999;animation:fadeIn .3s;';
+  t.textContent=msg; document.body.appendChild(t); setTimeout(()=>t.remove(),2500);
+}
+
+// ── 조직도 ──────────────────────────────────────
+async function loadOrgChart(){
+  try{
+    const ctrl=new AbortController(); setTimeout(()=>ctrl.abort(),5000);
+    const res=await fetch(`${API}/org_chart`,{signal:ctrl.signal});
+    const org=await res.json();
+    const tree=document.getElementById('org-tree');
+    const SI={running:'🟢',idle:'⚪',done:'✅',error:'🔴',offline:'⬛',waiting:'🟡'};
+
+    // 회장
+    const ch=org.board?.chairman||{};
+    let html=`<div style="text-align:center;margin-bottom:4px;">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(210,153,34,.2),rgba(188,140,255,.1));border:1px solid var(--yellow);border-radius:10px;padding:10px 22px;">
+        <span style="font-size:1.8rem">${ch.emoji||'👑'}</span>
+        <div><div style="font-weight:700">${ch.name||'대표님'}</div><div style="font-size:.7rem;color:var(--yellow)">${ch.role||'회장'}</div></div>
+      </div>
+    </div><div class="org-connector">│</div>`;
+
+    // CEO
+    const csuite=org.c_suite||[];
+    const ceo=csuite.find(c=>c.title==='CEO')||{};
+    html+=`<div style="text-align:center;margin-bottom:4px;">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,rgba(88,166,255,.15),rgba(188,140,255,.1));border:1px solid var(--blue);border-radius:10px;padding:10px 22px;">
+        <span style="font-size:1.5rem">${ceo.emoji||'🧭'}</span>
+        <div>
+          <div style="font-weight:700">${ceo.name||'도비'}</div>
+          <div style="font-size:.7rem;color:var(--blue)">${ceo.title||'CEO'} — ${ceo.full_title||''}</div>
+          <div style="font-size:.65rem;color:var(--muted)">${ceo.server||'서버3'} (${ceo.ip||''})</div>
+        </div>
+      </div>
+    </div><div class="org-connector">├────────────┬────────────┤</div>`;
+
+    // COO, CFO, CTO
+    const officers=csuite.filter(c=>c.title!=='CEO');
+    html+=`<div style="display:grid;grid-template-columns:repeat(${officers.length},1fr);gap:8px;margin-bottom:4px;">`;
+    for(const o of officers){
+      html+=`<div style="background:rgba(63,185,80,.06);border:1px solid rgba(63,185,80,.25);border-radius:8px;padding:8px 10px;text-align:center;">
+        <div style="font-size:1.2rem">${o.emoji||'💼'}</div>
+        <div style="font-weight:700;font-size:.78rem;color:var(--green)">${o.title||''}</div>
+        <div style="font-size:.7rem;color:var(--muted)">${o.name||''}</div>
+        <div style="font-size:.62rem;color:var(--muted);margin-top:2px">${(o.manages||[]).join(', ')}</div>
+      </div>`;
+    }
+    html+=`</div><div class="org-connector">├────────────┬────────────┤</div>`;
+
+    // 부서
+    html+=`<div class="org-dept-row">`;
+    for(const dept of (org.departments||[])){
+      const ls=dept.live_status||{};
+      const si=SI[ls.status||'offline']||'⬛';
+      html+=`<div class="org-dept" style="transition:border-color .2s;">
+        <div class="org-dept-header">
+          <div class="org-dept-name">${dept.name||''}</div>
+          <span>${si}</span>
+        </div>
+        <div style="font-size:.68rem;color:var(--muted);margin-bottom:3px">${dept.server||''} · ↑${dept.reports_to_executive||''}</div>
+        ${ls.task?`<div style="font-size:.66rem;color:var(--muted);margin-bottom:4px;">${ls.task.substring(0,30)}</div>`:''}
+        ${(dept.kpi||[]).length?`<div style="font-size:.63rem;color:var(--yellow);margin:3px 0">${dept.kpi.slice(0,2).join(' | ')}</div>`:''}
+        <div style="border-top:1px solid var(--border);margin:5px 0"></div>`;
+      for(const emp of (dept.employees||[])){
+        const isHead=emp.id===dept.head_id;
+        html+=`<div class="org-member ${isHead?'head':''}">
+          <span>${emp.emoji||'🤖'}</span>
+          <div style="flex:1">
+            <div class="org-member-name" style="color:${isHead?'var(--blue)':'var(--text)'}">${emp.name||''}${isHead?' ★':''}</div>
+            <div class="org-member-role">${emp.title||''}</div>
+          </div>
+          ${emp.virtual?'<span style="color:var(--muted);font-size:.6rem">[가상]</span>':''}
+        </div>`;
+      }
+      html+=`</div>`;
+    }
+    html+=`</div>`;
+    tree.innerHTML=html;
+  }catch(e){
+    const t=document.getElementById('org-tree');
+    if(t) t.innerHTML=`<div style="color:var(--muted)">조직도 로드 실패: ${e.message}</div>`;
+  }
+}
+
+// ── 임무판 ──────────────────────────────────────
+async function loadTaskBoard(){
+  try{
+    const ctrl=new AbortController(); setTimeout(()=>ctrl.abort(),4000);
+    const res=await fetch(`${API}/task_board`,{signal:ctrl.signal});
+    const board=await res.json();
+    const tasks=board.tasks||[];
+    const active=tasks.filter(t=>t.status!=='done');
+    const list=document.getElementById('task-list');
+    document.getElementById('task-pending-count').textContent=`(${active.length}건)`;
+    document.getElementById('task-count').textContent=`전체 ${tasks.length}건`;
+    if(!active.length){list.innerHTML='<div style="color:var(--muted);font-size:.8rem">진행 중 임무 없음</div>';return;}
+    list.innerHTML='';
+    active.slice(-15).reverse().forEach(t=>{
+      const pi={'high':'🚨','normal':'📋','low':'📝'}[t.priority]||'📋';
+      const si={'assigned':'📬','in_progress':'🔄','review':'🔍','done':'✅','backlog':'📥'}[t.status]||'📬';
+      const el=document.createElement('div');
+      el.className=`task-item ${t.priority||'normal'} ${t.status==='done'?'done':''}`;
+      el.innerHTML=`
+        <div style="flex:1">
+          <div class="task-title">${si} ${pi} ${t.title||''}</div>
+          <div class="task-meta">[${t.dept||'?'}] → ${t.assigned_to||'?'} | ${(t.created||'').substring(0,10)}</div>
+          ${t.result?`<div class="task-meta" style="color:var(--green)">✅ ${t.result.substring(0,60)}</div>`:''}
+        </div>
+        <button class="task-done-btn" onclick="completeTask('${t.id}')">완료</button>`;
+      list.appendChild(el);
+    });
+  }catch{}
+}
+
+async function assignTask(){
+  const text=document.getElementById('task-text').value.trim();
+  const dept=document.getElementById('task-dept').value;
+  const priority=document.getElementById('task-priority').value;
+  if(!text){alert('임무 내용을 입력하세요');return;}
+  try{
+    const res=await fetch(`${API}/task_board/assign`,{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({task:text,dept:dept||undefined,priority})
+    });
+    const d=await res.json();
+    if(d.ok){toast(`임무 #${d.task_id} 배정`);document.getElementById('task-text').value='';setTimeout(()=>{loadTaskBoard();loadMessages();},600);}
+    else toast('배정 실패: '+(d.error||''));
+  }catch{toast('서버 연결 실패');}
+}
+
+async function completeTask(taskId){
+  const result=prompt('완료 결과 메모','완료')||'완료';
+  try{
+    await fetch(`${API}/task_board/complete`,{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({id:taskId,result})
+    });
+    toast(`임무 #${taskId} 완료`);setTimeout(loadTaskBoard,600);
+  }catch{toast('서버 연결 실패');}
+}
+
+// ── 🐷 도방육종 데이터 ──────────────────────────────
+async function loadPigData(){
+  const d=await fetchAPI('/livestock/summary','livestock_summary.json',{});
+  // 상단 스탯
+  if(d.total_pigs!==undefined){
+    document.getElementById('stat-total').textContent=fmt(d.total_pigs);
+    document.getElementById('stat-total-sub').textContent=`목표: ${d.target_pigs||'-'}두`;
+  }
+  if(d.today_death!==undefined){
+    document.getElementById('stat-death').textContent=d.today_death;
+    document.getElementById('stat-death-sub').textContent=`7일 누적: ${d.week_death||'-'}두`;
+    const r=d.death_rate||0;
+    const badge=document.getElementById('stat-death-badge');
+    if(badge){
+      badge.textContent=`${r.toFixed(2)}%`;
+      badge.className=`stat-badge ${r<1?'up':r<2?'neutral':'down'}`;
+    }
+  }
+  if(d.month_weaning!==undefined){
+    document.getElementById('stat-born').textContent=fmt(d.month_weaning);
+    document.getElementById('stat-born-sub').textContent=`PSY 추산: ${d.psy||'-'}`;
+  }
+  if(d.month_ship!==undefined){
+    document.getElementById('stat-ship').textContent=fmt(d.month_ship);
+    document.getElementById('stat-ship-sub').textContent=`예상: ${d.expected_revenue||'-'}`;
+  }
+
+  // 돈방 테이블
+  const barns=d.barns||[];
+  const tbody=document.getElementById('barn-body');
+  if(barns.length){
+    tbody.innerHTML=barns.map(b=>{
+      const cls=b.abnormal?'barn-warn':b.ok?'barn-ok':'';
+      return `<tr>
+        <td>${b.name||''}</td>
+        <td class="barn-num ${cls}">${fmt(b.count)||'-'}</td>
+        <td class="barn-num">${b.age||'-'}</td>
+        <td>${b.status||'-'}</td>
+        <td style="font-size:.75rem;color:var(--muted)">${b.note||''}</td>
+      </tr>`;
+    }).join('');
+  }else{
+    tbody.innerHTML='<tr><td colspan="5" style="color:var(--muted);text-align:center;padding:16px">서버 연결 후 갱신됩니다</td></tr>';
+    // 정적 샘플 데이터
+    tbody.innerHTML=`
+      <tr><td>분만사 1</td><td class="barn-num">48</td><td class="barn-num">0~21d</td><td class="barn-ok">정상</td><td style="font-size:.75rem;color:var(--muted)">수유중</td></tr>
+      <tr><td>인큐베이터</td><td class="barn-num">72</td><td class="barn-num">19~24d</td><td class="barn-ok">정상</td><td style="font-size:.75rem;color:var(--muted)">이유준비</td></tr>
+      <tr><td>자돈사 1</td><td class="barn-num">180</td><td class="barn-num">25~55d</td><td class="barn-ok">정상</td><td style="font-size:.75rem;color:var(--muted)"></td></tr>
+      <tr><td>자돈사 2</td><td class="barn-num">165</td><td class="barn-num">25~55d</td><td class="barn-warn">주의</td><td style="font-size:.75rem;color:var(--muted)">폐사 3두</td></tr>
+      <tr><td>비육사</td><td class="barn-num">420</td><td class="barn-num">90d+</td><td class="barn-ok">정상</td><td style="font-size:.75rem;color:var(--muted)">출하대기 80두</td></tr>
+      <tr><td>환돈사 (B4오른쪽)</td><td class="barn-num">12</td><td class="barn-num">-</td><td class="barn-warn">격리</td><td style="font-size:.75rem;color:var(--muted)">관찰중</td></tr>`;
+  }
+
+  // 폐사 차트 (최근 7일)
+  const deaths=d.week_deaths||[
+    {day:'월',cnt:2},{day:'화',cnt:1},{day:'수',cnt:3},{day:'목',cnt:0},{day:'금',cnt:2},{day:'토',cnt:1},{day:'일',cnt:1}
+  ];
+  const maxDeath=Math.max(...deaths.map(x=>x.cnt),1);
+  const colors=['var(--s1)','var(--s2)','var(--yellow)','var(--green)','var(--blue)','var(--purple)','var(--orange)'];
+  document.getElementById('death-chart').innerHTML=deaths.map((x,i)=>`
+    <div class="death-bar-row">
+      <div class="death-bar-label">${x.day}</div>
+      <div class="death-bar-track">
+        <div class="death-bar-fill" style="width:${x.cnt/maxDeath*100}%;background:${x.cnt>2?'var(--red)':x.cnt>0?'var(--yellow)':'var(--green)'}"></div>
+        <span class="death-bar-val" style="color:${x.cnt>0?'var(--text)':'var(--muted)'}">${x.cnt}두</span>
+      </div>
+    </div>`).join('');
+
+  // 폐사 원인
+  const causes=d.death_causes||[{cause:'폐렴',cnt:4},{cause:'설사',cnt:2},{cause:'외상',cnt:1}];
+  document.getElementById('death-cause').innerHTML=causes.map(c=>`
+    <span style="background:rgba(248,81,73,.12);color:var(--red);border:1px solid rgba(248,81,73,.2);
+      padding:3px 10px;border-radius:20px;font-size:.74rem;font-weight:600">${c.cause} ${c.cnt}두</span>`).join('');
+}
+
+// ── 백신 일정 ──────────────────────────────────────
+async function loadVaccineSchedule(){
+  const d=await fetchAPI('/livestock/vaccines','vaccines.json',{vaccines:[]});
+  const vaccines=d.vaccines||[
+    {date:'2026-04-25',name:'구제역 2차',target:'비육사 전두',d_day:0},
+    {date:'2026-04-28',name:'PRRS 부스터',target:'번식돈 20두',d_day:3},
+    {date:'2026-05-02',name:'돈단독 1차',target:'자돈사 1,2',d_day:7},
+    {date:'2026-05-10',name:'써코바이러스',target:'이유자돈',d_day:15},
+  ];
+  const cnt=document.getElementById('vaccine-count');
+  if(cnt) cnt.textContent=`${vaccines.filter(v=>v.d_day<=7).length}건 긴급`;
+  document.getElementById('vaccine-list').innerHTML=vaccines.slice(0,8).map(v=>{
+    const cls=v.d_day===0?'urgent':v.d_day<=7?'soon':'ok';
+    const badge=v.d_day===0?'<span class="d-badge d0">D-0</span>':v.d_day<=7?`<span class="d-badge d7">D-${v.d_day}</span>`:`<span class="d-badge d30">D-${v.d_day}</span>`;
+    return `<div class="vaccine-item ${cls}">
+      <div class="vaccine-d">${v.date.substring(5)}</div>
+      <div style="flex:1">
+        <div class="vaccine-name">${v.name}</div>
+        <div class="vaccine-target">${v.target}</div>
+      </div>
+      ${badge}
+    </div>`;
+  }).join('');
+}
+
+// ── 사료 현황 ──────────────────────────────────────
+async function loadFeedStatus(){
+  const d=await fetchAPI('/livestock/feed','feed.json',{});
+  const upd=document.getElementById('feed-updated');
+  if(upd) upd.textContent=d.updated||'';
+  const items=d.feed_items||[
+    {name:'자돈사료 (510)',stock:'2.8톤',days_left:8,status:'보통'},
+    {name:'비육사료 (550)',stock:'4.2톤',days_left:12,status:'양호'},
+    {name:'임신사료',stock:'1.1톤',days_left:5,status:'주문필요'},
+    {name:'포유사료',stock:'0.8톤',days_left:3,status:'긴급'},
+  ];
+  document.getElementById('feed-content').innerHTML=`
+    <table class="barn-table">
+      <thead><tr><th>사료종류</th><th>재고</th><th>잔여일</th><th>상태</th></tr></thead>
+      <tbody>
+        ${items.map(f=>{
+          const cls=f.days_left<=3?'barn-crit':f.days_left<=7?'barn-warn':'barn-ok';
+          return `<tr>
+            <td>${f.name}</td>
+            <td class="barn-num">${f.stock}</td>
+            <td class="barn-num ${cls}">${f.days_left}일</td>
+            <td class="${cls}">${f.status}</td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>`;
+}
+
+// ── 시설 이상 ──────────────────────────────────────
+async function loadFacility(){
+  const d=await fetchAPI('/livestock/facility','facility.json',{items:[]});
+  const items=d.items||[{title:'B3 급수기 압력 저하',severity:'warn',date:'2026-04-24'},{title:'분만사 환풍기 #3 소음',severity:'info',date:'2026-04-23'}];
+  const cnt=document.getElementById('facility-count');
+  if(cnt) cnt.textContent=`${items.length}건`;
+  if(!items.length){document.getElementById('facility-list').innerHTML='<div style="color:var(--green);font-size:.82rem">✅ 이상 없음</div>';return;}
+  document.getElementById('facility-list').innerHTML=items.map(i=>`
+    <div style="display:flex;align-items:center;gap:8px;padding:7px 10px;background:var(--surface2);border-radius:6px;border-left:3px solid ${i.severity==='crit'?'var(--red)':i.severity==='warn'?'var(--yellow)':'var(--blue)'}">
+      <div style="flex:1">
+        <div style="font-size:.82rem;font-weight:600">${i.title}</div>
+        <div style="font-size:.72rem;color:var(--muted)">${i.date||''} ${i.assignee?'→ '+i.assignee:''}</div>
+      </div>
+      <span style="font-size:.7rem;padding:2px 7px;border-radius:9px;background:${i.severity==='crit'?'rgba(248,81,73,.15)':i.severity==='warn'?'rgba(210,153,34,.15)':'rgba(88,166,255,.12)'};color:${i.severity==='crit'?'var(--red)':i.severity==='warn'?'var(--yellow)':'var(--blue)'}">${i.severity==='crit'?'긴급':i.severity==='warn'?'주의':'정보'}</span>
+    </div>`).join('');
+}
+
+// ── ⚡ 에너지 데이터 ──────────────────────────────
+async function loadEnergyData(){
+  const d=await fetchAPI('/energy/summary','energy_summary.json',{});
+  const plants=d.plants||[{kwh:3200,gas_rate:38.72},{kwh:2900,gas_rate:46.11}];
+  if(plants[0]) {
+    document.getElementById('e-kwh1').textContent=fmt(plants[0].kwh||0);
+    document.getElementById('e-gas1').textContent=`가스: ${(plants[0].gas_rate||0).toFixed(1)}%`;
+  }
+  if(plants[1]) {
+    document.getElementById('e-kwh2').textContent=fmt(plants[1].kwh||0);
+    document.getElementById('e-gas2').textContent=`가스: ${(plants[1].gas_rate||0).toFixed(1)}%`;
+  }
+  document.getElementById('e-smp').textContent=d.smp||'--';
+  const slaughter=d.slaughter_price||0;
+  document.getElementById('e-slaughter').textContent=slaughter?fmt(slaughter):'--';
+  const rec=document.getElementById('e-slaughter-rec');
+  if(rec) rec.textContent=slaughter>=200000?'출하권고: ✅ 적기':'출하권고: ⏸ 대기';
+
+  // 발전 실적 차트 (7일)
+  const history=d.history||[{day:'월',kwh:6100},{day:'화',kwh:6050},{day:'수',kwh:6200},{day:'목',kwh:5980},{day:'금',kwh:6300},{day:'토',kwh:6150},{day:'일',kwh:6100}];
+  const maxKwh=Math.max(...history.map(x=>x.kwh),1);
+  document.getElementById('energy-chart').innerHTML=`
+    <div class="section-label">7일 발전량 추이</div>
+    <div class="death-chart">
+      ${history.map(x=>`
+        <div class="death-bar-row">
+          <div class="death-bar-label">${x.day}</div>
+          <div class="death-bar-track">
+            <div class="death-bar-fill" style="width:${x.kwh/maxKwh*100}%;background:var(--s2)"></div>
+            <span class="death-bar-val">${(x.kwh/1000).toFixed(1)}k</span>
+          </div>
+        </div>`).join('')}
+    </div>`;
+
+  // 설비
+  const maint=d.maintenance||[{name:'발전기1 오일교환',d_day:12,status:'ok'},{name:'탈황기 점검',d_day:3,status:'soon'},{name:'발전기2 필터',d_day:30,status:'ok'}];
+  document.getElementById('maintenance-list').innerHTML=maint.map(m=>`
+    <div class="vaccine-item ${m.d_day<=3?'urgent':m.d_day<=14?'soon':'ok'}">
+      <div class="vaccine-d">${m.d_day===0?'오늘':`D-${m.d_day}`}</div>
+      <div class="vaccine-name">${m.name}</div>
+      <span class="d-badge ${m.d_day===0?'d0':m.d_day<=7?'d7':'d30'}">D-${m.d_day}</span>
+    </div>`).join('');
+
+  // 서버2 보고서
+  const r=await fetchAPI('/reports/서버2','reports_s2.json',{});
+  if(r.content) {
+    document.getElementById('s2-report').textContent=r.content;
+    const t=document.getElementById('s2-report-time');
+    if(t) t.textContent=r.updated||'';
+  }
+}
+
+// ── 📋 법무재무 데이터 ──────────────────────────────
+async function loadFinanceData(){
+  const d=await fetchAPI('/finance/summary','finance_summary.json',{});
+  const payments=d.payments||[];
+  const d0=payments.filter(p=>p.d_day===0).length;
+  const d7=payments.filter(p=>p.d_day<=7).length;
+  document.getElementById('f-d0').textContent=d0||'0';
+  document.getElementById('f-d7').textContent=d7||'0';
+  document.getElementById('f-tax').textContent=d.tax_count||'0';
+
+  // 급여 시즌 판단
+  const today=new Date().getDate();
+  const isSalaryMonth=today>=13&&today<=20;
+  document.getElementById('f-salary').textContent=isSalaryMonth?'시즌':'일반';
+  document.getElementById('f-salary-sub').textContent=isSalaryMonth?`⚠️ ${20-today}일 후 지급`:'지급일: 매달 20일';
+
+  // 결제 목록
+  const payItems=payments.length?payments:[
+    {name:'사료대금 (한일사료)',amount:'4,200,000',d_day:2,account:'농협'},
+    {name:'약품비 (명문제약)',amount:'870,000',d_day:5,account:'국민은행'},
+    {name:'전기요금',amount:'1,200,000',d_day:8,account:'자동이체'},
+  ];
+  document.getElementById('payment-list').innerHTML=payItems.slice(0,10).map(p=>`
+    <div style="display:flex;align-items:center;gap:8px;padding:8px 11px;background:var(--surface2);border-radius:7px;border-left:3px solid ${p.d_day===0?'var(--red)':p.d_day<=3?'var(--yellow)':'var(--blue)'}">
+      <div style="flex:1">
+        <div style="font-size:.82rem;font-weight:600">${p.name}</div>
+        <div style="font-size:.72rem;color:var(--muted)">${p.account||''}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:.82rem;font-family:monospace">${p.amount}원</div>
+        <div style="font-size:.68rem;color:${p.d_day===0?'var(--red)':p.d_day<=3?'var(--yellow)':'var(--muted)'}">D-${p.d_day}</div>
+      </div>
+    </div>`).join('');
+
+  // 세무 기한
+  const taxItems=d.tax_items||[
+    {name:'부가가치세 신고',deadline:'2026-07-25',d_day:91,status:'ok'},
+    {name:'원천세 납부',deadline:'2026-05-10',d_day:15,status:'soon'},
+    {name:'재산세',deadline:'2026-07-31',d_day:97,status:'ok'},
+  ];
+  document.getElementById('tax-list').innerHTML=taxItems.slice(0,8).map(t=>`
+    <div class="vaccine-item ${t.d_day<=7?'urgent':t.d_day<=30?'soon':'ok'}">
+      <div class="vaccine-d">${t.deadline.substring(5)}</div>
+      <div style="flex:1"><div class="vaccine-name">${t.name}</div></div>
+      <span class="d-badge ${t.d_day<=7?'d0':t.d_day<=30?'d7':'d30'}">D-${t.d_day}</span>
+    </div>`).join('');
+
+  // 서버4 보고서
+  const r=await fetchAPI('/reports/서버4','reports_s4.json',{});
+  if(r.content) {
+    document.getElementById('s4-report').textContent=r.content;
+    const t=document.getElementById('s4-report-time');
+    if(t) t.textContent=r.updated||'';
+  }
+}
+
+// ── 서버1 보고서 ──────────────────────────────────
+async function loadS1Report(){
+  const r=await fetchAPI('/reports/서버1','reports_s1.json',{});
+  if(r.content){
+    document.getElementById('s1-report').textContent=r.content;
+    const t=document.getElementById('s1-report-time');
+    if(t) t.textContent=r.updated||'';
+  }
+}
+
+// ── 숫자 포맷 ──────────────────────────────────────
+function fmt(n){return n?.toLocaleString()||'-';}
+
+// ── 메인 폴링 루프 ────────────────────────────────
+async function refresh(){
+  try{
+    const d=await fetchAPI('/status','status.json',{agents:{}});
+    renderAgents(d.agents||{});
+    refreshN++;
+    const mode=useGitHub?'🟡GitHub':'🟢LAN';
+    document.getElementById('refresh-status').textContent=`#${refreshN} ${mode}`;
+  }catch{document.getElementById('refresh-status').textContent='⚠️오프라인';}
+  await loadMessages();
+  if(refreshN%3===1){await loadTaskBoard();}
+  if(refreshN%6===1){await loadObsidian();}
+  if(refreshN%12===1){
+    await loadPigData(); await loadVaccineSchedule(); await loadFeedStatus();
+    await loadFacility(); await loadS1Report();
+    await loadEnergyData(); await loadFinanceData();
+  }
+}
+
+// ── 초기화 ──────────────────────────────────────
+detectAPI().then(async()=>{
+  refresh();
+  loadPigData(); loadVaccineSchedule(); loadFeedStatus(); loadFacility(); loadS1Report();
+  loadEnergyData(); loadFinanceData();
+  loadObsidian(); loadOrgChart(); loadTaskBoard();
+});
+setInterval(()=>detectAPI().then(refresh), 5000);
+</script>
+</body>
+</html>
