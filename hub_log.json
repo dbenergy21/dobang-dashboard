@@ -4,6 +4,27 @@
       "agent": "서버2",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (17:09)",
+      "ts": "2026-04-25 17:09:18"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (17:07)",
+      "ts": "2026-04-25 17:07:01"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (17:01)",
+      "ts": "2026-04-25 17:01:39"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (16:58)",
       "ts": "2026-04-25 16:58:41"
     },
@@ -328,28 +349,7 @@
       "subject": "⚠️ 시스템 경보",
       "to": "서버2",
       "ts": "2026-04-25 11:54:19"
-    },
-    {
-      "event": "message_sent",
-      "from": "서버3",
-      "subject": "⚠️ 시스템 경보",
-      "to": "서버1",
-      "ts": "2026-04-25 11:54:19"
-    },
-    {
-      "agent": "서버3",
-      "event": "status_update",
-      "status": "running",
-      "task": "오케스트레이터 동작 중",
-      "ts": "2026-04-25 11:54:19"
-    },
-    {
-      "event": "message_sent",
-      "from": "서버3",
-      "subject": "⚠️ 시스템 경보",
-      "to": "서버4",
-      "ts": "2026-04-25 11:50:47"
     }
   ],
-  "_synced": "2026-04-25 17:01:01"
+  "_synced": "2026-04-25 17:11:01"
 }
