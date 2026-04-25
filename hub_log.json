@@ -1,6 +1,48 @@
 {
   "logs": [
     {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (23:01)",
+      "ts": "2026-04-25 23:01:28"
+    },
+    {
+      "agent": "CEO",
+      "event": "status_update",
+      "status": "idle",
+      "task": "사이클#10 완료 (다음:23:07)",
+      "ts": "2026-04-25 23:00:12"
+    },
+    {
+      "agent": "CEO",
+      "event": "status_update",
+      "status": "running",
+      "task": "CEO 사이클#10 22:57",
+      "ts": "2026-04-25 22:57:33"
+    },
+    {
+      "agent": "CEO",
+      "event": "status_update",
+      "status": "running",
+      "task": "CEO 조율 엔진 v2.0 시작",
+      "ts": "2026-04-25 22:57:31"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (22:57)",
+      "ts": "2026-04-25 22:57:00"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (22:52)",
+      "ts": "2026-04-25 22:52:34"
+    },
+    {
       "agent": "CEO",
       "event": "status_update",
       "status": "running",
@@ -307,49 +349,7 @@
       "status": "running",
       "task": "원격 claude 실행 중 (21:29)",
       "ts": "2026-04-25 21:29:44"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 루프 21:29",
-      "ts": "2026-04-25 21:29:44"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 조율 엔진 시작",
-      "ts": "2026-04-25 21:29:42"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "idle",
-      "task": "대기 중 (다음 루프: 21:38)",
-      "ts": "2026-04-25 21:28:22"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 루프 21:28",
-      "ts": "2026-04-25 21:28:17"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 조율 엔진 시작",
-      "ts": "2026-04-25 21:28:15"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "idle",
-      "task": "대기 중 (다음 루프: 21:37)",
-      "ts": "2026-04-25 21:27:08"
     }
   ],
-  "_synced": "2026-04-25 22:51:00"
+  "_synced": "2026-04-25 23:01:00"
 }
