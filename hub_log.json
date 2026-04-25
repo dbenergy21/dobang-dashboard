@@ -3,6 +3,34 @@
     {
       "agent": "CEO",
       "event": "status_update",
+      "status": "running",
+      "task": "CEO 사이클#9 22:51",
+      "ts": "2026-04-25 22:51:09"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (22:49)",
+      "ts": "2026-04-25 22:49:51"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (22:47)",
+      "ts": "2026-04-25 22:47:01"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (22:42)",
+      "ts": "2026-04-25 22:42:49"
+    },
+    {
+      "agent": "CEO",
+      "event": "status_update",
       "status": "idle",
       "task": "사이클#8 완료 (다음:22:48)",
       "ts": "2026-04-25 22:41:07"
@@ -321,35 +349,7 @@
       "status": "idle",
       "task": "대기 중 (다음 루프: 21:37)",
       "ts": "2026-04-25 21:27:08"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 루프 21:27",
-      "ts": "2026-04-25 21:27:04"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 조율 엔진 시작",
-      "ts": "2026-04-25 21:27:02"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (21:27)",
-      "ts": "2026-04-25 21:27:00"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "idle",
-      "task": "대기 중 (다음 루프: 21:36)",
-      "ts": "2026-04-25 21:26:42"
     }
   ],
-  "_synced": "2026-04-25 22:41:00"
+  "_synced": "2026-04-25 22:51:00"
 }
