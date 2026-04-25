@@ -583,7 +583,7 @@ tr:hover:not(.history-row) { background:var(--surface2); cursor:pointer; }
 
 #hb-root * { box-sizing:border-box; margin:0; padding:0; }
 #hb-root { font-family:'Segoe UI',"맑은 고딕",sans-serif; font-size:13px; background:var(--bg); color:var(--text); }
-#hb-root .page { max-width:1200px; margin:0 auto; padding:16px; }
+#hb-root .page { display:block !important; max-width:1200px; margin:0 auto; padding:16px; }
 
 /* ── 헤더 ── */
 #hb-root .header { background:var(--surface); border:1px solid var(--border); color:var(--text); padding:16px 24px; border-radius:10px; margin-bottom:14px; display:flex; justify-content:space-between; align-items:center; }
@@ -4061,7 +4061,7 @@ function hb_fetchHeadcount() {
   statusEl.style.color = '#888';
   statusEl.textContent = '⏳ 조회 중...';
 
-  fetch((typeof LAN_API!=='undefined'?LAN_API:'http://192.168.0.13:5001') + '/api/headcount?date=' + date, {signal: AbortSignal.timeout(8000)})
+  fetch((typeof LAN_API!=='undefined'?LAN_API:'http://192.168.0.13:5001/api') + '/headcount?date=' + date, {signal: AbortSignal.timeout(8000)})
     .then(function(r) { return r.json(); })
     .then(function(d) {
       // 카드 갱신
