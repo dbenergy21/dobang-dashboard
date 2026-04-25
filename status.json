@@ -14,11 +14,11 @@
       "agent": "서버2",
       "emoji": "⚡",
       "last_report": "",
-      "loop_count": 45,
+      "loop_count": 46,
       "progress": 10,
       "status": "running",
-      "task": "원격 claude 실행 중 (01:00)",
-      "updated": "2026-04-26 01:00:18"
+      "task": "원격 claude 실행 중 (02:50)",
+      "updated": "2026-04-26 02:50:41"
     },
     "서버3": {
       "agent": "서버3",
@@ -41,7 +41,7 @@
       "updated": "2026-04-26 00:52:18"
     }
   },
-  "server_time": "2026-04-26 02:47:46",
+  "server_time": "2026-04-26 02:51:02",
   "today": "2026-04-26",
-  "_synced": "2026-04-26 02:47:44"
+  "_synced": "2026-04-26 02:51:00"
 }
