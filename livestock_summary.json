@@ -9,8 +9,8 @@
   "psy": "집계중",
   "target_pigs": 5200,
   "today_death": 5,
-  "total_pigs": 3472,
-  "updated": "20:21",
+  "total_pigs": 5214,
+  "updated": "20:31",
   "week_death": 34,
   "week_deaths": [
     {
@@ -42,5 +42,5 @@
       "date": "04-19"
     }
   ],
-  "_synced": "2026-04-25 20:21:00"
+  "_synced": "2026-04-25 20:31:00"
 }
