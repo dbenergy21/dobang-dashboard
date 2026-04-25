@@ -4591,26 +4591,36 @@ async function loadPigData(){
       <tr><td>환돈사 (B4오른쪽)</td><td class="barn-num">12</td><td class="barn-num">-</td><td class="barn-warn">격리</td><td style="font-size:.75rem;color:var(--muted)">관찰중</td></tr>`;
   }
 
-  // 폐사 차트 (최근 7일)
+  // 폐사 차트 (최근 7일) — API 포맷 {date,count} 또는 {day,cnt} 양쪽 지원
   const deaths=d.week_deaths||[
     {day:'월',cnt:2},{day:'화',cnt:1},{day:'수',cnt:3},{day:'목',cnt:0},{day:'금',cnt:2},{day:'토',cnt:1},{day:'일',cnt:1}
   ];
-  const maxDeath=Math.max(...deaths.map(x=>x.cnt),1);
-  const colors=['var(--s1)','var(--s2)','var(--yellow)','var(--green)','var(--blue)','var(--purple)','var(--orange)'];
-  document.getElementById('death-chart').innerHTML=deaths.map((x,i)=>`
-    <div class="death-bar-row">
-      <div class="death-bar-label">${x.day}</div>
+  const maxDeath=Math.max(...deaths.map(x=>(x.count||x.cnt||0)),1);
+  document.getElementById('death-chart').innerHTML=deaths.map((x)=>{
+    const lbl=x.date||x.day||'';
+    const cnt=x.count!==undefined?x.count:(x.cnt||0);
+    return `<div class="death-bar-row">
+      <div class="death-bar-label">${lbl}</div>
       <div class="death-bar-track">
-        <div class="death-bar-fill" style="width:${x.cnt/maxDeath*100}%;background:${x.cnt>2?'var(--red)':x.cnt>0?'var(--yellow)':'var(--green)'}"></div>
-        <span class="death-bar-val" style="color:${x.cnt>0?'var(--text)':'var(--muted)'}">${x.cnt}두</span>
+        <div class="death-bar-fill" style="width:${cnt/maxDeath*100}%;background:${cnt>2?'var(--red)':cnt>0?'var(--yellow)':'var(--green)'}"></div>
+        <span class="death-bar-val" style="color:${cnt>0?'var(--text)':'var(--muted)'}">${cnt}두</span>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
-  // 폐사 원인
-  const causes=d.death_causes||[{cause:'폐렴',cnt:4},{cause:'설사',cnt:2},{cause:'외상',cnt:1}];
-  document.getElementById('death-cause').innerHTML=causes.map(c=>`
-    <span style="background:rgba(248,81,73,.12);color:var(--red);border:1px solid rgba(248,81,73,.2);
-      padding:3px 10px;border-radius:20px;font-size:.74rem;font-weight:600">${c.cause} ${c.cnt}두</span>`).join('');
+  // 폐사 요약 (death_summary 있으면 표시)
+  if(d.death_summary){
+    const el=document.getElementById('death-cause');
+    if(el) el.insertAdjacentHTML('beforebegin',`<div style="font-size:.78rem;color:var(--muted);margin-bottom:6px">📊 ${d.death_summary} (${d.analysis_updated||''})</div>`);
+  }
+
+  // 폐사 원인 — API 포맷 {cause,count} 또는 {cause,cnt} 양쪽 지원
+  const causes=d.death_causes||(d.barns&&d.barns.length?d.barns.map(b=>({cause:b.name,cnt:b.deaths||b.count||0})):[])||[{cause:'폐렴',cnt:4},{cause:'설사',cnt:2},{cause:'외상',cnt:1}];
+  document.getElementById('death-cause').innerHTML=causes.map(c=>{
+    const cnt=c.count!==undefined?c.count:(c.cnt||0);
+    return `<span style="background:rgba(248,81,73,.12);color:var(--red);border:1px solid rgba(248,81,73,.2);
+      padding:3px 10px;border-radius:20px;font-size:.74rem;font-weight:600">${c.cause} ${cnt}두</span>`;
+  }).join('');
 }
 
 // ── 백신 일정 ──────────────────────────────────────
@@ -4726,10 +4736,21 @@ async function loadEnergyData(){
       <span class="d-badge ${m.d_day===0?'d0':m.d_day<=7?'d7':'d30'}">D-${m.d_day}</span>
     </div>`).join('');
 
-  // 서버2 보고서
+  // 에너지 분석 노트 (analysis_file이 있으면 note에 추가)
+  const noteEl=document.getElementById('s2-report');
+  const note=d.analysis||d.note||d.scada_note||'';
+  if(note&&noteEl) {
+    const meta=d.analysis_file?`[${d.analysis_updated||''} ${d.analysis_file}]\n\n`:'';
+    const scadaNote=d.scada_note&&d.scada_note!==note?`\n\n--- SCADA (${d.scada_updated||''}) ---\n${d.scada_note}`:'';
+    noteEl.textContent=meta+note+scadaNote;
+    const t=document.getElementById('s2-report-time');
+    if(t) t.textContent=d.analysis_updated||'';
+  }
+
+  // 서버2 보고서 (Obsidian)
   const r=await fetchAPI('/reports/서버2','reports_s2.json',{});
-  if(r.content) {
-    document.getElementById('s2-report').textContent=r.content;
+  if(r.content&&r.content!=='보고서 없음') {
+    if(noteEl) noteEl.textContent=r.content;
     const t=document.getElementById('s2-report-time');
     if(t) t.textContent=r.updated||'';
   }
@@ -4757,17 +4778,25 @@ async function loadFinanceData(){
     {name:'약품비 (명문제약)',amount:'870,000',d_day:5,account:'국민은행'},
     {name:'전기요금',amount:'1,200,000',d_day:8,account:'자동이체'},
   ];
-  document.getElementById('payment-list').innerHTML=payItems.slice(0,10).map(p=>`
-    <div style="display:flex;align-items:center;gap:8px;padding:8px 11px;background:var(--surface2);border-radius:7px;border-left:3px solid ${p.d_day===0?'var(--red)':p.d_day<=3?'var(--yellow)':'var(--blue)'}">
+  document.getElementById('payment-list').innerHTML=payItems.slice(0,10).map(p=>{
+    // 금액에 이미 '만원'/'백만원' 포함 여부 확인
+    const amtStr=String(p.amount||'');
+    const amtDisp=amtStr.includes('만원')||amtStr.includes('백만원')||amtStr.includes('원')?amtStr:amtStr+'원';
+    const dday=p.d_day!==undefined?p.d_day:99;
+    const urgentColor=dday===0?'var(--red)':p.urgent?'var(--red)':p.warn||dday<=7?'var(--yellow)':'var(--blue)';
+    const ddayColor=dday===0?'var(--red)':dday<=3?'var(--red)':dday<=7?'var(--yellow)':'var(--muted)';
+    const ddayLabel=dday===0?'🚨 오늘':p.urgent?`🚨 D-${dday}`:p.warn||dday<=7?`⚠️ D-${dday}`:`D-${dday}`;
+    return `<div style="display:flex;align-items:center;gap:8px;padding:8px 11px;background:var(--surface2);border-radius:7px;border-left:3px solid ${urgentColor}">
       <div style="flex:1">
         <div style="font-size:.82rem;font-weight:600">${p.name}</div>
         <div style="font-size:.72rem;color:var(--muted)">${p.account||''}</div>
       </div>
       <div style="text-align:right">
-        <div style="font-size:.82rem;font-family:monospace">${p.amount}원</div>
-        <div style="font-size:.68rem;color:${p.d_day===0?'var(--red)':p.d_day<=3?'var(--yellow)':'var(--muted)'}">D-${p.d_day}</div>
+        <div style="font-size:.82rem;font-family:monospace;font-weight:600">${amtDisp}</div>
+        <div style="font-size:.72rem;color:${ddayColor};font-weight:600">${ddayLabel}</div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
   // 세무 기한
   const taxItems=d.tax_items||[
@@ -4775,12 +4804,18 @@ async function loadFinanceData(){
     {name:'원천세 납부',deadline:'2026-05-10',d_day:15,status:'soon'},
     {name:'재산세',deadline:'2026-07-31',d_day:97,status:'ok'},
   ];
-  document.getElementById('tax-list').innerHTML=taxItems.slice(0,8).map(t=>`
-    <div class="vaccine-item ${t.d_day<=7?'urgent':t.d_day<=30?'soon':'ok'}">
-      <div class="vaccine-d">${t.deadline.substring(5)}</div>
+  document.getElementById('tax-list').innerHTML=taxItems.slice(0,8).map(t=>{
+    const dday=t.d_day!==undefined?t.d_day:99;
+    const isOverdue=dday<0;
+    const cls=isOverdue?'urgent':dday<=7?'urgent':dday<=30?'soon':'ok';
+    const badge=isOverdue?`<span class="d-badge d0">초과</span>`:`<span class="d-badge ${dday<=7?'d0':dday<=30?'d7':'d30'}">D-${dday}</span>`;
+    const ddisplay=t.deadline?t.deadline.substring(5):'';
+    return `<div class="vaccine-item ${cls}">
+      <div class="vaccine-d">${ddisplay}</div>
       <div style="flex:1"><div class="vaccine-name">${t.name}</div></div>
-      <span class="d-badge ${t.d_day<=7?'d0':t.d_day<=30?'d7':'d30'}">D-${t.d_day}</span>
-    </div>`).join('');
+      ${badge}
+    </div>`;
+  }).join('');
 
   // 서버4 보고서
   const r=await fetchAPI('/reports/서버4','reports_s4.json',{});
