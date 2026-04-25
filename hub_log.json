@@ -4,6 +4,27 @@
       "agent": "서버2",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (03:00)",
+      "ts": "2026-04-26 03:00:00"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (02:57)",
+      "ts": "2026-04-26 02:57:01"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (02:53)",
+      "ts": "2026-04-26 02:53:12"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (02:50)",
       "ts": "2026-04-26 02:50:41"
     },
@@ -328,28 +349,7 @@
       "status": "running",
       "task": "CEO 조율 엔진 v2.0 시작",
       "ts": "2026-04-25 22:57:31"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (22:57)",
-      "ts": "2026-04-25 22:57:00"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (22:52)",
-      "ts": "2026-04-25 22:52:34"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 사이클#9 22:51",
-      "ts": "2026-04-25 22:51:09"
     }
   ],
-  "_synced": "2026-04-26 02:51:00"
+  "_synced": "2026-04-26 03:01:00"
 }
