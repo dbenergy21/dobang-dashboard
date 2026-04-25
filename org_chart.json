@@ -390,11 +390,11 @@
         "agent": "서버4",
         "emoji": "📋",
         "last_report": "",
-        "loop_count": 27,
+        "loop_count": 28,
         "progress": 10,
         "status": "running",
-        "task": "원격 claude 실행 중 (21:13)",
-        "updated": "2026-04-25 21:13:28"
+        "task": "원격 claude 실행 중 (21:33)",
+        "updated": "2026-04-25 21:33:36"
       },
       "name": "📋 법무/재무부",
       "reports_to_executive": "CFO",
@@ -500,5 +500,5 @@
     "record": "옵시디언 00-Dashboard/주간회의록.md",
     "time": "07:00"
   },
-  "_synced": "2026-04-25 21:31:00"
+  "_synced": "2026-04-25 21:41:00"
 }
