@@ -1,19 +1,7 @@
 {
-  "updated": "",
-  "total_pigs": 0,
-  "target_pigs": 900,
-  "today_death": 0,
-  "week_death": 0,
-  "death_rate": 0.0,
-  "month_weaning": 0,
-  "psy": "계산중",
-  "month_ship": 0,
-  "expected_revenue": "계산중",
   "barns": [],
-  "week_deaths": [
-    {"day":"월","cnt":0},{"day":"화","cnt":0},{"day":"수","cnt":0},{"day":"목","cnt":0},
-    {"day":"금","cnt":0},{"day":"토","cnt":0},{"day":"일","cnt":0}
-  ],
   "death_causes": [],
-  "note": "서버1 루프 실행 후 자동 갱신됩니다"
+  "updated": "14:54",
+  "week_deaths": [],
+  "_synced": "2026-04-25 14:53:56"
 }

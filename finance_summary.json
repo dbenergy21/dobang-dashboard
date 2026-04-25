@@ -1,7 +1,6 @@
 {
-  "updated": "",
   "payments": [],
-  "tax_items": [],
   "tax_count": 0,
-  "note": "서버4 루프 실행 후 자동 갱신됩니다"
+  "tax_items": [],
+  "_synced": "2026-04-25 14:53:56"
 }
