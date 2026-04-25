@@ -4040,121 +4040,6 @@ tr:hover:not(.history-row) { background:var(--surface2); cursor:pointer; }
 
 </div><!-- /page -->
 
-<script>
-/* ── 두수 조회 시스템 ── */
-// LAN 내부: 192.168.0.13:5001, 외부: GitHub JSON fallback
-var API_LAN = 'http://192.168.0.13:5001';
-var API  = API_LAN;
-var BASE = '2026-04-21';
-
-function fmt(n) { return Number(n).toLocaleString(); }
-
-function hb_setToday() {
-  var t = new Date();
-  var s = t.getFullYear() + '-' + String(t.getMonth()+1).padStart(2,'0') + '-' + String(t.getDate()).padStart(2,'0');
-  document.getElementById('queryDate').value = s;
-  hb_fetchHeadcount();
-}
-
-function hb_fetchHeadcount() {
-  var date = document.getElementById('queryDate').value;
-  if (!date) return;
-  var statusEl = document.getElementById('queryStatus');
-  statusEl.style.color = '#888';
-  statusEl.textContent = '⏳ 조회 중...';
-
-  fetch(API + '/api/headcount?date=' + date, {signal: AbortSignal.timeout(8000)})
-    .then(function(r) { return r.json(); })
-    .then(function(d) {
-      // 카드 갱신
-      document.getElementById('val-total').textContent   = fmt(d.current_total);
-      document.getElementById('val-beef').textContent    = fmt(d.sections.beef.count);
-      document.getElementById('val-jadan').textContent   = fmt(d.sections.jadan.count);
-      document.getElementById('val-incu').textContent    = fmt(d.sections.incu.count);
-      document.getElementById('val-special').textContent = fmt(d.sections.special.count);
-      document.getElementById('val-modon').textContent   = fmt(d.sections.modon.count);
-
-      // 전체 카드 서브텍스트 — 변동량 표시
-      var dSign = d.delta <= 0 ? '' : '+';
-      document.getElementById('sub-total').innerHTML =
-        '27개 군 &nbsp;<span style="color:#c0392b;font-size:10px">폐사 -' + d.death_total + '두 · 출하 -' + d.ship_total + '두 (' + BASE + '이후)</span>';
-
-      // 헤더 날짜
-      document.getElementById('header-date').textContent = date;
-      document.getElementById('header-status').textContent = '✅ 실시간 반영됨';
-      if (document.getElementById('print-date')) document.getElementById('print-date').textContent = date;
-
-      // 상태바
-      statusEl.style.color = '#2e7d32';
-      statusEl.textContent = '✅ ' + date + ' 기준 | ' + BASE + ' 대비 ' + (d.delta > 0 ? '+' : '') + d.delta + '두  (폐사 -' + d.death_total + '두 · 출하 -' + d.ship_total + '두)';
-    })
-    .catch(function() {
-      statusEl.style.color = '#e65100';
-      statusEl.textContent = '⚠️ 사내 서버 미연결 — ' + BASE + ' 기준 데이터로 표시 중 (사내 네트워크 접속 시 자동 갱신)';
-      document.getElementById('header-date').textContent = BASE;
-      document.getElementById('header-status').textContent = '⚠️ 오프라인 (4/21 기준)';
-    });
-}
-
-// 페이지 로드 시 오늘 날짜로 자동 조회
-window.addEventListener('load', function() {
-  hb_setToday();
-});
-
-function hb_showTab(name) {
-  document.querySelectorAll('.section').forEach(function(s) {
-    s.classList.remove('active');
-    s.style.display = 'none';
-  });
-  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
-  var target = document.getElementById('sec-' + name);
-  if (target) { target.classList.add('active'); target.style.display = 'block'; }
-  if (event && event.target) event.target.classList.add('active');
-}
-
-function hb_toggleVaxDetail(gn) {
-  var detail = document.getElementById('vax-detail-' + gn);
-  var arrow  = document.getElementById('vax-arrow-' + gn);
-  if (!detail) return;
-  if (detail.style.display === 'none' || detail.style.display === '') {
-    detail.style.display = 'block';
-    if (arrow) arrow.textContent = '▲';
-  } else {
-    detail.style.display = 'none';
-    if (arrow) arrow.textContent = '▼';
-  }
-}
-
-function hb_toggleHistory(gid) {
-  var row = document.getElementById('hist-' + gid);
-  var toggle = row.previousElementSibling.querySelector('.hist-toggle');
-  if (row.style.display === 'none' || row.style.display === '') {
-    row.style.display = 'table-row';
-    if (toggle) toggle.textContent = '▲';
-  } else {
-    row.style.display = 'none';
-    if (toggle) toggle.textContent = '▼';
-  }
-}
-
-function hb_expandAll() {
-  document.querySelectorAll('.history-row').forEach(r => r.style.display = 'table-row');
-  document.querySelectorAll('.hist-toggle').forEach(t => t.textContent = '▲');
-}
-
-function hb_collapseAll() {
-  document.querySelectorAll('.history-row').forEach(r => r.style.display = 'none');
-  document.querySelectorAll('.hist-toggle').forEach(t => t.textContent = '▼');
-}
-
-// 인쇄 시 인쇄용 헤더 표시
-window.onbeforeprint = function() {
-  document.getElementById('print-header').style.display = 'flex';
-};
-window.onafterprint = function() {
-  document.getElementById('print-header').style.display = 'none';
-};
-</script>
 </div>
 <script id="hb-script">
 (function() {
@@ -4268,7 +4153,15 @@ window.onafterprint = function() {
   document.getElementById('hb-print-header').style.display = 'none';
 };
 
-window.hb_init = (typeof hb_init==='function') ? hb_init : function() { if(typeof hb_setToday==='function') hb_setToday(); };
+// onclick에서 접근 가능하도록 전역 노출
+window.hb_init            = hb_init;
+window.hb_setToday        = hb_setToday;
+window.hb_fetchHeadcount  = hb_fetchHeadcount;
+window.hb_showTab         = hb_showTab;
+window.hb_toggleVaxDetail = hb_toggleVaxDetail;
+window.hb_toggleHistory   = hb_toggleHistory;
+window.hb_expandAll       = hb_expandAll;
+window.hb_collapseAll     = hb_collapseAll;
 })();
 </script>
   </div><!-- /pssub-herdboard -->
