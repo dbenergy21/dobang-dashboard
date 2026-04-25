@@ -4,7 +4,14 @@
   "barns": [],
   "death_causes": [],
   "death_summary": "30일 총 폐사: **84두** (일평균 2.8두)",
-  "updated": "18:51",
+  "month_ship": 27,
+  "month_weaning": 0,
+  "psy": "집계중",
+  "target_pigs": 5200,
+  "today_death": 0,
+  "total_pigs": 0,
+  "updated": "19:01",
+  "week_death": 29,
   "week_deaths": [
     {
       "count": 3,
@@ -35,5 +42,5 @@
       "date": "04-19"
     }
   ],
-  "_synced": "2026-04-25 18:51:05"
+  "_synced": "2026-04-25 19:01:01"
 }
