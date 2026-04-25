@@ -4200,8 +4200,21 @@ async function detectAPI(){
     document.getElementById('api-badge').style.color='var(--green)';
   }catch{
     useGitHub=true;
-    document.getElementById('api-badge').textContent='🟡 GitHub 캐시';
+    document.getElementById('api-badge').textContent='🟡 GitHub 동기화 중...';
     document.getElementById('api-badge').style.color='var(--yellow)';
+    // GitHub Raw에서 마지막 동기화 시간 표시
+    try{
+      const r=await fetch(`${GH_RAW}/status.json?t=${Date.now()}`);
+      if(r.ok){
+        const d=await r.json();
+        const s=d._synced||'';
+        const t=s?s.slice(11,16):'?';
+        document.getElementById('api-badge').textContent=`🟡 GitHub 캐시 (${t} 갱신)`;
+        document.getElementById('refresh-status').textContent='10분마다 자동갱신';
+      }
+    }catch{
+      document.getElementById('api-badge').textContent='🟡 GitHub 캐시';
+    }
   }
 }
 
@@ -4344,17 +4357,16 @@ async function loadMessages(){
 // ── 옵시디언 ──────────────────────────────────────
 async function loadObsidian(){
   try{
-    const ctrl=new AbortController(); setTimeout(()=>ctrl.abort(),5000);
-    const res=await fetch(`${API}/obsidian/dashboard`,{signal:ctrl.signal});
-    const d=await res.json();
+    const d=await fetchAPI('/obsidian/dashboard','obsidian_dashboard.json',{content:'데이터 없음'});
     let html=(d.content||'')
       .replace(/&/g,'&amp;').replace(/</g,'&lt;')
       .replace(/^# (.+)$/gm,'<span style="color:var(--blue);font-weight:700;font-size:1rem">$1</span>')
       .replace(/^## (.+)$/gm,'<span style="color:var(--purple);font-weight:600">$1</span>')
       .replace(/\*\*(.+?)\*\*/g,'<b style="color:var(--orange)">$1</b>')
       .replace(/🚨/g,'<span style="color:var(--red)">🚨</span>');
-    document.getElementById('obsidian-content').innerHTML=html;
-  }catch{document.getElementById('obsidian-content').textContent='로드 실패 (서버 연결 확인)';}
+    const synced=d._synced?`<div style="font-size:.68rem;color:var(--muted);text-align:right;margin-top:4px;">🔄 ${d._synced}</div>`:'';
+    document.getElementById('obsidian-content').innerHTML=html+synced;
+  }catch{document.getElementById('obsidian-content').textContent='로드 실패';}
 }
 
 // ── 빠른 명령 ──────────────────────────────────────
