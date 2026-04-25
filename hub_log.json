@@ -1,6 +1,41 @@
 {
   "logs": [
     {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (00:41)",
+      "ts": "2026-04-26 00:41:21"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (00:39)",
+      "ts": "2026-04-26 00:39:08"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (00:37)",
+      "ts": "2026-04-26 00:37:00"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (00:33)",
+      "ts": "2026-04-26 00:33:31"
+    },
+    {
+      "agent": "CEO",
+      "event": "status_update",
+      "status": "idle",
+      "task": "사이클#17 완료 (다음:00:39)",
+      "ts": "2026-04-26 00:31:47"
+    },
+    {
       "agent": "서버2",
       "event": "status_update",
       "status": "running",
@@ -314,42 +349,7 @@
       "status": "running",
       "task": "CEO 조율 엔진 v2.0 시작",
       "ts": "2026-04-25 22:38:11"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (22:37)",
-      "ts": "2026-04-25 22:37:00"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "idle",
-      "task": "사이클#7 완료 (다음:22:43)",
-      "ts": "2026-04-25 22:35:47"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 사이클#7 22:33",
-      "ts": "2026-04-25 22:33:40"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 조율 엔진 v2.0 시작",
-      "ts": "2026-04-25 22:33:38"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (22:32)",
-      "ts": "2026-04-25 22:32:52"
     }
   ],
-  "_synced": "2026-04-26 00:31:00"
+  "_synced": "2026-04-26 00:41:00"
 }
