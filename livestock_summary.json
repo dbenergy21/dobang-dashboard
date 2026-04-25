@@ -10,7 +10,7 @@
   "target_pigs": 5200,
   "today_death": 0,
   "total_pigs": 0,
-  "updated": "19:01",
+  "updated": "19:11",
   "week_death": 29,
   "week_deaths": [
     {
@@ -42,5 +42,5 @@
       "date": "04-19"
     }
   ],
-  "_synced": "2026-04-25 19:01:01"
+  "_synced": "2026-04-25 19:11:01"
 }
