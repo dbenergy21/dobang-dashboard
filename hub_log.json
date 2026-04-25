@@ -1,6 +1,27 @@
 {
   "logs": [
     {
+      "agent": "CEO",
+      "event": "status_update",
+      "status": "idle",
+      "task": "사이클#16 완료 (다음:00:25)",
+      "ts": "2026-04-26 00:19:15"
+    },
+    {
+      "agent": "CEO",
+      "event": "status_update",
+      "status": "running",
+      "task": "CEO 사이클#16 00:15",
+      "ts": "2026-04-26 00:15:20"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (00:13)",
+      "ts": "2026-04-26 00:13:42"
+    },
+    {
       "agent": "서버2",
       "event": "status_update",
       "status": "running",
@@ -328,28 +349,7 @@
       "status": "idle",
       "task": "사이클#6 완료 (다음:22:34)",
       "ts": "2026-04-25 22:26:36"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 사이클#6 22:24",
-      "ts": "2026-04-25 22:24:07"
-    },
-    {
-      "agent": "CEO",
-      "event": "status_update",
-      "status": "running",
-      "task": "CEO 조율 엔진 v2.0 시작",
-      "ts": "2026-04-25 22:24:05"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (22:22)",
-      "ts": "2026-04-25 22:22:11"
     }
   ],
-  "_synced": "2026-04-26 00:11:00"
+  "_synced": "2026-04-26 00:21:00"
 }
