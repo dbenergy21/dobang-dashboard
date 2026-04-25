@@ -4,6 +4,48 @@
       "agent": "서버1",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (15:59)",
+      "ts": "2026-04-25 15:59:17"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 1회 완료",
+      "ts": "2026-04-25 15:52:55"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "claude 시작 중 (서버4)",
+      "ts": "2026-04-25 15:52:02"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 1회 완료",
+      "ts": "2026-04-25 15:52:02"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "claude 시작 중 (서버2)",
+      "ts": "2026-04-25 15:51:32"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 1회 완료",
+      "ts": "2026-04-25 15:51:32"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
       "task": "claude 시작 중 (서버1)",
       "ts": "2026-04-25 15:51:08"
     },
@@ -307,49 +349,7 @@
       "subject": "⚠️ 시스템 경보",
       "to": "서버2",
       "ts": "2026-04-25 11:47:47"
-    },
-    {
-      "event": "message_sent",
-      "from": "서버3",
-      "subject": "⚠️ 시스템 경보",
-      "to": "서버1",
-      "ts": "2026-04-25 11:47:47"
-    },
-    {
-      "agent": "서버3",
-      "event": "status_update",
-      "status": "running",
-      "task": "오케스트레이터 동작 중",
-      "ts": "2026-04-25 11:47:47"
-    },
-    {
-      "event": "message_sent",
-      "from": "서버3",
-      "subject": "⚠️ 시스템 경보",
-      "to": "서버4",
-      "ts": "2026-04-25 11:46:47"
-    },
-    {
-      "event": "message_sent",
-      "from": "서버3",
-      "subject": "⚠️ 시스템 경보",
-      "to": "서버2",
-      "ts": "2026-04-25 11:46:47"
-    },
-    {
-      "event": "message_sent",
-      "from": "서버3",
-      "subject": "⚠️ 시스템 경보",
-      "to": "서버1",
-      "ts": "2026-04-25 11:46:47"
-    },
-    {
-      "agent": "서버3",
-      "event": "status_update",
-      "status": "running",
-      "task": "오케스트레이터 동작 중",
-      "ts": "2026-04-25 11:46:47"
     }
   ],
-  "_synced": "2026-04-25 15:51:01"
+  "_synced": "2026-04-25 16:01:02"
 }

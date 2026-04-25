@@ -4,21 +4,21 @@
       "agent": "서버1",
       "emoji": "🐷",
       "last_report": "",
-      "loop_count": 5,
-      "progress": 0,
-      "status": "idle",
-      "task": "대기 중",
-      "updated": "2026-04-25 13:09:37"
+      "loop_count": 7,
+      "progress": 10,
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:59)",
+      "updated": "2026-04-25 15:59:17"
     },
     "서버2": {
       "agent": "서버2",
       "emoji": "⚡",
       "last_report": "",
-      "loop_count": 3,
-      "progress": 0,
+      "loop_count": 4,
+      "progress": 100,
       "status": "idle",
-      "task": "대기 중",
-      "updated": "2026-04-25 13:10:00"
+      "task": "claude 1회 완료",
+      "updated": "2026-04-25 15:52:02"
     },
     "서버3": {
       "agent": "서버3",
@@ -34,14 +34,14 @@
       "agent": "서버4",
       "emoji": "📋",
       "last_report": "",
-      "loop_count": 3,
-      "progress": 0,
+      "loop_count": 4,
+      "progress": 100,
       "status": "idle",
-      "task": "대기 중",
-      "updated": "2026-04-25 13:10:23"
+      "task": "claude 1회 완료",
+      "updated": "2026-04-25 15:52:55"
     }
   },
-  "server_time": "2026-04-25 15:51:03",
+  "server_time": "2026-04-25 16:01:04",
   "today": "2026-04-25",
-  "_synced": "2026-04-25 15:51:01"
+  "_synced": "2026-04-25 16:01:02"
 }
