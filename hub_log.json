@@ -1,6 +1,13 @@
 {
   "logs": [
     {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "claude 시작 중 (서버1)",
+      "ts": "2026-04-25 15:51:08"
+    },
+    {
       "agent": "서버4",
       "event": "status_update",
       "status": "idle",
@@ -342,14 +349,7 @@
       "status": "running",
       "task": "오케스트레이터 동작 중",
       "ts": "2026-04-25 11:46:47"
-    },
-    {
-      "event": "message_sent",
-      "from": "서버3",
-      "subject": "⚠️ 시스템 경보",
-      "to": "서버4",
-      "ts": "2026-04-25 11:45:47"
     }
   ],
-  "_synced": "2026-04-25 15:41:01"
+  "_synced": "2026-04-25 15:51:01"
 }
