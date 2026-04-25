@@ -204,11 +204,11 @@
         "agent": "서버1",
         "emoji": "🐷",
         "last_report": "",
-        "loop_count": 72,
+        "loop_count": 73,
         "progress": 10,
         "status": "running",
-        "task": "원격 claude 실행 중 (07:27)",
-        "updated": "2026-04-26 07:27:01"
+        "task": "원격 claude 실행 중 (07:47)",
+        "updated": "2026-04-26 07:47:01"
       },
       "name": "🐷 육종사업부",
       "reports_to_executive": "COO",
@@ -297,11 +297,11 @@
         "agent": "서버2",
         "emoji": "⚡",
         "last_report": "",
-        "loop_count": 71,
+        "loop_count": 72,
         "progress": 10,
         "status": "running",
-        "task": "원격 claude 실행 중 (07:30)",
-        "updated": "2026-04-26 07:30:18"
+        "task": "원격 claude 실행 중 (07:49)",
+        "updated": "2026-04-26 07:49:25"
       },
       "name": "⚡ 에너지사업부",
       "reports_to_executive": "COO",
@@ -500,5 +500,5 @@
     "record": "옵시디언 00-Dashboard/주간회의록.md",
     "time": "07:00"
   },
-  "_synced": "2026-04-26 07:41:00"
+  "_synced": "2026-04-26 07:51:00"
 }
