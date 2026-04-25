@@ -496,6 +496,35 @@ tr:hover:not(.history-row) { background:var(--surface2); cursor:pointer; }
     </div>
   </div>
 
+  <!-- 돈방 현황 테이블 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-header">
+      <h3>🏠 돈방별 현황</h3>
+      <span style="font-size:.72rem;color:var(--muted);">두수·일령·상태</span>
+    </div>
+    <div class="card-body" style="padding:0;">
+      <table class="barn-table" style="width:100%;">
+        <thead><tr><th>돈방</th><th>두수</th><th>일령</th><th>상태</th><th>비고</th></tr></thead>
+        <tbody id="barn-body">
+          <tr><td colspan="5" style="color:var(--muted);text-align:center;padding:16px;">로딩 중...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 백신 일정 -->
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-header">
+      <h3>💉 백신 일정</h3>
+      <span id="vaccine-count" style="font-size:.72rem;color:var(--red);font-weight:700;"></span>
+    </div>
+    <div class="card-body">
+      <div class="vaccine-list" id="vaccine-list">
+        <div style="color:var(--muted);font-size:.82rem;">로딩 중...</div>
+      </div>
+    </div>
+  </div>
+
   <!-- 시설 이상 + 직원 현황 -->
   <div class="grid-2" style="margin-bottom:16px;">
     <div class="card">
@@ -4801,6 +4830,7 @@ async function loadPigData(){
   // 돈방 테이블
   const barns=d.barns||[];
   const tbody=document.getElementById('barn-body');
+  if(!tbody) return; // null guard — element 없으면 조기 종료
   if(barns.length){
     tbody.innerHTML=barns.map(b=>{
       const cls=b.abnormal?'barn-warn':b.ok?'barn-ok':'';
@@ -4859,7 +4889,7 @@ async function loadPigData(){
 // ── 백신 일정 ──────────────────────────────────────
 async function loadVaccineSchedule(){
   const d=await fetchAPI('/livestock/vaccines','vaccines.json',{vaccines:[]});
-  const vaccines=d.vaccines||[
+  const vaccines=(d.vaccines&&d.vaccines.length>0)?d.vaccines:[
     {date:'2026-04-25',name:'구제역 2차',target:'비육사 전두',d_day:0},
     {date:'2026-04-28',name:'PRRS 부스터',target:'번식돈 20두',d_day:3},
     {date:'2026-05-02',name:'돈단독 1차',target:'자돈사 1,2',d_day:7},
@@ -4867,7 +4897,9 @@ async function loadVaccineSchedule(){
   ];
   const cnt=document.getElementById('vaccine-count');
   if(cnt) cnt.textContent=`${vaccines.filter(v=>v.d_day<=7).length}건 긴급`;
-  document.getElementById('vaccine-list').innerHTML=vaccines.slice(0,8).map(v=>{
+  const vlist=document.getElementById('vaccine-list');
+  if(!vlist) return; // null guard
+  vlist.innerHTML=vaccines.slice(0,8).map(v=>{
     const cls=v.d_day===0?'urgent':v.d_day<=7?'soon':'ok';
     const badge=v.d_day===0?'<span class="d-badge d0">D-0</span>':v.d_day<=7?`<span class="d-badge d7">D-${v.d_day}</span>`:`<span class="d-badge d30">D-${v.d_day}</span>`;
     return `<div class="vaccine-item ${cls}">
