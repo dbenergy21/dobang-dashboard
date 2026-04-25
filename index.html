@@ -894,9 +894,8 @@ function toast(msg){
 // ── 조직도 ──────────────────────────────────────
 async function loadOrgChart(){
   try{
-    const ctrl=new AbortController(); setTimeout(()=>ctrl.abort(),5000);
-    const res=await fetch(`${API}/org_chart`,{signal:ctrl.signal});
-    const org=await res.json();
+    const org=await fetchAPI('/org_chart','org_chart.json',null);
+    if(!org) throw new Error('데이터 없음');
     const tree=document.getElementById('org-tree');
     const SI={running:'🟢',idle:'⚪',done:'✅',error:'🔴',offline:'⬛',waiting:'🟡'};
 
