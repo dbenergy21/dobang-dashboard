@@ -11,17 +11,18 @@
     {
       "assigned_by": "CEO(??)",
       "assigned_to": "??1",
-      "completed": "",
+      "completed": "2026-04-25 21:48:45",
+      "completed_by": "서버1",
       "created": "2026-04-25 21:30",
       "dept": "",
       "due": "",
       "id": "ceo-test-001",
       "priority": "normal",
-      "result": "",
-      "status": "assigned",
+      "result": "서버1 CEO API 수신 확인 완료",
+      "status": "done",
       "title": "CEO API ??? ??"
     }
   ],
-  "updated": "2026-04-25 21:32:25",
-  "_synced": "2026-04-25 21:41:00"
+  "updated": "2026-04-25 21:48:45",
+  "_synced": "2026-04-25 21:51:00"
 }
