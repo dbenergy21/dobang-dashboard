@@ -4,6 +4,48 @@
       "agent": "서버4",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (14:30)",
+      "ts": "2026-04-26 14:30:55"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: latest_report.md 저장 완료 — 발전 CHP2기 월 5,75",
+      "ts": "2026-04-26 14:30:55"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (14:29)",
+      "ts": "2026-04-26 14:29:37"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 폐사기록 DB 조회 완료 — 2026-04-26 총 10두 폐사(이유자돈",
+      "ts": "2026-04-26 14:29:37"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (14:27)",
+      "ts": "2026-04-26 14:27:05"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: D-7 긴급결제 4건(롯데렌탈 D-0, 분뇨처리/4대보험/정액 D-4) ",
+      "ts": "2026-04-26 14:24:00"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (14:21)",
       "ts": "2026-04-26 14:21:08"
     },
@@ -307,49 +349,7 @@
       "status": "idle",
       "task": "claude 완료: 완료(exit=1)",
       "ts": "2026-04-26 13:12:18"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (13:09)",
-      "ts": "2026-04-26 13:09:34"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 완료(exit=0)",
-      "ts": "2026-04-26 13:09:33"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (13:07)",
-      "ts": "2026-04-26 13:07:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 완료(exit=0)",
-      "ts": "2026-04-26 13:06:09"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 완료(exit=1)",
-      "ts": "2026-04-26 13:05:31"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (13:03)",
-      "ts": "2026-04-26 13:03:27"
     }
   ],
-  "_synced": "2026-04-26 14:21:02"
+  "_synced": "2026-04-26 14:31:06"
 }
