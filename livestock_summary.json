@@ -8,10 +8,10 @@
   "month_weaning": 494,
   "psy": "집계중",
   "target_pigs": 5200,
-  "today_death": 0,
+  "today_death": 7,
   "total_pigs": 5214,
-  "updated": "10:01",
-  "week_death": 30,
+  "updated": "10:11",
+  "week_death": 37,
   "week_deaths": [
     {
       "count": 3,
@@ -42,5 +42,5 @@
       "date": "04-19"
     }
   ],
-  "_synced": "2026-04-26 10:01:01"
+  "_synced": "2026-04-26 10:11:00"
 }
