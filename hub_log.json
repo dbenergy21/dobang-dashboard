@@ -4,6 +4,69 @@
       "agent": "서버4",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (18:30)",
+      "ts": "2026-04-26 18:30:31"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: latest_report.md 이미 오늘(4/26) 최신 보고서 저장 완",
+      "ts": "2026-04-26 18:30:31"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (18:29)",
+      "ts": "2026-04-26 18:29:24"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 폐사기록 노션DB 실측 완료 — 오늘(4/26) 총 10두 폐사(이유자돈",
+      "ts": "2026-04-26 18:29:24"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (18:27)",
+      "ts": "2026-04-26 18:27:01"
+    },
+    {
+      "agent": "dobangoffice",
+      "event": "status_update",
+      "status": "idle",
+      "task": "dobangoffice 정상 (Claude Code 설치됨 ✅)",
+      "ts": "2026-04-26 18:23:54"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "idle",
+      "task": "서버5 SCADA 수집 완료 (2026-04-26)",
+      "ts": "2026-04-26 18:23:40"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "running",
+      "task": "서버5 SCADA 데이터 수집 중 (18:23)",
+      "ts": "2026-04-26 18:23:40"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: latest_report.md 저장 완료 — D-7 긴급결제 4건(3,0",
+      "ts": "2026-04-26 18:23:40"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (18:20)",
       "ts": "2026-04-26 18:20:38"
     },
@@ -286,70 +349,7 @@
       "status": "idle",
       "task": "SCADA 수집 완료: \\WinCC\\OPC\\UAServer\\OpcUaServerWinCC.txt",
       "ts": "2026-04-26 17:33:41"
-    },
-    {
-      "agent": "SCADA",
-      "event": "status_update",
-      "status": "running",
-      "task": "SCADA 데이터 수집 중 (17:33)",
-      "ts": "2026-04-26 17:33:38"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 노션 결제관리 DB 18건 실측 → D-7 긴급결제 4건(총 3,020만",
-      "ts": "2026-04-26 17:33:38"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (17:30)",
-      "ts": "2026-04-26 17:30:56"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 도방에너지 4/26 보고서 latest_report.md 저장 완료. 발",
-      "ts": "2026-04-26 17:30:56"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (17:29)",
-      "ts": "2026-04-26 17:29:29"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 노션 폐사기록 DB 실측 조회 완료 — 2026-04-26 오늘 폐사 *",
-      "ts": "2026-04-26 17:29:29"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (17:27)",
-      "ts": "2026-04-26 17:27:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 노션 결제관리 DB 18건 실측 → D-7 긴급결제 4건(총 3,020만",
-      "ts": "2026-04-26 17:22:42"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (17:20)",
-      "ts": "2026-04-26 17:20:30"
     }
   ],
-  "_synced": "2026-04-26 18:21:01"
+  "_synced": "2026-04-26 18:31:01"
 }
