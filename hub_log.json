@@ -4,6 +4,69 @@
       "agent": "서버4",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (18:00)",
+      "ts": "2026-04-26 18:00:57"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 발전 CHP2기 월 5,757만원(SMP+REC), 경락가 1+등급 6,",
+      "ts": "2026-04-26 18:00:57"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (17:59)",
+      "ts": "2026-04-26 17:59:42"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 오늘(4/26) 폐사 10두(7건), 전일대비+4두(67%↑). 긴급기준",
+      "ts": "2026-04-26 17:59:42"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (17:57)",
+      "ts": "2026-04-26 17:57:01"
+    },
+    {
+      "agent": "dobangoffice",
+      "event": "status_update",
+      "status": "idle",
+      "task": "dobangoffice 정상 (Claude Code 설치됨 ✅)",
+      "ts": "2026-04-26 17:53:05"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "idle",
+      "task": "서버5 SCADA 수집 완료 (2026-04-26)",
+      "ts": "2026-04-26 17:52:46"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "running",
+      "task": "서버5 SCADA 데이터 수집 중 (17:52)",
+      "ts": "2026-04-26 17:52:46"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 노션 결제관리 DB 18건 실측 완료. D-7 긴급결제 4건(3,020만",
+      "ts": "2026-04-26 17:52:46"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (17:50)",
       "ts": "2026-04-26 17:50:31"
     },
@@ -286,70 +349,7 @@
       "status": "idle",
       "task": "claude 완료: 노션 결제관리 DB 18건 실측 → D-7 긴급결제 4건(롯데렌탈 D-0",
       "ts": "2026-04-26 16:42:49"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (16:40)",
-      "ts": "2026-04-26 16:40:49"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: latest_report.md 이미 4/26 최신 — CHP 2기 가동(",
-      "ts": "2026-04-26 16:40:49"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (16:39)",
-      "ts": "2026-04-26 16:39:24"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 폐사기록 DB 조회 완료 — 오늘(4/26) 총 10두 폐사(7건), 전",
-      "ts": "2026-04-26 16:39:24"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (16:37)",
-      "ts": "2026-04-26 16:37:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 노션 결제관리 DB 18건 실측 → D-7 긴급결제 4건(30,202,0",
-      "ts": "2026-04-26 16:33:58"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (16:31)",
-      "ts": "2026-04-26 16:31:26"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: latest_report.md 저장 완료 — 발전 CHP2기 월 5,75",
-      "ts": "2026-04-26 16:31:26"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (16:30)",
-      "ts": "2026-04-26 16:30:24"
     }
   ],
-  "_synced": "2026-04-26 17:51:01"
+  "_synced": "2026-04-26 18:01:01"
 }
