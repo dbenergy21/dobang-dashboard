@@ -204,11 +204,11 @@
         "agent": "서버1",
         "emoji": "🐷",
         "last_report": "",
-        "loop_count": 100,
+        "loop_count": 101,
         "progress": 10,
         "status": "running",
-        "task": "원격 claude 실행 중 (12:27)",
-        "updated": "2026-04-26 12:27:01"
+        "task": "원격 claude 실행 중 (12:37)",
+        "updated": "2026-04-26 12:37:01"
       },
       "name": "🐷 육종사업부",
       "reports_to_executive": "COO",
@@ -297,11 +297,11 @@
         "agent": "서버2",
         "emoji": "⚡",
         "last_report": "",
-        "loop_count": 99,
+        "loop_count": 100,
         "progress": 10,
         "status": "running",
-        "task": "원격 claude 실행 중 (12:29)",
-        "updated": "2026-04-26 12:29:55"
+        "task": "원격 claude 실행 중 (12:38)",
+        "updated": "2026-04-26 12:38:57"
       },
       "name": "⚡ 에너지사업부",
       "reports_to_executive": "COO",
@@ -390,11 +390,11 @@
         "agent": "서버4",
         "emoji": "📋",
         "last_report": "",
-        "loop_count": 97,
+        "loop_count": 99,
         "progress": 10,
         "status": "running",
-        "task": "원격 claude 실행 중 (12:20)",
-        "updated": "2026-04-26 12:20:49"
+        "task": "원격 claude 실행 중 (12:41)",
+        "updated": "2026-04-26 12:41:04"
       },
       "name": "📋 법무/재무부",
       "reports_to_executive": "CFO",
@@ -500,5 +500,5 @@
     "record": "옵시디언 00-Dashboard/주간회의록.md",
     "time": "07:00"
   },
-  "_synced": "2026-04-26 12:31:01"
+  "_synced": "2026-04-26 12:41:01"
 }

@@ -1,6 +1,34 @@
 {
   "logs": [
     {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (12:41)",
+      "ts": "2026-04-26 12:41:04"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (12:38)",
+      "ts": "2026-04-26 12:38:57"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (12:37)",
+      "ts": "2026-04-26 12:37:01"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (12:32)",
+      "ts": "2026-04-26 12:32:15"
+    },
+    {
       "agent": "서버2",
       "event": "status_update",
       "status": "running",
@@ -321,35 +349,7 @@
       "status": "running",
       "task": "원격 claude 실행 중 (09:59)",
       "ts": "2026-04-26 09:59:27"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (09:57)",
-      "ts": "2026-04-26 09:57:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (09:51)",
-      "ts": "2026-04-26 09:51:50"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (09:49)",
-      "ts": "2026-04-26 09:49:05"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (09:47)",
-      "ts": "2026-04-26 09:47:01"
     }
   ],
-  "_synced": "2026-04-26 12:31:01"
+  "_synced": "2026-04-26 12:41:01"
 }
