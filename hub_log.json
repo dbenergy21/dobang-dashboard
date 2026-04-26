@@ -4,6 +4,48 @@
       "agent": "서버4",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (17:30)",
+      "ts": "2026-04-26 17:30:56"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 도방에너지 4/26 보고서 latest_report.md 저장 완료. 발",
+      "ts": "2026-04-26 17:30:56"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (17:29)",
+      "ts": "2026-04-26 17:29:29"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 노션 폐사기록 DB 실측 조회 완료 — 2026-04-26 오늘 폐사 *",
+      "ts": "2026-04-26 17:29:29"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (17:27)",
+      "ts": "2026-04-26 17:27:01"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 노션 결제관리 DB 18건 실측 → D-7 긴급결제 4건(총 3,020만",
+      "ts": "2026-04-26 17:22:42"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (17:20)",
       "ts": "2026-04-26 17:20:30"
     },
@@ -307,49 +349,7 @@
       "status": "running",
       "task": "원격 claude 실행 중 (16:00)",
       "ts": "2026-04-26 16:00:31"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: latest_report.md에 4/26 보고서 이미 존재 확인 — CH",
-      "ts": "2026-04-26 16:00:31"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (15:59)",
-      "ts": "2026-04-26 15:59:20"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 04-26 폐사 10두(7건) — B4.1동 4두 집중폐사, 이유자돈 5",
-      "ts": "2026-04-26 15:59:20"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (15:57)",
-      "ts": "2026-04-26 15:57:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: latest_report.md 저장 완료. D-7 긴급결제 4건(3,02",
-      "ts": "2026-04-26 15:52:05"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (15:50)",
-      "ts": "2026-04-26 15:50:11"
     }
   ],
-  "_synced": "2026-04-26 17:21:01"
+  "_synced": "2026-04-26 17:31:01"
 }
