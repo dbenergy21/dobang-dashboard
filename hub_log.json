@@ -4,6 +4,27 @@
       "agent": "서버2",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (09:29)",
+      "ts": "2026-04-26 09:29:32"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (09:27)",
+      "ts": "2026-04-26 09:27:06"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (09:22)",
+      "ts": "2026-04-26 09:22:17"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (09:20)",
       "ts": "2026-04-26 09:20:05"
     },
@@ -328,28 +349,7 @@
       "status": "running",
       "task": "원격 claude 실행 중 (06:17)",
       "ts": "2026-04-26 06:17:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (06:11)",
-      "ts": "2026-04-26 06:11:00"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (06:09)",
-      "ts": "2026-04-26 06:09:04"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (06:07)",
-      "ts": "2026-04-26 06:07:01"
     }
   ],
-  "_synced": "2026-04-26 09:21:03"
+  "_synced": "2026-04-26 09:31:07"
 }
