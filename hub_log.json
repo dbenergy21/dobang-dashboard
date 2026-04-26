@@ -1,6 +1,34 @@
 {
   "logs": [
     {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:00)",
+      "ts": "2026-04-26 15:00:26"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 노션 폐사기록 DB 조회 완료 → 오늘(4/26) 폐사 10두(전일 6두",
+      "ts": "2026-04-26 15:00:26"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (14:57)",
+      "ts": "2026-04-26 14:57:01"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: D-7긴급결제 4건(총3,020만: 롯데렌탈D-0 105만, 분뇨처리D-",
+      "ts": "2026-04-26 14:53:07"
+    },
+    {
       "agent": "서버4",
       "event": "status_update",
       "status": "running",
@@ -321,35 +349,7 @@
       "status": "idle",
       "task": "claude 완료: 완료(exit=0)",
       "ts": "2026-04-26 13:39:28"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (13:37)",
-      "ts": "2026-04-26 13:37:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 완료(exit=1)",
-      "ts": "2026-04-26 13:34:50"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (13:31)",
-      "ts": "2026-04-26 13:31:50"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 완료(exit=1)",
-      "ts": "2026-04-26 13:31:50"
     }
   ],
-  "_synced": "2026-04-26 14:51:01"
+  "_synced": "2026-04-26 15:01:01"
 }
