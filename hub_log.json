@@ -1,6 +1,76 @@
 {
   "logs": [
     {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:50)",
+      "ts": "2026-04-26 15:50:11"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: latest_report.md 이미 4/26 최신 보고서 존재 확인 — ",
+      "ts": "2026-04-26 15:50:11"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:49)",
+      "ts": "2026-04-26 15:49:04"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 노션 폐사기록 DB 실측 조회 완료 — 2026-04-26 총 10두 폐",
+      "ts": "2026-04-26 15:49:04"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:47)",
+      "ts": "2026-04-26 15:47:01"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: D-7긴급결제 4건/3,020만원(롯데렌탈D-0, 분뇨처리+4대보험+정액",
+      "ts": "2026-04-26 15:45:53"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:43)",
+      "ts": "2026-04-26 15:43:09"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: latest_report.md 저장 완료. 발전 CHP2기 월5,757만",
+      "ts": "2026-04-26 15:43:09"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:41)",
+      "ts": "2026-04-26 15:41:32"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 완료(exit=1)",
+      "ts": "2026-04-26 15:41:32"
+    },
+    {
       "agent": "서버1",
       "event": "status_update",
       "status": "running",
@@ -279,77 +349,7 @@
       "status": "idle",
       "task": "claude 완료: latest_report.md 저장 완료 — 발전 CHP2기 월 5,75",
       "ts": "2026-04-26 14:30:55"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (14:29)",
-      "ts": "2026-04-26 14:29:37"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 폐사기록 DB 조회 완료 — 2026-04-26 총 10두 폐사(이유자돈",
-      "ts": "2026-04-26 14:29:37"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (14:27)",
-      "ts": "2026-04-26 14:27:05"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: D-7 긴급결제 4건(롯데렌탈 D-0, 분뇨처리/4대보험/정액 D-4) ",
-      "ts": "2026-04-26 14:24:00"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (14:21)",
-      "ts": "2026-04-26 14:21:08"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: latest_report.md 저장 완료 — 발전 월 5,757만원(SM",
-      "ts": "2026-04-26 14:21:08"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (14:19)",
-      "ts": "2026-04-26 14:19:29"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 폐사기록DB 조회 완료(7건/10두). latest_report.md 갱",
-      "ts": "2026-04-26 14:19:29"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (14:17)",
-      "ts": "2026-04-26 14:17:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: latest_report.md 갱신 완료. D-0 롯데렌탈 105만, D",
-      "ts": "2026-04-26 14:13:14"
     }
   ],
-  "_synced": "2026-04-26 15:41:01"
+  "_synced": "2026-04-26 15:51:01"
 }
