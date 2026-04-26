@@ -4,6 +4,48 @@
       "agent": "서버4",
       "event": "status_update",
       "status": "running",
+      "task": "원격 claude 실행 중 (15:20)",
+      "ts": "2026-04-26 15:20:29"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: latest_report.md 저장 완료 — 발전 CHP 2기 월 5,7",
+      "ts": "2026-04-26 15:20:29"
+    },
+    {
+      "agent": "서버2",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:18)",
+      "ts": "2026-04-26 15:18:54"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: 폐사기록 조회 완료 — 오늘 총 10두 폐사(이유자돈5, 비육후기4, 비",
+      "ts": "2026-04-26 15:18:54"
+    },
+    {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (15:17)",
+      "ts": "2026-04-26 15:17:01"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: latest_report.md 저장 완료. D-7 긴급결제 4건(총 3,",
+      "ts": "2026-04-26 15:13:24"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "running",
       "task": "원격 claude 실행 중 (15:11)",
       "ts": "2026-04-26 15:11:11"
     },
@@ -307,49 +349,7 @@
       "status": "idle",
       "task": "claude 완료: latest_report.md 저장 완료. 발전수익 월 5,757만원(S",
       "ts": "2026-04-26 14:01:01"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (13:59)",
-      "ts": "2026-04-26 13:59:43"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 노션 폐사기록 DB 조회 완료 → 오늘(4/26) 총 폐사 10두(전일 ",
-      "ts": "2026-04-26 13:59:43"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (13:57)",
-      "ts": "2026-04-26 13:57:01"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: D-7 긴급결제 4건(3,020만원) — 오늘 롯데렌탈 105만 자동출금",
-      "ts": "2026-04-26 13:52:59"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (13:50)",
-      "ts": "2026-04-26 13:50:14"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: latest_report.md 저장 완료 — 발전 SMP 119.47원(",
-      "ts": "2026-04-26 13:50:14"
     }
   ],
-  "_synced": "2026-04-26 15:11:01"
+  "_synced": "2026-04-26 15:21:01"
 }
