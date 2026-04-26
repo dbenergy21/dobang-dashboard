@@ -1,6 +1,20 @@
 {
   "logs": [
     {
+      "agent": "서버1",
+      "event": "status_update",
+      "status": "running",
+      "task": "원격 claude 실행 중 (16:57)",
+      "ts": "2026-04-26 16:57:05"
+    },
+    {
+      "agent": "서버4",
+      "event": "status_update",
+      "status": "idle",
+      "task": "claude 완료: latest_report.md 저장 완료. D-7 긴급결제 4건(롯데렌탈",
+      "ts": "2026-04-26 16:53:41"
+    },
+    {
       "agent": "서버4",
       "event": "status_update",
       "status": "running",
@@ -335,21 +349,7 @@
       "status": "idle",
       "task": "claude 완료: latest_report.md 저장 완료. D-7 긴급결제 4건(30,2",
       "ts": "2026-04-26 15:32:27"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (15:30)",
-      "ts": "2026-04-26 15:30:27"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: latest_report.md 저장 완료 — 발전 월 5,757만원(SM",
-      "ts": "2026-04-26 15:30:27"
     }
   ],
-  "_synced": "2026-04-26 16:51:02"
+  "_synced": "2026-04-26 17:01:06"
 }
