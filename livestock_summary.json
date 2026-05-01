@@ -1,6 +1,6 @@
 {
   "analysis_file": "verified_april_records.json",
-  "analysis_updated": "05/02 07:20",
+  "analysis_updated": "05/02 08:20",
   "barns": [
     {
       "deaths": 5,
@@ -35,20 +35,15 @@
       "name": "A3.2"
     }
   ],
-  "death_causes": [
-    {
-      "cause": "원인미상",
-      "count": 2
-    }
-  ],
+  "death_causes": [],
   "death_summary": "4/21 이후 검증 폐사: 24두",
   "month_ship": 247,
   "month_weaning": 459,
   "psy": "집계중",
   "target_pigs": 5200,
   "today_death": 0,
-  "total_pigs": 5076,
-  "updated": "07:20",
+  "total_pigs": 5064,
+  "updated": "08:20",
   "verified_patch": "2026-04-21 이후 대표 확인 기록 반영",
   "week_death": 24,
   "week_deaths": [
@@ -85,5 +80,5 @@
       "date": "04-30"
     }
   ],
-  "_synced": "2026-05-02 07:20:32"
+  "_synced": "2026-05-02 08:20:32"
 }
