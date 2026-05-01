@@ -1,38 +1,38 @@
 {
-  "analysis_file": "2026-04-20 폐사분석.md",
-  "analysis_updated": "04/26 22:07",
+  "analysis_file": "verified_april_records.json",
+  "analysis_updated": "05/01 18:43",
   "barns": [
     {
       "deaths": 5,
-      "name": "자돈."
+      "name": "B4.7"
     },
     {
-      "deaths": 3,
-      "name": "B4.1..................1"
-    },
-    {
-      "deaths": 3,
-      "name": "B4.3................1"
+      "deaths": 5,
+      "name": "인큐4.2"
     },
     {
       "deaths": 2,
-      "name": "인큐.2...........2"
+      "name": "돈궁1.2"
     },
     {
       "deaths": 2,
-      "name": "B4.7................1"
-    },
-    {
-      "deaths": 2,
-      "name": "B4"
-    },
-    {
-      "deaths": 2,
-      "name": "B4.8............1"
+      "name": "인큐3.2"
     },
     {
       "deaths": 1,
-      "name": "B4.6"
+      "name": "3자돈.1"
+    },
+    {
+      "deaths": 1,
+      "name": "3자돈.2"
+    },
+    {
+      "deaths": 1,
+      "name": "3자돈.4"
+    },
+    {
+      "deaths": 1,
+      "name": "A3.2"
     }
   ],
   "death_causes": [
@@ -41,44 +41,49 @@
       "count": 2
     }
   ],
-  "death_summary": "30일 총 폐사: **84두** (일평균 2.8두)",
-  "month_ship": 0,
-  "month_weaning": 0,
+  "death_summary": "4/21 이후 검증 폐사: 24두",
+  "month_ship": 247,
+  "month_weaning": 459,
   "psy": "집계중",
   "target_pigs": 5200,
-  "today_death": 3,
+  "today_death": 4,
   "total_pigs": 5076,
-  "updated": "18:20",
-  "week_death": 29,
+  "updated": "18:42",
+  "verified_patch": "2026-04-21 이후 대표 확인 기록 반영",
+  "week_death": 24,
   "week_deaths": [
     {
+      "count": 0,
+      "date": "04-22"
+    },
+    {
+      "count": 0,
+      "date": "04-23"
+    },
+    {
+      "count": 0,
+      "date": "04-24"
+    },
+    {
       "count": 3,
-      "date": "04-12"
+      "date": "04-25"
     },
     {
-      "count": 7,
-      "date": "04-13"
+      "count": 10,
+      "date": "04-26"
     },
     {
-      "count": 8,
-      "date": "04-14"
+      "count": 9,
+      "date": "04-27"
     },
     {
-      "count": 5,
-      "date": "04-15"
+      "count": 0,
+      "date": "04-28"
     },
     {
-      "count": 5,
-      "date": "04-17"
-    },
-    {
-      "count": 4,
-      "date": "04-18"
-    },
-    {
-      "count": 6,
-      "date": "04-19"
+      "count": 2,
+      "date": "04-30"
     }
   ],
-  "_synced": "2026-05-01 18:20:33"
+  "_synced": "2026-05-01 18:42:48"
 }
