@@ -5,6 +5,20 @@
       "event": "status_update",
       "status": "idle",
       "task": "서버5 SCADA 수집 완료 (2026-05-01)",
+      "ts": "2026-05-01 16:10:04"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "running",
+      "task": "서버5 SCADA 데이터 수집 중 (16:10)",
+      "ts": "2026-05-01 16:10:02"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "idle",
+      "task": "서버5 SCADA 수집 완료 (2026-05-01)",
       "ts": "2026-05-01 15:10:03"
     },
     {
@@ -335,21 +349,7 @@
       "status": "idle",
       "task": "claude 완료: 폐사기록 DB 실측 완료 — 오늘(4/26) 총 10두 폐사(전일 6두 ",
       "ts": "2026-04-26 17:49:36"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (17:47)",
-      "ts": "2026-04-26 17:47:01"
-    },
-    {
-      "agent": "서버5",
-      "event": "status_update",
-      "status": "idle",
-      "task": "서버5 SCADA 수집 완료 (2026-04-26)",
-      "ts": "2026-04-26 17:43:20"
     }
   ],
-  "_synced": "2026-05-01 15:20:27"
+  "_synced": "2026-05-01 16:20:25"
 }
