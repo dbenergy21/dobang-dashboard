@@ -1,6 +1,6 @@
 {
   "analysis_file": "verified_april_records.json",
-  "analysis_updated": "05/02 03:20",
+  "analysis_updated": "05/02 04:20",
   "barns": [
     {
       "deaths": 5,
@@ -48,7 +48,7 @@
   "target_pigs": 5200,
   "today_death": 0,
   "total_pigs": 5076,
-  "updated": "03:20",
+  "updated": "04:20",
   "verified_patch": "2026-04-21 이후 대표 확인 기록 반영",
   "week_death": 24,
   "week_deaths": [
@@ -85,5 +85,5 @@
       "date": "04-30"
     }
   ],
-  "_synced": "2026-05-02 03:20:33"
+  "_synced": "2026-05-02 04:20:31"
 }
