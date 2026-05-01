@@ -5,6 +5,20 @@
       "event": "status_update",
       "status": "idle",
       "task": "서버5 SCADA 수집 완료 (2026-05-02)",
+      "ts": "2026-05-02 06:10:02"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "running",
+      "task": "서버5 SCADA 데이터 수집 중 (06:10)",
+      "ts": "2026-05-02 06:10:01"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "idle",
+      "task": "서버5 SCADA 수집 완료 (2026-05-02)",
       "ts": "2026-05-02 05:10:02"
     },
     {
@@ -335,21 +349,7 @@
       "status": "running",
       "task": "원격 claude 실행 중 (18:19)",
       "ts": "2026-04-26 18:19:19"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "idle",
-      "task": "claude 완료: 폐사기록DB 조회→오늘 총 10두(이유자돈5+비육초기1+비육후기4), 전",
-      "ts": "2026-04-26 18:19:19"
-    },
-    {
-      "agent": "서버1",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (18:17)",
-      "ts": "2026-04-26 18:17:01"
     }
   ],
-  "_synced": "2026-05-02 05:20:34"
+  "_synced": "2026-05-02 06:20:36"
 }
