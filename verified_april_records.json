@@ -1,0 +1,151 @@
+{
+  "updated": "18:41",
+  "source": "verified_april_records.py",
+  "period": "2026-04-21..2026-04-30",
+  "verified_death_total": 24,
+  "verified_weaning_piglets": 459,
+  "verified_weaning_sows": 38,
+  "verified_shipment_total": 247,
+  "verified_fattening_shipment_total": 242,
+  "verified_sow_cull_total": 5,
+  "death_by_date": [
+    {
+      "date": "2026-04-22",
+      "count": 0
+    },
+    {
+      "date": "2026-04-23",
+      "count": 0
+    },
+    {
+      "date": "2026-04-24",
+      "count": 0
+    },
+    {
+      "date": "2026-04-25",
+      "count": 3
+    },
+    {
+      "date": "2026-04-26",
+      "count": 10
+    },
+    {
+      "date": "2026-04-27",
+      "count": 9
+    },
+    {
+      "date": "2026-04-28",
+      "count": 0
+    },
+    {
+      "date": "2026-04-30",
+      "count": 2
+    }
+  ],
+  "death_by_location": [
+    {
+      "name": "B4.7",
+      "deaths": 5
+    },
+    {
+      "name": "인큐4.2",
+      "deaths": 5
+    },
+    {
+      "name": "돈궁1.2",
+      "deaths": 2
+    },
+    {
+      "name": "인큐3.2",
+      "deaths": 2
+    },
+    {
+      "name": "3자돈.1",
+      "deaths": 1
+    },
+    {
+      "name": "3자돈.2",
+      "deaths": 1
+    },
+    {
+      "name": "3자돈.4",
+      "deaths": 1
+    },
+    {
+      "name": "A3.2",
+      "deaths": 1
+    },
+    {
+      "name": "A4.1",
+      "deaths": 1
+    },
+    {
+      "name": "B4.1",
+      "deaths": 1
+    },
+    {
+      "name": "B4.10",
+      "deaths": 1
+    },
+    {
+      "name": "B4.8",
+      "deaths": 1
+    },
+    {
+      "name": "돈궁",
+      "deaths": 1
+    },
+    {
+      "name": "돈궁2.1",
+      "deaths": 1
+    }
+  ],
+  "shipment_by_date": [
+    {
+      "date": "2026-04-21",
+      "count": 40
+    },
+    {
+      "date": "2026-04-23",
+      "count": 62
+    },
+    {
+      "date": "2026-04-26",
+      "count": 40
+    },
+    {
+      "date": "2026-04-28",
+      "count": 40
+    },
+    {
+      "date": "2026-04-29",
+      "count": 65
+    }
+  ],
+  "weaning_records": [
+    {
+      "date": "2026-04-20",
+      "barn": "5분만사",
+      "sows": 18,
+      "piglets": 220,
+      "source_note": "가장 근처일 실제 이유"
+    },
+    {
+      "date": "2026-04-27",
+      "barn": "1분만사",
+      "sows": 20,
+      "piglets": 239,
+      "source_note": "실제 이유"
+    }
+  ],
+  "rejected_auto_weaning": [
+    {
+      "date": "2026-04-23",
+      "reason": "이유 없음. CHECK wean 2두는 오분류"
+    },
+    {
+      "date": "2026-04-29",
+      "reason": "모돈 도태 5두. 이유 5두가 아님"
+    }
+  ]
+}
