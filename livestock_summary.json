@@ -1,17 +1,55 @@
 {
   "analysis_file": "2026-04-20 폐사분석.md",
-  "analysis_updated": "04/20 06:32",
-  "barns": [],
-  "death_causes": [],
+  "analysis_updated": "04/26 22:07",
+  "barns": [
+    {
+      "deaths": 3,
+      "name": "자돈."
+    },
+    {
+      "deaths": 3,
+      "name": "B4.1..................1"
+    },
+    {
+      "deaths": 3,
+      "name": "B4.3................1"
+    },
+    {
+      "deaths": 2,
+      "name": "인큐.2...........2"
+    },
+    {
+      "deaths": 2,
+      "name": "B4.7................1"
+    },
+    {
+      "deaths": 1,
+      "name": "B4.6"
+    },
+    {
+      "deaths": 1,
+      "name": "B1.4"
+    },
+    {
+      "deaths": 1,
+      "name": "8자돈.3"
+    }
+  ],
+  "death_causes": [
+    {
+      "cause": "원인미상",
+      "count": 2
+    }
+  ],
   "death_summary": "30일 총 폐사: **84두** (일평균 2.8두)",
-  "month_ship": 415,
-  "month_weaning": 494,
+  "month_ship": 0,
+  "month_weaning": 0,
   "psy": "집계중",
   "target_pigs": 5200,
-  "today_death": 8,
-  "total_pigs": 5214,
-  "updated": "18:31",
-  "week_death": 38,
+  "today_death": 3,
+  "total_pigs": 4978,
+  "updated": "14:14",
+  "week_death": 29,
   "week_deaths": [
     {
       "count": 3,
@@ -42,5 +80,5 @@
       "date": "04-19"
     }
   ],
-  "_synced": "2026-04-26 18:31:01"
+  "_synced": "2026-05-01 14:13:55"
 }
