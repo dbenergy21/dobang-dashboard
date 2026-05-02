@@ -1,7 +1,7 @@
 {
   "base_date": "2026-04-21",
   "current_total": 5064,
-  "date": "2026-05-02",
+  "date": "2026-05-03",
   "death_total": 100,
   "delta": 0,
   "sections": {
@@ -23,6 +23,6 @@
   },
   "ship_total": 88,
   "target_pigs": 5200,
-  "updated": "23:20",
-  "_synced": "2026-05-02 23:20:33"
+  "updated": "00:20",
+  "_synced": "2026-05-03 00:20:31"
 }
