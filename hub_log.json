@@ -5,6 +5,20 @@
       "event": "status_update",
       "status": "idle",
       "task": "서버5 SCADA 수집 완료 (2026-05-03)",
+      "ts": "2026-05-03 02:10:03"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "running",
+      "task": "서버5 SCADA 데이터 수집 중 (02:10)",
+      "ts": "2026-05-03 02:10:01"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "idle",
+      "task": "서버5 SCADA 수집 완료 (2026-05-03)",
       "ts": "2026-05-03 01:10:02"
     },
     {
@@ -335,21 +349,7 @@
       "status": "idle",
       "task": "서버5 SCADA 수집 완료 (2026-05-02)",
       "ts": "2026-05-02 08:10:02"
-    },
-    {
-      "agent": "서버5",
-      "event": "status_update",
-      "status": "running",
-      "task": "서버5 SCADA 데이터 수집 중 (08:10)",
-      "ts": "2026-05-02 08:10:02"
-    },
-    {
-      "agent": "서버5",
-      "event": "status_update",
-      "status": "idle",
-      "task": "서버5 SCADA 수집 완료 (2026-05-02)",
-      "ts": "2026-05-02 07:10:03"
     }
   ],
-  "_synced": "2026-05-03 01:20:30"
+  "_synced": "2026-05-03 02:20:30"
 }
