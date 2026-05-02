@@ -1,7 +1,7 @@
 {
-  "analysis": "# 도방에너지 수익누수 1차 보드\n\n- 생성시각: 2026-05-02T20:13:21\n- 원천: C:\\dobang-server\\data\\company_os\\scada_vault_snapshot\\latest.json\n- 주의: 현재 금액은 실제 정산단가가 아니라 보수적 placeholder 기준입니다.\n\n## 현재 수익 연결 요약\n- 최신 총 발전출력: 239.0 kW\n- 샘플 평균 발전출력: 247.7 kW\n- 금일 누적 발전량 후보: 3.04 MWh\n- 금일 발전가치 후보: 668,800원\n- 기대 출력 기준: 230 kW\n- 기대 대비 출력 부족: 0 kW\n- 시간당 잠재 손실 후보: 0원\n- 최대 DP: 70.1 m3\n- 샘플 플레어 시간 합계: 0분\n\n## 경보/주의\n- DP 과다: 70.1 / 처리 병목/환경 리스크/가동 제한 가능성\n\n## 발견된 SCADA 알림\n- RETURN_TEMP_WARN value=39.2 sent_dm=True (2026-05-02T20:00:4",
+  "analysis": "# 도방에너지 수익누수 1차 보드\n\n- 생성시각: 2026-05-02T21:17:50\n- 원천: C:\\dobang-server\\data\\company_os\\scada_vault_snapshot\\latest.json\n- 주의: 현재 금액은 실제 정산단가가 아니라 보수적 placeholder 기준입니다.\n\n## 현재 수익 연결 요약\n- 최신 총 발전출력: 239.0 kW\n- 샘플 평균 발전출력: 247.7 kW\n- 금일 누적 발전량 후보: 3.04 MWh\n- 금일 발전가치 후보: 668,800원\n- 기대 출력 기준: 230 kW\n- 기대 대비 출력 부족: 0 kW\n- 시간당 잠재 손실 후보: 0원\n- 최대 DP: 70.1 m3\n- 샘플 플레어 시간 합계: 0분\n\n## 경보/주의\n- DP 과다: 70.1 / 처리 병목/환경 리스크/가동 제한 가능성\n\n## 발견된 SCADA 알림\n- RETURN_TEMP_WARN value=39.2 sent_dm=True (2026-05-02T20:00:4",
   "analysis_file": "2026-05-02_도방에너지_수익누수_1차보드.md",
-  "analysis_updated": "05/02 20:13",
+  "analysis_updated": "05/02 21:17",
   "history": [],
   "maintenance": [],
   "note": "---\ntitle: 발전실적요약\ntype: data\ndate: 2026-04-13\ntags: [도방에너지, 서버5, SCADA]\n---\n\n# 발전실적 관리대장 요약\n\n> 출처: 월간_발전실적관리대장.xlsx\n\n## 2026년 1월 발전실적 관리대장(발전기2)\n  일수: 32일\n  총 가스사용: 82,171 m3\n  총 송전량: 186,528 kWh\n  일평균: 5,829 kWh/일\n\n## 2026년 1월 발전실적 관리대장(발전기1)\n  일수: 32일\n  총 가스사용: 69,000 m3\n  총 송전량: 156,630 kWh\n  일평균: 4,895 kWh/일\n\n## 2025년 12월 발전실적 관리대장(발전기2)  \n  일수: 32일\n  총 가스사용: 77,567 m3\n  총 송전량: 176,076 kWh\n  일",
@@ -19,6 +19,6 @@
   "scada_updated": "04/14 19:06",
   "slaughter_price": 0,
   "smp": 1.0,
-  "updated": "20:21",
-  "_synced": "2026-05-02 20:20:45"
+  "updated": "21:20",
+  "_synced": "2026-05-02 21:20:31"
 }
