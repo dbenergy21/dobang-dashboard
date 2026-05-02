@@ -5,6 +5,20 @@
       "event": "status_update",
       "status": "idle",
       "task": "서버5 SCADA 수집 완료 (2026-05-03)",
+      "ts": "2026-05-03 05:10:02"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "running",
+      "task": "서버5 SCADA 데이터 수집 중 (05:10)",
+      "ts": "2026-05-03 05:10:01"
+    },
+    {
+      "agent": "서버5",
+      "event": "status_update",
+      "status": "idle",
+      "task": "서버5 SCADA 수집 완료 (2026-05-03)",
       "ts": "2026-05-03 04:10:02"
     },
     {
@@ -335,21 +349,7 @@
       "status": "idle",
       "task": "claude 완료: 완료(exit=1)",
       "ts": "2026-05-02 08:51:53"
-    },
-    {
-      "agent": "서버4",
-      "event": "status_update",
-      "status": "running",
-      "task": "원격 claude 실행 중 (08:51)",
-      "ts": "2026-05-02 08:51:46"
-    },
-    {
-      "agent": "서버2",
-      "event": "status_update",
-      "status": "error",
-      "task": "SSH 접속 실패: [Errno None] Unable to connect to port 22 on 192.168.0.12",
-      "ts": "2026-05-02 08:51:46"
     }
   ],
-  "_synced": "2026-05-03 04:20:34"
+  "_synced": "2026-05-03 05:20:34"
 }
