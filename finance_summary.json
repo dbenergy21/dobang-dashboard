@@ -1,6 +1,13 @@
 {
   "payments": [
     {
+      "amount": "5.0백만원",
+      "d_day": 0,
+      "name": "대구동양화학(도방에너지)",
+      "urgent": true,
+      "warn": true
+    },
+    {
       "amount": "0.6백만원",
       "d_day": 1,
       "name": "내집담보대출(도방육종)",
@@ -97,13 +104,6 @@
       "name": "도방에너지 화재보험(도방에너지)",
       "urgent": false,
       "warn": false
-    },
-    {
-      "amount": "1.1백만원",
-      "d_day": 22,
-      "name": "롯데렌탈(도방육종)",
-      "urgent": false,
-      "warn": false
     }
   ],
   "tax_count": 7,
@@ -144,5 +144,5 @@
       "name": "종합소득세 신고"
     }
   ],
-  "_synced": "2026-05-04 21:20:32"
+  "_synced": "2026-05-04 22:20:35"
 }
