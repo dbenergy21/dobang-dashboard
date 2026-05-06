@@ -2,105 +2,105 @@
   "payments": [
     {
       "amount": "0.3백만원",
-      "d_day": 4,
+      "d_day": 3,
       "name": "임신진단(도방육종)",
-      "urgent": false,
+      "urgent": true,
       "warn": true
     },
     {
       "amount": "3.0백만원",
-      "d_day": 4,
+      "d_day": 3,
       "name": "출하차운송비용(도방육종)",
-      "urgent": false,
+      "urgent": true,
       "warn": true
     },
     {
       "amount": "8.0백만원",
-      "d_day": 4,
+      "d_day": 3,
       "name": "전기요금(도방육종)",
-      "urgent": false,
+      "urgent": true,
       "warn": true
     },
     {
       "amount": "2.0백만원",
-      "d_day": 4,
+      "d_day": 3,
       "name": "카드(도방육종)",
-      "urgent": false,
+      "urgent": true,
       "warn": true
     },
     {
       "amount": "0.3백만원",
-      "d_day": 10,
+      "d_day": 9,
       "name": "산림조합(도방육종)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "4.9백만원",
-      "d_day": 11,
+      "d_day": 10,
       "name": "경남은행 가음정 대출 ①(도방에너지)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "8.6백만원",
-      "d_day": 12,
+      "d_day": 11,
       "name": "경남은행 가음정 대출 ②(도방에너지)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "1.0백만원",
-      "d_day": 12,
+      "d_day": 11,
       "name": "도방에너지 급여(도방에너지)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "16.5백만원",
-      "d_day": 14,
+      "d_day": 13,
       "name": "BNK캐피탈 이자(도방육종)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "2.0백만원",
-      "d_day": 14,
+      "d_day": 13,
       "name": "현대철물(도방육종)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "28.0백만원",
-      "d_day": 14,
+      "d_day": 13,
       "name": "도방육종 급여(도방육종)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "3.1백만원",
-      "d_day": 14,
+      "d_day": 13,
       "name": "도방에너지 경영보험(도방에너지)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "5.0백만원",
-      "d_day": 19,
+      "d_day": 18,
       "name": "도방에너지 화재보험(도방에너지)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "1.1백만원",
-      "d_day": 20,
+      "d_day": 19,
       "name": "롯데렌탈(도방육종)",
       "urgent": false,
       "warn": false
     },
     {
       "amount": "24.1백만원",
-      "d_day": 24,
+      "d_day": 23,
       "name": "분뇨처리비용(도방에너지)",
       "urgent": false,
       "warn": false
@@ -109,17 +109,17 @@
   "tax_count": 7,
   "tax_items": [
     {
-      "d_day": 4,
+      "d_day": 3,
       "desc": "",
       "name": "원천세 신고 (4월분)"
     },
     {
-      "d_day": 80,
+      "d_day": 79,
       "desc": "",
       "name": "부가세 신고 (1기)"
     },
     {
-      "d_day": 80,
+      "d_day": 79,
       "desc": "",
       "name": "부가세 신고 (1기)"
     },
@@ -134,15 +134,15 @@
       "name": "급여 확정일 (4월)"
     },
     {
-      "d_day": 329,
+      "d_day": 328,
       "desc": "",
       "name": "법인세 신고"
     },
     {
-      "d_day": 390,
+      "d_day": 389,
       "desc": "",
       "name": "종합소득세 신고"
     }
   ],
-  "_synced": "2026-05-06 23:20:40"
+  "_synced": "2026-05-07 00:20:33"
 }
