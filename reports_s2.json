@@ -2,5 +2,5 @@
   "content": "# 도방에너지 수익누수 1차 보드\n\n- 생성시각: 2026-05-02T21:46:29\n- 원천: C:\\dobang-server\\data\\company_os\\scada_vault_snapshot\\latest.json\n- 주의: 현재 금액은 실제 정산단가가 아니라 보수적 placeholder 기준입니다.\n\n## 현재 수익 연결 요약\n- 최신 총 발전출력: 239.0 kW\n- 샘플 평균 발전출력: 247.7 kW\n- 금일 누적 발전량 후보: 3.04 MWh\n- 금일 발전가치 후보: 668,800원\n- 기대 출력 기준: 230 kW\n- 기대 대비 출력 부족: 0 kW\n- 시간당 잠재 손실 후보: 0원\n- 최대 DP: 70.1 m3\n- 샘플 플레어 시간 합계: 0분\n\n## 경보/주의\n- DP 과다: 70.1 / 처리 병목/환경 리스크/가동 제한 가능성\n\n## 발견된 SCADA 알림\n- RETURN_TEMP_WARN value=39.2 sent_dm=True (2026-05-02T20:00:48)\n- RETURN_TEMP_WARN value=49.5 sent_dm=True (2026-05-02T18:30:47)\n- RETURN_TEMP_WARN value=48.87 sent_dm=True (2026-05-02T17:00:47)\n- RETURN_TEMP_WARN value=39.2 sent_dm=True (2026-05-02T14:00:48)\n- DP_ALERT value=70.07 sent_dm=True (2026-05-02T11:00:51)\n\n## 다음 질문\n1. 현재 SMP/REC 실제 단가를 넣어 placeholder 손실액을 실제 손실액으로 바꿀 것\n2. CHP 기대 출력 기준을 계절/설비상태별로 조정할 것\n3. DP 과다 경보가 발전량 저하 또는 처리량 병목과 연결되는지 하루 단위로 추적할 것\n4. 플레어 시간이 0이 아닌 날은 추정 kWh/REC 손실로 환산할 것\n",
   "name": "2026-05-02_도방에너지_수익누수_1차보드.md",
   "updated": "05/02 21:46",
-  "_synced": "2026-05-07 17:20:34"
+  "_synced": "2026-05-07 18:20:34"
 }
