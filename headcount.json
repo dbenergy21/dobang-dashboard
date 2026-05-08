@@ -1,7 +1,7 @@
 {
   "base_date": "2026-04-21",
-  "current_total": 5067,
-  "date": "2026-05-08",
+  "current_total": 5053,
+  "date": "2026-05-09",
   "death_total": 100,
   "delta": 0,
   "sections": {
@@ -9,10 +9,10 @@
       "count": 2114
     },
     "incu": {
-      "count": 1281
+      "count": 891
     },
     "jadan": {
-      "count": 1124
+      "count": 1500
     },
     "modon": {
       "count": 486
@@ -23,6 +23,6 @@
   },
   "ship_total": 91,
   "target_pigs": 5200,
-  "updated": "23:20",
-  "_synced": "2026-05-08 23:20:34"
+  "updated": "00:20",
+  "_synced": "2026-05-09 00:20:33"
 }
