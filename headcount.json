@@ -1,6 +1,6 @@
 {
   "base_date": "2026-04-21",
-  "current_total": 5053,
+  "current_total": 5065,
   "date": "2026-05-09",
   "death_total": 100,
   "delta": 0,
@@ -9,7 +9,7 @@
       "count": 2114
     },
     "incu": {
-      "count": 891
+      "count": 903
     },
     "jadan": {
       "count": 1500
@@ -23,6 +23,6 @@
   },
   "ship_total": 91,
   "target_pigs": 5200,
-  "updated": "00:20",
-  "_synced": "2026-05-09 00:20:33"
+  "updated": "01:20",
+  "_synced": "2026-05-09 01:20:34"
 }
