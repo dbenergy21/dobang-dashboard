@@ -1,15 +1,15 @@
 {
   "base_date": "2026-04-21",
-  "current_total": 5065,
+  "current_total": 5057,
   "date": "2026-05-10",
   "death_total": 100,
   "delta": 0,
   "sections": {
     "beef": {
-      "count": 2114
+      "count": 2113
     },
     "incu": {
-      "count": 903
+      "count": 901
     },
     "jadan": {
       "count": 1500
@@ -18,11 +18,11 @@
       "count": 486
     },
     "special": {
-      "count": 62
+      "count": 57
     }
   },
   "ship_total": 91,
   "target_pigs": 5200,
-  "updated": "09:20",
-  "_synced": "2026-05-10 09:20:34"
+  "updated": "10:20",
+  "_synced": "2026-05-10 10:20:35"
 }
