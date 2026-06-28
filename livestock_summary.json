@@ -1,38 +1,38 @@
 {
   "analysis_file": "reconciliation_latest.json",
-  "analysis_updated": "06/16 09:05",
+  "analysis_updated": "06/28 08:59",
   "barns": [
     {
-      "deaths": 50,
-      "name": "돈공"
+      "deaths": 78,
+      "name": "돈궁"
     },
     {
-      "deaths": 12,
+      "deaths": 24,
       "name": "B4.7"
     },
     {
-      "deaths": 12,
+      "deaths": 22,
       "name": "B4.8"
     },
     {
-      "deaths": 7,
+      "deaths": 11,
+      "name": "인큐1.2"
+    },
+    {
+      "deaths": 8,
+      "name": "8자돈.4"
+    },
+    {
+      "deaths": 8,
       "name": "인큐2.1"
     },
     {
-      "deaths": 6,
-      "name": "C4.6"
+      "deaths": 7,
+      "name": "B4.6"
     },
     {
-      "deaths": 5,
-      "name": "6자돈.4"
-    },
-    {
-      "deaths": 5,
-      "name": "B4.3"
-    },
-    {
-      "deaths": 4,
-      "name": "돈공1.2"
+      "deaths": 7,
+      "name": "인큐4.1"
     }
   ],
   "death_causes": [
@@ -41,73 +41,73 @@
       "count": 1
     }
   ],
-  "death_summary": "단체방 대조 완료 폐사: 140두",
+  "death_summary": "단체방 대조 완료 폐사: 270두",
   "month_ship": 247,
   "month_weaning": 459,
   "psy": "집계중",
   "target_pigs": 5200,
   "today_death": 0,
   "total_pigs": 4945,
-  "updated": "08:20",
+  "updated": "09:20",
   "verified_patch": "단체방 원문/Notion 재대조 최신 반영",
-  "week_death": 140,
+  "week_death": 270,
   "week_deaths": [
     {
-      "count": 8,
-      "date": "05-10"
+      "count": 4,
+      "date": "06-10"
+    },
+    {
+      "count": 5,
+      "date": "06-12"
+    },
+    {
+      "count": 5,
+      "date": "06-13"
     },
     {
       "count": 4,
-      "date": "05-11"
+      "date": "06-14"
     },
     {
-      "count": 6,
-      "date": "05-13"
+      "count": 7,
+      "date": "06-15"
+    },
+    {
+      "count": 5,
+      "date": "06-17"
+    },
+    {
+      "count": 4,
+      "date": "06-20"
+    },
+    {
+      "count": 12,
+      "date": "06-21"
+    },
+    {
+      "count": 4,
+      "date": "06-22"
     },
     {
       "count": 10,
-      "date": "05-14"
+      "date": "06-23"
     },
     {
       "count": 14,
-      "date": "05-16"
-    },
-    {
-      "count": 8,
-      "date": "05-17"
-    },
-    {
-      "count": 6,
-      "date": "05-18"
-    },
-    {
-      "count": 8,
-      "date": "05-19"
-    },
-    {
-      "count": 10,
-      "date": "05-20"
-    },
-    {
-      "count": 22,
-      "date": "05-30"
-    },
-    {
-      "count": 8,
-      "date": "06-02"
-    },
-    {
-      "count": 3,
-      "date": "06-07"
-    },
-    {
-      "count": 4,
-      "date": "06-08"
+      "date": "06-24"
     },
     {
       "count": 2,
-      "date": "06-12"
+      "date": "06-25"
+    },
+    {
+      "count": 4,
+      "date": "06-26"
+    },
+    {
+      "count": 3,
+      "date": "06-27"
     }
   ],
-  "_synced": "2026-06-28 08:20:16"
+  "_synced": "2026-06-28 09:20:15"
 }

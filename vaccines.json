@@ -1,13 +1,13 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v2",
-  "generated_at": "2026-06-27T13:11:54",
+  "generated_at": "2026-06-28T09:12:31",
   "basis": "current active herd only; old shipped/completed groups are excluded from dashboard attention list",
   "vaccines": [
     {
       "date": "2026-04-30",
       "name": "HE 돈열단독 1차",
       "target": "G17 B2 168두",
-      "d_day": -58,
+      "d_day": -59,
       "gid": "G17",
       "location": "B2",
       "heads": 168,
@@ -21,7 +21,7 @@
       "date": "2026-06-09",
       "name": "FMD 구제역 1차",
       "target": "G26 A1 148두",
-      "d_day": -18,
+      "d_day": -19,
       "gid": "G26",
       "location": "A1",
       "heads": 148,
@@ -35,7 +35,7 @@
       "date": "2026-06-23",
       "name": "HE 돈열단독 1차",
       "target": "G26 A1 148두",
-      "d_day": -4,
+      "d_day": -5,
       "gid": "G26",
       "location": "A1",
       "heads": 148,
@@ -407,7 +407,7 @@
       "date": "2026-06-20",
       "name": "FMD",
       "target": "nursery pen 1",
-      "d_day": -7,
+      "d_day": -8,
       "status": "location_only",
       "status_label": "위치기록",
       "reason": "2026-06-02 msg 1294 moved 1 nursery pigs to A1; no reliable later movement into 1 nursery found in reviewed chat, so do not attach to group 73.",
@@ -417,7 +417,7 @@
       "date": "2026-06-20",
       "name": "Apache",
       "target": "nursery pen 2",
-      "d_day": -7,
+      "d_day": -8,
       "status": "location_only",
       "status_label": "위치기록",
       "reason": "2026-05-28 msg 1220 moved 2 incubator pigs into 2 nursery; current first-dose row 66:apache1 was already done on 2026-05-07, so do not overwrite it.",
@@ -437,5 +437,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-06-28 08:20:16"
+  "_synced": "2026-06-28 09:20:15"
 }
