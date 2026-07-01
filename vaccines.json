@@ -1,13 +1,13 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-06-28T14:34:19",
+  "generated_at": "2026-07-01T23:46:17",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
       "date": "2026-04-30",
       "name": "HE 돈열단독 1차",
       "target": "G17 B2비육 168두",
-      "d_day": -59,
+      "d_day": -62,
       "gid": "G17",
       "location": "B2비육",
       "heads": 168,
@@ -20,11 +20,11 @@
     {
       "date": "2026-06-09",
       "name": "FMD 구제역 1차",
-      "target": "G26 A1비육 148두",
-      "d_day": -19,
+      "target": "G26 1자돈 183두",
+      "d_day": -22,
       "gid": "G26",
-      "location": "A1비육",
-      "heads": 148,
+      "location": "1자돈",
+      "heads": 183,
       "status": "overdue",
       "status_label": "지연",
       "actual": null,
@@ -34,11 +34,11 @@
     {
       "date": "2026-06-23",
       "name": "HE 돈열단독 1차",
-      "target": "G26 A1비육 148두",
-      "d_day": -5,
+      "target": "G26 1자돈 183두",
+      "d_day": -8,
       "gid": "G26",
-      "location": "A1비육",
-      "heads": 148,
+      "location": "1자돈",
+      "heads": 183,
       "status": "overdue",
       "status_label": "지연",
       "actual": null,
@@ -170,11 +170,11 @@
     {
       "date": "2026-06-02",
       "name": "아파치 1차",
-      "target": "G26 A1비육 148두",
+      "target": "G26 1자돈 183두",
       "d_day": 999,
       "gid": "G26",
-      "location": "A1비육",
-      "heads": 148,
+      "location": "1자돈",
+      "heads": 183,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-06-13",
@@ -1030,14 +1030,6 @@
           "days_left": null
         }
       }
-    },
-    {
-      "gid": "G27",
-      "location": "출하완료",
-      "heads": 0,
-      "stage": "완료",
-      "evidence": "",
-      "vaccines": {}
     }
   ],
   "additional_vaccine_events": [
@@ -1111,7 +1103,7 @@
       "date": "2026-06-20",
       "name": "FMD",
       "target": "nursery pen 1",
-      "d_day": -8,
+      "d_day": -11,
       "status": "location_only",
       "status_label": "위치기록",
       "reason": "2026-06-02 msg 1294 moved 1 nursery pigs to A1; no reliable later movement into 1 nursery found in reviewed chat, so do not attach to group 73.",
@@ -1121,7 +1113,7 @@
       "date": "2026-06-20",
       "name": "Apache",
       "target": "nursery pen 2",
-      "d_day": -8,
+      "d_day": -11,
       "status": "location_only",
       "status_label": "위치기록",
       "reason": "2026-05-28 msg 1220 moved 2 incubator pigs into 2 nursery; current first-dose row 66:apache1 was already done on 2026-05-07, so do not overwrite it.",
@@ -1129,12 +1121,12 @@
     }
   ],
   "summary": {
-    "active_groups": 24,
-    "completed_or_empty_groups_excluded": 12,
+    "active_groups": 25,
+    "completed_or_empty_groups_excluded": 11,
     "attention_count": 3,
     "location_only_count": 2,
     "done_recent_count": 46,
-    "completed_hidden_count": 12,
+    "completed_hidden_count": 11,
     "additional_event_count": 4
   },
   "sources": {
@@ -1142,5 +1134,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-07-01 23:20:16"
+  "_synced": "2026-07-02 00:20:15"
 }
