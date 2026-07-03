@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-07-03T12:38:38",
+  "generated_at": "2026-07-03T14:09:12",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -198,11 +198,11 @@
     {
       "date": "2026-06-05",
       "name": "HE 돈열단독 1차",
-      "target": "G23 6자돈 198두",
+      "target": "G23 C1비육 180두",
       "d_day": 999,
       "gid": "G23",
-      "location": "6자돈",
-      "heads": 198,
+      "location": "C1비육",
+      "heads": 180,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-06-13",
@@ -240,11 +240,11 @@
     {
       "date": "2026-05-22",
       "name": "FMD 구제역 1차",
-      "target": "G23 6자돈 198두",
+      "target": "G23 C1비육 180두",
       "d_day": 999,
       "gid": "G23",
-      "location": "6자돈",
-      "heads": 198,
+      "location": "C1비육",
+      "heads": 180,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-06-06",
@@ -296,11 +296,11 @@
     {
       "date": "2026-05-15",
       "name": "아파치 1차",
-      "target": "G23 6자돈 198두",
+      "target": "G23 C1비육 180두",
       "d_day": 999,
       "gid": "G23",
-      "location": "6자돈",
-      "heads": 198,
+      "location": "C1비육",
+      "heads": 180,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-06-01",
@@ -1134,5 +1134,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-07-03 13:20:17"
+  "_synced": "2026-07-03 14:20:16"
 }
