@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-07-03T14:09:12",
+  "generated_at": "2026-07-03T17:54:32",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -1121,7 +1121,7 @@
     }
   ],
   "summary": {
-    "active_groups": 25,
+    "active_groups": 26,
     "completed_or_empty_groups_excluded": 11,
     "attention_count": 3,
     "location_only_count": 2,
@@ -1134,5 +1134,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-07-03 17:20:14"
+  "_synced": "2026-07-03 18:20:14"
 }
