@@ -1,11 +1,11 @@
 {
   "base_date": "2026-04-21",
   "base_total": 5072,
-  "current_total": 4971,
+  "current_total": 4967,
   "date": "2026-07-11",
-  "death_record_count": 324,
-  "death_total": 441,
-  "delta": -101,
+  "death_record_count": 328,
+  "death_total": 448,
+  "delta": -105,
   "sections": {
     "beef": {
       "count": 2266
@@ -26,14 +26,14 @@
       "count": 0
     },
     "special": {
-      "count": 10
+      "count": 6
     }
   },
   "ship_record_count": 41,
   "ship_total": 1514,
   "target_pigs": 5200,
-  "updated": "21:20",
+  "updated": "22:20",
   "window_end": "2026-07-11",
   "window_start": "2026-04-22",
-  "_synced": "2026-07-11 21:20:16"
+  "_synced": "2026-07-11 22:20:15"
 }
