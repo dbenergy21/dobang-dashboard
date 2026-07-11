@@ -1,13 +1,13 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-07-11T07:40:05",
+  "generated_at": "2026-07-12T07:40:03",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
       "date": "2026-04-30",
       "name": "HE 돈열단독 1차",
       "target": "G17 B2비육 164두",
-      "d_day": -72,
+      "d_day": -73,
       "gid": "G17",
       "location": "B2비육",
       "heads": 164,
@@ -15,34 +15,6 @@
       "status_label": "지연",
       "actual": null,
       "scheduled": "2026-04-30",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-06-09",
-      "name": "FMD 구제역 1차",
-      "target": "G26 1자돈 182두",
-      "d_day": -32,
-      "gid": "G26",
-      "location": "1자돈",
-      "heads": 182,
-      "status": "overdue",
-      "status_label": "지연",
-      "actual": null,
-      "scheduled": "2026-06-09",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-06-23",
-      "name": "HE 돈열단독 1차",
-      "target": "G26 1자돈 182두",
-      "d_day": -18,
-      "gid": "G26",
-      "location": "1자돈",
-      "heads": 182,
-      "status": "overdue",
-      "status_label": "지연",
-      "actual": null,
-      "scheduled": "2026-06-23",
       "source": "herd_identity_current_active"
     }
   ],
@@ -112,6 +84,104 @@
       "event_type": "additional_vaccine_event"
     },
     {
+      "date": "2026-07-08",
+      "name": "apache1",
+      "target": "G30 5자돈 184두",
+      "d_day": 999,
+      "gid": "G30",
+      "location": "5자돈",
+      "heads": 184,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-07-08",
+      "scheduled": null,
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-07-08",
+      "name": "apache1",
+      "target": "G29 4자돈 158두",
+      "d_day": 999,
+      "gid": "G29",
+      "location": "4자돈",
+      "heads": 158,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-07-08",
+      "scheduled": null,
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-07-08",
+      "name": "fmd1",
+      "target": "G28 3자돈 194두",
+      "d_day": 999,
+      "gid": "G28",
+      "location": "3자돈",
+      "heads": 194,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-07-08",
+      "scheduled": null,
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-07-08",
+      "name": "he1",
+      "target": "G27 2자돈 195두",
+      "d_day": 999,
+      "gid": "G27",
+      "location": "2자돈",
+      "heads": 195,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-07-08",
+      "scheduled": null,
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-06-26",
+      "name": "apache1",
+      "target": "G28 3자돈 194두",
+      "d_day": 999,
+      "gid": "G28",
+      "location": "3자돈",
+      "heads": 194,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-06-26",
+      "scheduled": null,
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-06-26",
+      "name": "fmd1",
+      "target": "G27 2자돈 195두",
+      "d_day": 999,
+      "gid": "G27",
+      "location": "2자돈",
+      "heads": 195,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-06-26",
+      "scheduled": null,
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-06-23",
+      "name": "HE 돈열단독 1차",
+      "target": "G26 1자돈 182두",
+      "d_day": 999,
+      "gid": "G26",
+      "location": "1자돈",
+      "heads": 182,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-06-26",
+      "scheduled": "2026-06-23",
+      "source": "herd_identity_current_active"
+    },
+    {
       "date": "2026-06-17",
       "name": "HE 돈열단독 1차",
       "target": "G25 8자돈 195두",
@@ -137,6 +207,34 @@
       "status_label": "완료",
       "actual": "2026-06-26",
       "scheduled": "2026-04-28",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-06-20",
+      "name": "apache1",
+      "target": "G27 2자돈 195두",
+      "d_day": 999,
+      "gid": "G27",
+      "location": "2자돈",
+      "heads": 195,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-06-20",
+      "scheduled": null,
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-06-09",
+      "name": "FMD 구제역 1차",
+      "target": "G26 1자돈 182두",
+      "d_day": 999,
+      "gid": "G26",
+      "location": "1자돈",
+      "heads": 182,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-06-20",
+      "scheduled": "2026-06-09",
       "source": "herd_identity_current_active"
     },
     {
@@ -628,34 +726,6 @@
       "actual": "2026-04-04",
       "scheduled": "2026-03-22",
       "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-03-23",
-      "name": "FMD 구제역 1차",
-      "target": "G13 A2비육 160두",
-      "d_day": 999,
-      "gid": "G13",
-      "location": "A2비육",
-      "heads": 160,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-04-04",
-      "scheduled": "2026-03-23",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-03-16",
-      "name": "아파치 1차",
-      "target": "G13 A2비육 160두",
-      "d_day": 999,
-      "gid": "G13",
-      "location": "A2비육",
-      "heads": 160,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-03-23",
-      "scheduled": "2026-03-16",
-      "source": "herd_identity_current_active"
     }
   ],
   "completed_hidden": [
@@ -1091,7 +1161,7 @@
       "date": "2026-06-20",
       "name": "FMD",
       "target": "nursery pen 1",
-      "d_day": -21,
+      "d_day": -22,
       "status": "location_only",
       "status_label": "위치기록",
       "reason": "2026-06-02 msg 1294 moved 1 nursery pigs to A1; no reliable later movement into 1 nursery found in reviewed chat, so do not attach to group 73.",
@@ -1101,7 +1171,7 @@
       "date": "2026-06-20",
       "name": "Apache",
       "target": "nursery pen 2",
-      "d_day": -21,
+      "d_day": -22,
       "status": "location_only",
       "status_label": "위치기록",
       "reason": "2026-05-28 msg 1220 moved 2 incubator pigs into 2 nursery; current first-dose row 66:apache1 was already done on 2026-05-07, so do not overwrite it.",
@@ -1111,9 +1181,9 @@
   "summary": {
     "active_groups": 25,
     "completed_or_empty_groups_excluded": 12,
-    "attention_count": 3,
+    "attention_count": 1,
     "location_only_count": 2,
-    "done_recent_count": 43,
+    "done_recent_count": 52,
     "completed_hidden_count": 12,
     "additional_event_count": 4
   },
@@ -1122,5 +1192,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-07-12 07:20:19"
+  "_synced": "2026-07-12 08:20:15"
 }
