@@ -1,39 +1,39 @@
 {
   "base_date": "2026-04-21",
   "base_total": 5072,
-  "current_total": 4967,
+  "current_total": 4932,
   "date": "2026-07-15",
-  "death_record_count": 339,
-  "death_total": 456,
-  "delta": -105,
+  "death_record_count": 360,
+  "death_total": 483,
+  "delta": -140,
   "sections": {
     "beef": {
-      "count": 2266
+      "count": 2255
     },
     "incu": {
-      "count": 663
+      "count": 657
     },
     "jadan": {
-      "count": 1493
+      "count": 1484
     },
     "modon": {
       "boars": 6,
-      "count": 539,
+      "count": 536,
       "gilts": 65,
-      "sows": 468
+      "sows": 465
     },
     "pending": {
       "count": 0
     },
     "special": {
-      "count": 6
+      "count": 0
     }
   },
   "ship_record_count": 41,
   "ship_total": 1514,
   "target_pigs": 5200,
-  "updated": "00:20",
+  "updated": "01:20",
   "window_end": "2026-07-15",
   "window_start": "2026-04-22",
-  "_synced": "2026-07-15 00:20:20"
+  "_synced": "2026-07-15 01:20:17"
 }
