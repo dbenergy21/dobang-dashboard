@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-07-15T07:40:03",
+  "generated_at": "2026-07-15T23:49:22",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -100,11 +100,11 @@
     {
       "date": "2026-07-08",
       "name": "apache1",
-      "target": "G29 4자돈 158두",
+      "target": "G29 4자돈 157두",
       "d_day": 999,
       "gid": "G29",
       "location": "4자돈",
-      "heads": 158,
+      "heads": 157,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-07-08",
@@ -114,11 +114,11 @@
     {
       "date": "2026-07-08",
       "name": "fmd1",
-      "target": "G28 3자돈 193두",
+      "target": "G28 3자돈 191두",
       "d_day": 999,
       "gid": "G28",
       "location": "3자돈",
-      "heads": 193,
+      "heads": 191,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-07-08",
@@ -142,11 +142,11 @@
     {
       "date": "2026-06-26",
       "name": "apache1",
-      "target": "G28 3자돈 193두",
+      "target": "G28 3자돈 191두",
       "d_day": 999,
       "gid": "G28",
       "location": "3자돈",
-      "heads": 193,
+      "heads": 191,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-06-26",
@@ -1200,5 +1200,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-07-15 23:20:18"
+  "_synced": "2026-07-16 00:20:19"
 }
