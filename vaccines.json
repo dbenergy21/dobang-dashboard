@@ -1,13 +1,13 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-07-17T07:40:03",
+  "generated_at": "2026-07-18T07:40:03",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
       "date": "2026-04-30",
       "name": "HE 돈열단독 1차",
       "target": "G17 B2비육 163두",
-      "d_day": -78,
+      "d_day": -79,
       "gid": "G17",
       "location": "B2비육",
       "heads": 163,
@@ -170,10 +170,10 @@
     {
       "date": "2026-06-23",
       "name": "HE 돈열단독 1차",
-      "target": "G26 1자돈 180두",
+      "target": "G26 A3비육 180두",
       "d_day": 999,
       "gid": "G26",
-      "location": "1자돈",
+      "location": "A3비육",
       "heads": 180,
       "status": "done",
       "status_label": "완료",
@@ -184,10 +184,10 @@
     {
       "date": "2026-06-17",
       "name": "HE 돈열단독 1차",
-      "target": "G25 8자돈 193두",
+      "target": "G25 A2비육 193두",
       "d_day": 999,
       "gid": "G25",
-      "location": "8자돈",
+      "location": "A2비육",
       "heads": 193,
       "status": "done",
       "status_label": "완료",
@@ -226,10 +226,10 @@
     {
       "date": "2026-06-09",
       "name": "FMD 구제역 1차",
-      "target": "G26 1자돈 180두",
+      "target": "G26 A3비육 180두",
       "d_day": 999,
       "gid": "G26",
-      "location": "1자돈",
+      "location": "A3비육",
       "heads": 180,
       "status": "done",
       "status_label": "완료",
@@ -240,10 +240,10 @@
     {
       "date": "2026-06-03",
       "name": "FMD 구제역 1차",
-      "target": "G25 8자돈 193두",
+      "target": "G25 A2비육 193두",
       "d_day": 999,
       "gid": "G25",
-      "location": "8자돈",
+      "location": "A2비육",
       "heads": 193,
       "status": "done",
       "status_label": "완료",
@@ -268,10 +268,10 @@
     {
       "date": "2026-06-02",
       "name": "아파치 1차",
-      "target": "G26 1자돈 180두",
+      "target": "G26 A3비육 180두",
       "d_day": 999,
       "gid": "G26",
-      "location": "1자돈",
+      "location": "A3비육",
       "heads": 180,
       "status": "done",
       "status_label": "완료",
@@ -324,10 +324,10 @@
     {
       "date": "2026-05-27",
       "name": "아파치 1차",
-      "target": "G25 8자돈 193두",
+      "target": "G25 A2비육 193두",
       "d_day": 999,
       "gid": "G25",
-      "location": "8자돈",
+      "location": "A2비육",
       "heads": 193,
       "status": "done",
       "status_label": "완료",
@@ -1169,7 +1169,7 @@
       "date": "2026-06-20",
       "name": "FMD",
       "target": "nursery pen 1",
-      "d_day": -27,
+      "d_day": -28,
       "status": "location_only",
       "status_label": "위치기록",
       "reason": "2026-06-02 msg 1294 moved 1 nursery pigs to A1; no reliable later movement into 1 nursery found in reviewed chat, so do not attach to group 73.",
@@ -1179,7 +1179,7 @@
       "date": "2026-06-20",
       "name": "Apache",
       "target": "nursery pen 2",
-      "d_day": -27,
+      "d_day": -28,
       "status": "location_only",
       "status_label": "위치기록",
       "reason": "2026-05-28 msg 1220 moved 2 incubator pigs into 2 nursery; current first-dose row 66:apache1 was already done on 2026-05-07, so do not overwrite it.",
@@ -1200,5 +1200,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-07-18 07:20:18"
+  "_synced": "2026-07-18 08:20:18"
 }
