@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-07-19T10:12:56",
+  "generated_at": "2026-07-19T10:39:22",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -18,31 +18,31 @@
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-07-15",
+      "date": "2026-07-25",
       "name": "FMD 구제역 1차",
       "target": "G30 5자돈 183두",
-      "d_day": -4,
+      "d_day": 6,
       "gid": "G30",
       "location": "5자돈",
       "heads": 183,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
-      "scheduled": "2026-07-15",
+      "scheduled": "2026-07-25",
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-07-29",
+      "date": "2026-08-08",
       "name": "HE 돈열단독 1차",
       "target": "G30 5자돈 183두",
-      "d_day": 10,
+      "d_day": 20,
       "gid": "G30",
       "location": "5자돈",
       "heads": 183,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
-      "scheduled": "2026-07-29",
+      "scheduled": "2026-08-08",
       "source": "herd_identity_current_active"
     },
     {
@@ -350,7 +350,7 @@
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-07-08",
+      "date": "2026-07-18",
       "name": "apache1",
       "target": "G30 5자돈 183두",
       "d_day": 999,
@@ -360,7 +360,7 @@
       "status": "done",
       "status_label": "완료",
       "actual": "2026-07-08",
-      "scheduled": "2026-07-08",
+      "scheduled": "2026-07-18",
       "source": "herd_identity_current_active"
     },
     {
@@ -1410,5 +1410,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-07-19 10:20:16"
+  "_synced": "2026-07-19 11:20:37"
 }
