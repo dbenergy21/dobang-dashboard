@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-07-20T07:40:03",
+  "generated_at": "2026-07-20T08:34:40",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -910,31 +910,31 @@
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-04-12",
-      "name": "HE 돈열단독 1차",
-      "target": "G14 A3비육 183두",
+      "date": "2026-04-03",
+      "name": "아파치 1차",
+      "target": "G16 B1비육 183두",
       "d_day": 999,
-      "gid": "G14",
-      "location": "A3비육",
+      "gid": "G16",
+      "location": "B1비육",
       "heads": 183,
       "status": "done",
       "status_label": "완료",
-      "actual": "2026-05-06",
-      "scheduled": "2026-04-12",
+      "actual": "2026-04-11",
+      "scheduled": "2026-04-03",
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-03-29",
-      "name": "FMD 구제역 1차",
-      "target": "G14 A3비육 183두",
+      "date": "2026-03-28",
+      "name": "아파치 1차",
+      "target": "G15 A4비육 158두",
       "d_day": 999,
-      "gid": "G14",
-      "location": "A3비육",
-      "heads": 183,
+      "gid": "G15",
+      "location": "A4비육",
+      "heads": 158,
       "status": "done",
       "status_label": "완료",
-      "actual": "2026-04-23",
-      "scheduled": "2026-03-29",
+      "actual": "2026-04-04",
+      "scheduled": "2026-03-28",
       "source": "herd_identity_current_active"
     }
   ],
@@ -1300,6 +1300,66 @@
       }
     },
     {
+      "gid": "G13",
+      "location": "출하완료",
+      "heads": 0,
+      "stage": "완료",
+      "evidence": "2026-07-20 representative confirmation: old A2 finishing group is empty; remaining pigs were shipped or moved to other barns. A2 was refilled by G25.",
+      "vaccines": {
+        "apache1": {
+          "name": "아파치 1차",
+          "scheduled": "2026-03-16",
+          "actual": "2026-03-23",
+          "status": "done",
+          "days_left": null
+        },
+        "fmd1": {
+          "name": "FMD 구제역 1차",
+          "scheduled": "2026-03-23",
+          "actual": "2026-04-04",
+          "status": "done",
+          "days_left": null
+        },
+        "he1": {
+          "name": "HE 돈열단독 1차",
+          "scheduled": "2026-04-06",
+          "actual": "2026-04-23",
+          "status": "done",
+          "days_left": null
+        }
+      }
+    },
+    {
+      "gid": "G14",
+      "location": "출하완료",
+      "heads": 0,
+      "stage": "완료",
+      "evidence": "2026-07-20 representative confirmation: old A3 finishing group is empty; remaining pigs were shipped or moved to other barns. A3 was refilled by G26.",
+      "vaccines": {
+        "apache1": {
+          "name": "아파치 1차",
+          "scheduled": "2026-03-22",
+          "actual": "2026-04-04",
+          "status": "done",
+          "days_left": null
+        },
+        "fmd1": {
+          "name": "FMD 구제역 1차",
+          "scheduled": "2026-03-29",
+          "actual": "2026-04-23",
+          "status": "done",
+          "days_left": null
+        },
+        "he1": {
+          "name": "HE 돈열단독 1차",
+          "scheduled": "2026-04-12",
+          "actual": "2026-05-06",
+          "status": "done",
+          "days_left": null
+        }
+      }
+    },
+    {
       "gid": "SDG",
       "location": "돈궁",
       "heads": 0,
@@ -1397,12 +1457,12 @@
     }
   ],
   "summary": {
-    "active_groups": 24,
-    "completed_or_empty_groups_excluded": 13,
+    "active_groups": 22,
+    "completed_or_empty_groups_excluded": 15,
     "attention_count": 16,
     "location_only_count": 2,
-    "done_recent_count": 57,
-    "completed_hidden_count": 13,
+    "done_recent_count": 51,
+    "completed_hidden_count": 15,
     "additional_event_count": 4
   },
   "sources": {
@@ -1410,5 +1470,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-07-20 08:20:18"
+  "_synced": "2026-07-20 09:20:16"
 }
