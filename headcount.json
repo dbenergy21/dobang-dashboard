@@ -2,7 +2,7 @@
   "base_date": "2026-04-21",
   "base_total": 5072,
   "current_total": 4928,
-  "date": "2026-07-20",
+  "date": "2026-07-21",
   "death_record_count": 372,
   "death_total": 496,
   "delta": -144,
@@ -32,8 +32,8 @@
   "ship_record_count": 42,
   "ship_total": 1544,
   "target_pigs": 5200,
-  "updated": "23:20",
-  "window_end": "2026-07-20",
+  "updated": "00:20",
+  "window_end": "2026-07-21",
   "window_start": "2026-04-22",
-  "_synced": "2026-07-20 23:20:17"
+  "_synced": "2026-07-21 00:20:16"
 }
