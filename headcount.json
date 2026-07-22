@@ -3,8 +3,8 @@
   "base_total": 5072,
   "current_total": 4928,
   "date": "2026-07-22",
-  "death_record_count": 382,
-  "death_total": 508,
+  "death_record_count": 390,
+  "death_total": 520,
   "delta": -144,
   "sections": {
     "beef": {
@@ -32,8 +32,8 @@
   "ship_record_count": 43,
   "ship_total": 1546,
   "target_pigs": 5200,
-  "updated": "20:20",
+  "updated": "21:20",
   "window_end": "2026-07-22",
   "window_start": "2026-04-22",
-  "_synced": "2026-07-22 20:20:21"
+  "_synced": "2026-07-22 21:20:18"
 }
