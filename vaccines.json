@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-08-02T00:34:07",
+  "generated_at": "2026-08-02T07:40:03",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -1616,5 +1616,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-08-02 07:20:17"
+  "_synced": "2026-08-02 08:20:19"
 }
