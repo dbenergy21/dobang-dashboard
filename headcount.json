@@ -3,7 +3,7 @@
   "base_total": 5072,
   "current_total": 5325,
   "date": "2026-08-10",
-  "death_record_count": 477,
+  "death_record_count": 478,
   "death_total": 635,
   "delta": 253,
   "sections": {
@@ -32,8 +32,8 @@
   "ship_record_count": 47,
   "ship_total": 1800,
   "target_pigs": 5200,
-  "updated": "18:20",
+  "updated": "19:20",
   "window_end": "2026-08-10",
   "window_start": "2026-04-22",
-  "_synced": "2026-08-10 18:20:17"
+  "_synced": "2026-08-10 19:20:17"
 }
