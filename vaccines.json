@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-09-06T14:18:09",
+  "generated_at": "2026-09-06T14:23:41",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -1696,9 +1696,9 @@
     },
     {
       "gid": "G21",
-      "location": "출하완료",
+      "location": "점유교체종료",
       "heads": 0,
-      "stage": "출하완료",
+      "stage": "완료",
       "evidence": "",
       "vaccines": {
         "apache1": {
@@ -1736,9 +1736,9 @@
     },
     {
       "gid": "G22",
-      "location": "출하완료",
+      "location": "점유교체종료",
       "heads": 0,
-      "stage": "출하완료",
+      "stage": "완료",
       "evidence": "",
       "vaccines": {
         "apache1": {
@@ -1885,5 +1885,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-09-06 14:20:20"
+  "_synced": "2026-09-06 15:20:17"
 }
