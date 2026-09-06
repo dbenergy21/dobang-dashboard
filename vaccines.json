@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-09-06T07:40:02",
+  "generated_at": "2026-09-06T14:18:09",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -34,11 +34,11 @@
     {
       "date": "2026-08-20",
       "name": "HE 돈열단독 1차",
-      "target": "G32 7자돈 194두",
+      "target": "G32 C4비육 134두",
       "d_day": -17,
       "gid": "G32",
-      "location": "7자돈",
-      "heads": 194,
+      "location": "C4비육",
+      "heads": 134,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -48,11 +48,11 @@
     {
       "date": "2026-08-05",
       "name": "아파치 1차",
-      "target": "G33 8자돈 194두",
+      "target": "G33 C5비육 170두",
       "d_day": -32,
       "gid": "G33",
-      "location": "8자돈",
-      "heads": 194,
+      "location": "C5비육",
+      "heads": 170,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -60,27 +60,13 @@
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-08-12",
-      "name": "FMD 구제역 1차",
-      "target": "G33 8자돈 194두",
-      "d_day": -25,
-      "gid": "G33",
-      "location": "8자돈",
-      "heads": 194,
-      "status": "computed",
-      "status_label": "computed",
-      "actual": null,
-      "scheduled": "2026-08-12",
-      "source": "herd_identity_current_active"
-    },
-    {
       "date": "2026-08-26",
       "name": "HE 돈열단독 1차",
-      "target": "G33 8자돈 194두",
+      "target": "G33 C5비육 170두",
       "d_day": -11,
       "gid": "G33",
-      "location": "8자돈",
-      "heads": 194,
+      "location": "C5비육",
+      "heads": 170,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -90,11 +76,11 @@
     {
       "date": "2026-08-13",
       "name": "아파치 1차",
-      "target": "G34 1자돈 181두",
+      "target": "G34 A1비육 180두",
       "d_day": -24,
       "gid": "G34",
-      "location": "1자돈",
-      "heads": 181,
+      "location": "A1비육",
+      "heads": 180,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -102,27 +88,13 @@
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-08-20",
-      "name": "FMD 구제역 1차",
-      "target": "G34 1자돈 181두",
-      "d_day": -17,
-      "gid": "G34",
-      "location": "1자돈",
-      "heads": 181,
-      "status": "computed",
-      "status_label": "computed",
-      "actual": null,
-      "scheduled": "2026-08-20",
-      "source": "herd_identity_current_active"
-    },
-    {
       "date": "2026-09-03",
       "name": "HE 돈열단독 1차",
-      "target": "G34 1자돈 181두",
+      "target": "G34 A1비육 180두",
       "d_day": -3,
       "gid": "G34",
-      "location": "1자돈",
-      "heads": 181,
+      "location": "A1비육",
+      "heads": 180,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -141,20 +113,6 @@
       "status_label": "computed",
       "actual": null,
       "scheduled": "2026-08-20",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-08-27",
-      "name": "FMD 구제역 1차",
-      "target": "G35 2자돈 167두",
-      "d_day": -10,
-      "gid": "G35",
-      "location": "2자돈",
-      "heads": 167,
-      "status": "computed",
-      "status_label": "computed",
-      "actual": null,
-      "scheduled": "2026-08-27",
       "source": "herd_identity_current_active"
     },
     {
@@ -211,20 +169,6 @@
       "status_label": "computed",
       "actual": null,
       "scheduled": "2026-09-13",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-08-29",
-      "name": "아파치 1차",
-      "target": "G37 4자돈 178두",
-      "d_day": -8,
-      "gid": "G37",
-      "location": "4자돈",
-      "heads": 178,
-      "status": "computed",
-      "status_label": "computed",
-      "actual": null,
-      "scheduled": "2026-08-29",
       "source": "herd_identity_current_active"
     },
     {
@@ -342,11 +286,11 @@
     {
       "date": "2026-09-16",
       "name": "아파치 1차",
-      "target": "G40 4인큐 185두",
+      "target": "G40 7자돈 179두",
       "d_day": 10,
       "gid": "G40",
-      "location": "4인큐",
-      "heads": 185,
+      "location": "7자돈",
+      "heads": 179,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -356,11 +300,11 @@
     {
       "date": "2026-09-23",
       "name": "FMD 구제역 1차",
-      "target": "G40 4인큐 185두",
+      "target": "G40 7자돈 179두",
       "d_day": 17,
       "gid": "G40",
-      "location": "4인큐",
-      "heads": 185,
+      "location": "7자돈",
+      "heads": 179,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -370,11 +314,11 @@
     {
       "date": "2026-10-07",
       "name": "HE 돈열단독 1차",
-      "target": "G40 4인큐 185두",
+      "target": "G40 7자돈 179두",
       "d_day": 31,
       "gid": "G40",
-      "location": "4인큐",
-      "heads": 185,
+      "location": "7자돈",
+      "heads": 179,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -384,11 +328,11 @@
     {
       "date": "2026-09-22",
       "name": "아파치 1차",
-      "target": "G41 1인큐 188두",
+      "target": "G41 8자돈 177두",
       "d_day": 16,
       "gid": "G41",
-      "location": "1인큐",
-      "heads": 188,
+      "location": "8자돈",
+      "heads": 177,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -398,11 +342,11 @@
     {
       "date": "2026-09-29",
       "name": "FMD 구제역 1차",
-      "target": "G41 1인큐 188두",
+      "target": "G41 8자돈 177두",
       "d_day": 23,
       "gid": "G41",
-      "location": "1인큐",
-      "heads": 188,
+      "location": "8자돈",
+      "heads": 177,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -412,11 +356,11 @@
     {
       "date": "2026-10-13",
       "name": "HE 돈열단독 1차",
-      "target": "G41 1인큐 188두",
+      "target": "G41 8자돈 177두",
       "d_day": 37,
       "gid": "G41",
-      "location": "1인큐",
-      "heads": 188,
+      "location": "8자돈",
+      "heads": 177,
       "status": "computed",
       "status_label": "computed",
       "actual": null,
@@ -426,10 +370,10 @@
     {
       "date": "2026-09-28",
       "name": "아파치 1차",
-      "target": "G42 2인큐 180두",
+      "target": "G42 1자돈 180두",
       "d_day": 22,
       "gid": "G42",
-      "location": "2인큐",
+      "location": "1자돈",
       "heads": 180,
       "status": "computed",
       "status_label": "computed",
@@ -440,10 +384,10 @@
     {
       "date": "2026-10-05",
       "name": "FMD 구제역 1차",
-      "target": "G42 2인큐 180두",
+      "target": "G42 1자돈 180두",
       "d_day": 29,
       "gid": "G42",
-      "location": "2인큐",
+      "location": "1자돈",
       "heads": 180,
       "status": "computed",
       "status_label": "computed",
@@ -454,10 +398,10 @@
     {
       "date": "2026-10-19",
       "name": "HE 돈열단독 1차",
-      "target": "G42 2인큐 180두",
+      "target": "G42 1자돈 180두",
       "d_day": 43,
       "gid": "G42",
-      "location": "2인큐",
+      "location": "1자돈",
       "heads": 180,
       "status": "computed",
       "status_label": "computed",
@@ -505,6 +449,132 @@
       "status_label": "computed",
       "actual": null,
       "scheduled": "2026-10-25",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-10-11",
+      "name": "아파치 1차",
+      "target": "G44 4인큐 127두",
+      "d_day": 35,
+      "gid": "G44",
+      "location": "4인큐",
+      "heads": 127,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-10-11",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-10-18",
+      "name": "FMD 구제역 1차",
+      "target": "G44 4인큐 127두",
+      "d_day": 42,
+      "gid": "G44",
+      "location": "4인큐",
+      "heads": 127,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-10-18",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-11-01",
+      "name": "HE 돈열단독 1차",
+      "target": "G44 4인큐 127두",
+      "d_day": 56,
+      "gid": "G44",
+      "location": "4인큐",
+      "heads": 127,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-11-01",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-10-19",
+      "name": "아파치 1차",
+      "target": "G45 1인큐 173두",
+      "d_day": 43,
+      "gid": "G45",
+      "location": "1인큐",
+      "heads": 173,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-10-19",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-10-26",
+      "name": "FMD 구제역 1차",
+      "target": "G45 1인큐 173두",
+      "d_day": 50,
+      "gid": "G45",
+      "location": "1인큐",
+      "heads": 173,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-10-26",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-11-09",
+      "name": "HE 돈열단독 1차",
+      "target": "G45 1인큐 173두",
+      "d_day": 64,
+      "gid": "G45",
+      "location": "1인큐",
+      "heads": 173,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-11-09",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-10-25",
+      "name": "아파치 1차",
+      "target": "G46 2인큐 174두",
+      "d_day": 49,
+      "gid": "G46",
+      "location": "2인큐",
+      "heads": 174,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-10-25",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-11-01",
+      "name": "FMD 구제역 1차",
+      "target": "G46 2인큐 174두",
+      "d_day": 56,
+      "gid": "G46",
+      "location": "2인큐",
+      "heads": 174,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-11-01",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-11-15",
+      "name": "HE 돈열단독 1차",
+      "target": "G46 2인큐 174두",
+      "d_day": 70,
+      "gid": "G46",
+      "location": "2인큐",
+      "heads": 174,
+      "status": "computed",
+      "status_label": "computed",
+      "actual": null,
+      "scheduled": "2026-11-15",
       "source": "herd_identity_current_active"
     }
   ],
@@ -574,13 +644,69 @@
       "event_type": "additional_vaccine_event"
     },
     {
+      "date": "2026-08-29",
+      "name": "apache1",
+      "target": "G37 4자돈 178두",
+      "d_day": 999,
+      "gid": "G37",
+      "location": "4자돈",
+      "heads": 178,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-09-06",
+      "scheduled": "2026-08-29",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-08-27",
+      "name": "fmd1",
+      "target": "G35 2자돈 167두",
+      "d_day": 999,
+      "gid": "G35",
+      "location": "2자돈",
+      "heads": 167,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-09-06",
+      "scheduled": "2026-08-27",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-08-20",
+      "name": "fmd1",
+      "target": "G34 A1비육 180두",
+      "d_day": 999,
+      "gid": "G34",
+      "location": "A1비육",
+      "heads": 180,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-09-06",
+      "scheduled": "2026-08-20",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-08-12",
+      "name": "fmd1",
+      "target": "G33 C5비육 170두",
+      "d_day": 999,
+      "gid": "G33",
+      "location": "C5비육",
+      "heads": 170,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-09-06",
+      "scheduled": "2026-08-12",
+      "source": "herd_identity_current_active"
+    },
+    {
       "date": "2026-08-06",
       "name": "fmd1",
-      "target": "G32 7자돈 194두",
+      "target": "G32 C4비육 134두",
       "d_day": 999,
       "gid": "G32",
-      "location": "7자돈",
-      "heads": 194,
+      "location": "C4비육",
+      "heads": 134,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-07-25",
@@ -632,11 +758,11 @@
     {
       "date": "2026-07-30",
       "name": "apache1",
-      "target": "G32 7자돈 194두",
+      "target": "G32 C4비육 134두",
       "d_day": 999,
       "gid": "G32",
-      "location": "7자돈",
-      "heads": 194,
+      "location": "C4비육",
+      "heads": 134,
       "status": "done",
       "status_label": "완료",
       "actual": "2026-07-19",
@@ -798,20 +924,6 @@
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-04-28",
-      "name": "FMD 구제역 1차",
-      "target": "G19 A1비육 183두",
-      "d_day": 999,
-      "gid": "G19",
-      "location": "A1비육",
-      "heads": 183,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-06-26",
-      "scheduled": "2026-04-28",
-      "source": "herd_identity_current_active"
-    },
-    {
       "date": "2026-06-26",
       "name": "apache1",
       "target": "G27 A4비육 189두",
@@ -910,20 +1022,6 @@
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-05-30",
-      "name": "HE 돈열단독 1차",
-      "target": "G22 C5비육 176두",
-      "d_day": 999,
-      "gid": "G22",
-      "location": "C5비육",
-      "heads": 176,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-06-13",
-      "scheduled": "2026-05-30",
-      "source": "herd_identity_current_active"
-    },
-    {
       "date": "2026-05-27",
       "name": "아파치 1차",
       "target": "G25 A2비육 174두",
@@ -952,20 +1050,6 @@
       "source": "herd_identity_current_active"
     },
     {
-      "date": "2026-05-24",
-      "name": "HE 돈열단독 1차",
-      "target": "G21 C4비육 174두",
-      "d_day": 999,
-      "gid": "G21",
-      "location": "C4비육",
-      "heads": 174,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-06-06",
-      "scheduled": "2026-05-24",
-      "source": "herd_identity_current_active"
-    },
-    {
       "date": "2026-05-21",
       "name": "아파치 1차",
       "target": "G24 C2비육 168두",
@@ -991,90 +1075,6 @@
       "status_label": "완료",
       "actual": "2026-06-01",
       "scheduled": "2026-05-15",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-05-16",
-      "name": "FMD 구제역 1차",
-      "target": "G22 C5비육 176두",
-      "d_day": 999,
-      "gid": "G22",
-      "location": "C5비육",
-      "heads": 176,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-06-01",
-      "scheduled": "2026-05-16",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-05-10",
-      "name": "FMD 구제역 1차",
-      "target": "G21 C4비육 174두",
-      "d_day": 999,
-      "gid": "G21",
-      "location": "C4비육",
-      "heads": 174,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-06-01",
-      "scheduled": "2026-05-10",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-05-09",
-      "name": "아파치 1차",
-      "target": "G22 C5비육 176두",
-      "d_day": 999,
-      "gid": "G22",
-      "location": "C5비육",
-      "heads": 176,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-05-26",
-      "scheduled": "2026-05-09",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-05-12",
-      "name": "HE 돈열단독 1차",
-      "target": "G19 A1비육 183두",
-      "d_day": 999,
-      "gid": "G19",
-      "location": "A1비육",
-      "heads": 183,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-05-26",
-      "scheduled": "2026-05-12",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-05-03",
-      "name": "아파치 1차",
-      "target": "G21 C4비육 174두",
-      "d_day": 999,
-      "gid": "G21",
-      "location": "C4비육",
-      "heads": 174,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-05-07",
-      "scheduled": "2026-05-03",
-      "source": "herd_identity_current_active"
-    },
-    {
-      "date": "2026-04-21",
-      "name": "아파치 1차",
-      "target": "G19 A1비육 183두",
-      "d_day": 999,
-      "gid": "G19",
-      "location": "A1비육",
-      "heads": 183,
-      "status": "done",
-      "status_label": "완료",
-      "actual": "2026-05-07",
-      "scheduled": "2026-04-21",
       "source": "herd_identity_current_active"
     }
   ],
@@ -1587,7 +1587,7 @@
           "status": "done",
           "days_left": null,
           "dashboard_correction": {
-            "updated_at": "2026-08-02T00:32:58+09:00",
+            "updated_at": "2026-09-06T14:30:00+09:00",
             "source": "vaccine_group_chat_actuals",
             "reason": "2026-07-03 대표 확인: 3월 10일 실시"
           }
@@ -1625,6 +1625,41 @@
       }
     },
     {
+      "gid": "G19",
+      "location": "A1비육",
+      "heads": 0,
+      "stage": "비육",
+      "evidence": "2026-06-02 msg 1294: nursery1 183 -> A1 (자돈사 번호 표기 혼선 — 일령·군번호 흐름상 G19, 2026-07-03 대표 확인)",
+      "vaccines": {
+        "apache1": {
+          "name": "아파치 1차",
+          "scheduled": "2026-04-21",
+          "actual": "2026-05-07",
+          "status": "done",
+          "days_left": null
+        },
+        "fmd1": {
+          "name": "FMD 구제역 1차",
+          "scheduled": "2026-04-28",
+          "actual": "2026-06-26",
+          "status": "done",
+          "days_left": null,
+          "dashboard_correction": {
+            "updated_at": "2026-07-25T08:54:50+09:00",
+            "source": "telegram_group_msg_1866",
+            "reason": "2026-06-26 group message: FMD at nursery2; linked through 2026-05-28 msg 1220 incu2 -> nursery2."
+          }
+        },
+        "he1": {
+          "name": "HE 돈열단독 1차",
+          "scheduled": "2026-05-12",
+          "actual": "2026-05-26",
+          "status": "done",
+          "days_left": null
+        }
+      }
+    },
+    {
       "gid": "G20",
       "location": "출하완료",
       "heads": 0,
@@ -1652,9 +1687,89 @@
           "status": "done",
           "days_left": null,
           "dashboard_correction": {
-            "updated_at": "2026-08-02T00:32:58+09:00",
+            "updated_at": "2026-09-06T14:30:00+09:00",
             "source": "vaccine_group_chat_actuals",
             "reason": "6/6 대표: 돈열단독 3자돈사 (G20, 6/9 C3 이동 전)"
+          }
+        }
+      }
+    },
+    {
+      "gid": "G21",
+      "location": "출하완료",
+      "heads": 0,
+      "stage": "출하완료",
+      "evidence": "",
+      "vaccines": {
+        "apache1": {
+          "name": "아파치 1차",
+          "scheduled": "2026-05-03",
+          "actual": "2026-05-07",
+          "status": "done",
+          "days_left": null
+        },
+        "fmd1": {
+          "name": "FMD 구제역 1차",
+          "scheduled": "2026-05-10",
+          "actual": "2026-06-01",
+          "status": "done",
+          "days_left": null,
+          "dashboard_correction": {
+            "updated_at": "2026-09-06T14:30:00+09:00",
+            "source": "vaccine_group_chat_actuals",
+            "reason": "6/1 대표: 구제역 4자돈사 (G21, 6/17 C4 이동 전)"
+          }
+        },
+        "he1": {
+          "name": "HE 돈열단독 1차",
+          "scheduled": "2026-05-24",
+          "actual": "2026-06-06",
+          "status": "done",
+          "days_left": null,
+          "dashboard_correction": {
+            "updated_at": "2026-09-06T14:30:00+09:00",
+            "source": "vaccine_group_chat_actuals",
+            "reason": "6/6 대표: 돈열단독 4자돈사"
+          }
+        }
+      }
+    },
+    {
+      "gid": "G22",
+      "location": "출하완료",
+      "heads": 0,
+      "stage": "출하완료",
+      "evidence": "",
+      "vaccines": {
+        "apache1": {
+          "name": "아파치 1차",
+          "scheduled": "2026-05-09",
+          "actual": "2026-05-26",
+          "status": "done",
+          "days_left": null
+        },
+        "fmd1": {
+          "name": "FMD 구제역 1차",
+          "scheduled": "2026-05-16",
+          "actual": "2026-06-01",
+          "status": "done",
+          "days_left": null,
+          "dashboard_correction": {
+            "updated_at": "2026-09-06T14:30:00+09:00",
+            "source": "vaccine_group_chat_actuals",
+            "reason": "6/1 대표: 구제역 5자돈사"
+          }
+        },
+        "he1": {
+          "name": "HE 돈열단독 1차",
+          "scheduled": "2026-05-30",
+          "actual": "2026-06-13",
+          "status": "done",
+          "days_left": null,
+          "dashboard_correction": {
+            "updated_at": "2026-09-06T14:30:00+09:00",
+            "source": "vaccine_group_chat_actuals",
+            "reason": "6/13 대표: 돈열단독 5자돈사"
           }
         }
       }
@@ -1758,11 +1873,11 @@
   ],
   "summary": {
     "active_groups": 26,
-    "completed_or_empty_groups_excluded": 20,
-    "attention_count": 36,
+    "completed_or_empty_groups_excluded": 23,
+    "attention_count": 41,
     "location_only_count": 2,
-    "done_recent_count": 40,
-    "completed_hidden_count": 20,
+    "done_recent_count": 35,
+    "completed_hidden_count": 23,
     "additional_event_count": 4
   },
   "sources": {
@@ -1770,5 +1885,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-09-06 13:20:22"
+  "_synced": "2026-09-06 14:20:20"
 }
