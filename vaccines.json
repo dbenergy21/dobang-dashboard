@@ -1,22 +1,8 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-09-12T09:59:56",
+  "generated_at": "2026-09-12T12:37:56",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
-    {
-      "date": "2026-08-08",
-      "name": "HE 돈열단독 1차",
-      "target": "G30 B3비육 154두",
-      "d_day": -35,
-      "gid": "G30",
-      "location": "B3비육",
-      "heads": 154,
-      "status": "computed",
-      "status_label": "computed",
-      "actual": null,
-      "scheduled": "2026-08-08",
-      "source": "herd_identity_current_active"
-    },
     {
       "date": "2026-09-03",
       "name": "HE 돈열단독 1차",
@@ -697,6 +683,20 @@
       "status_label": "완료",
       "actual": "2026-08-12",
       "scheduled": "2026-08-13",
+      "source": "herd_identity_current_active"
+    },
+    {
+      "date": "2026-08-08",
+      "name": "he1",
+      "target": "G30 B3비육 154두",
+      "d_day": 999,
+      "gid": "G30",
+      "location": "B3비육",
+      "heads": 154,
+      "status": "done",
+      "status_label": "완료",
+      "actual": "2026-08-12",
+      "scheduled": "2026-08-08",
       "source": "herd_identity_current_active"
     },
     {
@@ -1587,7 +1587,7 @@
           "status": "done",
           "days_left": null,
           "dashboard_correction": {
-            "updated_at": "2026-09-12T09:59:56.248250+09:00",
+            "updated_at": "2026-09-12T12:37:55.576505+09:00",
             "source": "vaccine_group_chat_actuals",
             "reason": "2026-07-03 대표 확인: 3월 10일 실시"
           }
@@ -1687,7 +1687,7 @@
           "status": "done",
           "days_left": null,
           "dashboard_correction": {
-            "updated_at": "2026-09-12T09:59:56.248250+09:00",
+            "updated_at": "2026-09-12T12:37:55.576505+09:00",
             "source": "vaccine_group_chat_actuals",
             "reason": "6/6 대표: 돈열단독 3자돈사 (G20, 6/9 C3 이동 전)"
           }
@@ -1715,7 +1715,7 @@
           "status": "done",
           "days_left": null,
           "dashboard_correction": {
-            "updated_at": "2026-09-12T09:59:56.248250+09:00",
+            "updated_at": "2026-09-12T12:37:55.576505+09:00",
             "source": "vaccine_group_chat_actuals",
             "reason": "6/1 대표: 구제역 4자돈사 (G21, 6/17 C4 이동 전)"
           }
@@ -1727,7 +1727,7 @@
           "status": "done",
           "days_left": null,
           "dashboard_correction": {
-            "updated_at": "2026-09-12T09:59:56.248250+09:00",
+            "updated_at": "2026-09-12T12:37:55.576505+09:00",
             "source": "vaccine_group_chat_actuals",
             "reason": "6/6 대표: 돈열단독 4자돈사"
           }
@@ -1755,7 +1755,7 @@
           "status": "done",
           "days_left": null,
           "dashboard_correction": {
-            "updated_at": "2026-09-12T09:59:56.248250+09:00",
+            "updated_at": "2026-09-12T12:37:55.576505+09:00",
             "source": "vaccine_group_chat_actuals",
             "reason": "6/1 대표: 구제역 5자돈사"
           }
@@ -1767,7 +1767,7 @@
           "status": "done",
           "days_left": null,
           "dashboard_correction": {
-            "updated_at": "2026-09-12T09:59:56.248250+09:00",
+            "updated_at": "2026-09-12T12:37:55.576505+09:00",
             "source": "vaccine_group_chat_actuals",
             "reason": "6/13 대표: 돈열단독 5자돈사"
           }
@@ -1874,9 +1874,9 @@
   "summary": {
     "active_groups": 26,
     "completed_or_empty_groups_excluded": 23,
-    "attention_count": 30,
+    "attention_count": 29,
     "location_only_count": 2,
-    "done_recent_count": 46,
+    "done_recent_count": 47,
     "completed_hidden_count": 23,
     "additional_event_count": 4
   },
@@ -1885,5 +1885,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-09-12 12:20:20"
+  "_synced": "2026-09-12 13:20:16"
 }
