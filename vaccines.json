@@ -1,6 +1,6 @@
 {
   "schema_version": "dobang-dashboard-vaccines-v3",
-  "generated_at": "2026-10-02T09:18:56",
+  "generated_at": "2026-10-02T09:35:25",
   "basis": "active herd unfinished vaccines first; completed or shipped groups hidden by default",
   "vaccines": [
     {
@@ -1909,13 +1909,53 @@
       "status_label": "위치기록",
       "reason": "10/01 대표 완료 확인. 해당 시점 돈군 정체성 불명; GID actuals 및 기존 1차 실시일 자동 대체 금지.",
       "source": "representative_telegram_group_message"
+    },
+    {
+      "date": "2026-09-18",
+      "name": "HE",
+      "target": "A1비육",
+      "d_day": -14,
+      "status": "location_only",
+      "status_label": "위치기록",
+      "reason": "대표 백신 토픽 보고. 당시 대상 돈군 불명; GID actuals 및 기존 1차 실시일 자동 대체 금지.",
+      "source": "representative_telegram_group_message"
+    },
+    {
+      "date": "2026-09-18",
+      "name": "HE",
+      "target": "C1비육",
+      "d_day": -14,
+      "status": "location_only",
+      "status_label": "위치기록",
+      "reason": "대표 백신 토픽 보고. 당시 대상 돈군 불명; GID actuals 및 기존 1차 실시일 자동 대체 금지.",
+      "source": "representative_telegram_group_message"
+    },
+    {
+      "date": "2026-09-18",
+      "name": "HE",
+      "target": "C2비육",
+      "d_day": -14,
+      "status": "location_only",
+      "status_label": "위치기록",
+      "reason": "대표 백신 토픽 보고. 당시 대상 돈군 불명; GID actuals 및 기존 1차 실시일 자동 대체 금지.",
+      "source": "representative_telegram_group_message"
+    },
+    {
+      "date": "2026-09-18",
+      "name": "HE",
+      "target": "4자돈",
+      "d_day": -14,
+      "status": "location_only",
+      "status_label": "위치기록",
+      "reason": "대표 백신 토픽 보고. 당시 대상 돈군 불명; GID actuals 및 기존 1차 실시일 자동 대체 금지.",
+      "source": "representative_telegram_group_message"
     }
   ],
   "summary": {
     "active_groups": 26,
     "completed_or_empty_groups_excluded": 23,
     "attention_count": 29,
-    "location_only_count": 6,
+    "location_only_count": 10,
     "done_recent_count": 47,
     "completed_hidden_count": 23,
     "additional_event_count": 4
@@ -1925,5 +1965,5 @@
     "vaccine_management": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_management.json",
     "overrides": "C:\\dobang-server\\data\\company_os\\farm_ops\\vaccine_actual_overrides.json"
   },
-  "_synced": "2026-10-02 09:20:20"
+  "_synced": "2026-10-02 10:20:31"
 }
