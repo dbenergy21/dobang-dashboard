@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111827">
+<title>도방 모바일 — 두수·백신</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --line:#334155; --txt:#f1f5f9; --dim:#94a3b8;
+          --red:#f87171; --yellow:#fbbf24; --green:#4ade80; --blue:#60a5fa; }
+  * { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+  body { background:var(--bg); color:var(--txt); font-family:'Malgun Gothic',system-ui,sans-serif;
+         font-size:16px; padding:12px 12px 90px; max-width:560px; margin:0 auto; }
+  h1 { font-size:19px; display:flex; justify-content:space-between; align-items:center; padding:4px 2px 10px; }
+  h1 small { font-size:12px; color:var(--dim); font-weight:normal; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin-bottom:12px; }
+  .card h2 { font-size:15px; color:var(--dim); margin-bottom:10px; letter-spacing:.5px; }
+  .big { font-size:34px; font-weight:800; line-height:1.1; }
+  .delta { font-size:15px; margin-left:8px; font-weight:600; }
+  .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:12px; }
+  .cell { background:#0b1220; border-radius:10px; padding:10px 12px; }
+  .cell .k { font-size:12px; color:var(--dim); }
+  .cell .v { font-size:20px; font-weight:700; margin-top:2px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  td, th { padding:7px 4px; border-bottom:1px solid var(--line); text-align:left; }
+  th { color:var(--dim); font-weight:normal; font-size:12px; }
+  td.num { text-align:right; font-weight:700; }
+  .tag { display:inline-block; padding:2px 8px; border-radius:99px; font-size:12px; font-weight:700; }
+  .tag.overdue { background:#7f1d1d; color:#fecaca; }
+  .tag.soon { background:#78350f; color:#fde68a; }
+  .tag.later { background:#14532d; color:#bbf7d0; }
+  .muted { color:var(--dim); font-size:12px; margin-top:8px; }
+  .err { color:var(--red); font-size:13px; padding:6px 0; }
+  #bar { position:fixed; bottom:0; left:0; right:0; display:flex; gap:8px; padding:10px 12px;
+         padding-bottom:calc(10px + env(safe-area-inset-bottom)); background:rgba(15,23,42,.96);
+         border-top:1px solid var(--line); max-width:560px; margin:0 auto; }
+  .btn { flex:1; text-align:center; padding:13px 0; border-radius:12px; font-size:15px; font-weight:700;
+         text-decoration:none; border:none; cursor:pointer; }
+  .btn.primary { background:#2563eb; color:#fff; }
+  .btn.ghost { background:var(--card); color:var(--txt); border:1px solid var(--line); }
+</style>
+</head>
+<body>
+<h1>🐷 도방 현황 <small id="stamp">불러오는 중…</small></h1>
+
+<div class="card" id="herdCard">
+  <h2>두수</h2>
+  <div><span class="big" id="total">—</span><span class="delta" id="delta"></span></div>
+  <div class="grid" id="sections"></div>
+  <div class="muted" id="herdMeta"></div>
+</div>
+
+<div class="card">
+  <h2>폐사 상위 돈사 (최근 분석)</h2>
+  <table><tbody id="barns"><tr><td class="err">불러오는 중…</td></tr></tbody></table>
+  <div class="muted" id="barnMeta"></div>
+</div>
+
+<div class="card">
+  <h2>백신 — 이전 원장 기준 (현재 군 연결 미완료)</h2>
+  <table><thead><tr><th>백신</th><th>대상</th><th style="text-align:right">D-day</th></tr></thead>
+  <tbody id="vax"><tr><td class="err" colspan="3">불러오는 중…</td></tr></tbody></table>
+  <div class="muted" id="vaxMeta"></div>
+</div>
+
+<div id="bar">
+  <button class="btn ghost" onclick="loadAll(true)">🔄 새로고침</button>
+  <a class="btn primary" href="https://t.me/dobang_farm_bot">💬 도비에게 지시</a>
+</div>
+
+<script>
+/* Approved physical-stock basis; old unreconciled ledger is reference only. */
+var DOBANG_APPROVED_PHYSICAL_BASIS = {"schema":"dobang-approved-physical-stock-basis-v1","source_snapshot_sha256":"18ffdf8dd7006808362acc6c2dda58f872eec4a022cb07a77efa516777460f9b","generated_at":"2026-11-15T00:00:10.002886+00:00","approved_primary_basis":true,"legacy_ledger_status":"unreconciled_inaccurate_not_current_stock_basis","stock_snapshot":{"applied":true,"physical_total":5100,"physical_sections":{"incu":748,"jadan":1495,"beef":2236,"special":118,"breeding":503},"ledger_total":null,"ledger_label":"\uae30\uc874 \uc6d0\uc7a5(\uad70\uad00\ub9ac.json \ud604\uc7ac\ub450\uc218 \ud569\uacc4) \u2014 \uc2e4\uc0ac \uc544\ub2d8","cumulative_flows_note":"\ub204\uc801 \ud3d0\uc0ac\u00b7\ucd9c\ud558\ub294 \uae30\uc874 \uc6d0\uc7a5\uc758 \ubcc4\ub3c4 \ucd9c\ucc98\u00b7\uae30\uac04\uc5d0 \ub530\ub978 \uac12\uc774\uba70 \uc2e4\uc0ac\uc640 \ub300\uc870\ub418\uc9c0 \uc54a\uc74c. \uc2e4\uc0ac-\uc7a5\ubd80 \ucc28\uc774\ub97c \ud3d0\uc0ac\u00b7\ucd9c\ud558\ub85c \uc804\ud658\ud558\uc9c0 \uc54a\uc74c","errors":[],"ledger_delta_vs_base_legacy":null,"ledger_delta_note":"\uc7a5\ubd80 \ud604\uc7ac\ud569\uacc4\u2212BASE \uae30\uc900\uc77c \uc7a5\ubd80. \uc2e4\uc0ac \uc99d\uac10 \uc544\ub2d8","delta_status":"comparison_withheld_data_level_mismatch","physical_delta":null,"status":"applied","breeding_detail":{"sows":463,"gilts":35,"boars":5},"category_notes":{"beef":{"includes":{"B4":222},"note":"B4 = \uc77c\ub839 \ubb34\uad00 \uc794\uc5ec\ub3c8\u00b7\ud658\ub3c8\uc0ac. \uc77c\ubc18 \ube44\uc721\uad70 \uc77c\ub839\uc21c \uc81c\uc678; \uc6d0\uc790\ub8cc \ube44\uc721 \ud569\uacc4\uc5d0\ub294 \ud3ec\ud568","source":"\uc2a4\ub0c5\uc0f7 sections.beef\uc758 B4 \uc6d0\ud589; \uad00\ub9ac \uad6c\ubd84\uc740 \ub300\ud45c \uc9c1\uc811 \uc815\uc815"}},"stock_date":"2026-11-14","stock_time":null,"date_basis":"\ub300\ud45c\uac00 \ud604\uc7ac \uc2e4\uc0ac\ub85c \uc81c\uacf5. \uc218\ucca9 \uc790\uccb4\uc5d0 \uce21\uc815\uc77c\uc2dc \ud45c\uae30 \uc5c6\uc74c","scope":"\uc81c\uacf5 \uc218\ucca9\uc5d0 \uc801\ud78c \ubc88\uc2dd\ub3c8\u00b7\ud6c4\ubcf4\ub3c8\u00b7\uc6c5\ub3c8 \ubc0f \uc778\ud050\u00b7\uc790\ub3c8\u00b7\ube44\uc721\u00b7\ub3c8\uad81 \ud569\uacc4. \ud3ec\uc720\uc790\ub3c8 \uc218\ub294 \ubcc4\ub3c4 \ubbf8\uae30\uc7ac.","source_type":"representative_supplied_current_physical_count_photo","recorded_at":"2026-11-15T00:04:04+09:00","age_days":1,"stale":null,"freshness_verified":false,"age_warning":"\ub300\ud45c \uc81c\uacf5 \uae30\uc900\uc77c 2026-11-14 (1\uc77c \uacbd\uacfc) \u2014 \uc2e4\uce21\uc77c\uc2dc \ubbf8\ud655\uc778. \uc624\ub298 \uc2e4\uce21\uc774\ub098 \uc2e4\uc2dc\uac04 \ub450\uc218\ub77c\ub294 \ub73b\uc774 \uc544\ub2d9\ub2c8\ub2e4.","reconciliation":{"cohort_identity_status":"unresolved_pending_dated_movement_replay","flow_reconciliation_status":"incomplete","vaccine_reconciliation_status":"incomplete"},"historical_difference_is_not_loss":true,"gid_allocation":"\ubbf8\ud655\uc815 \u2014 \uc774\ub3d9\uc6d0\ucc9c \ub300\uc870 \uc804(\ubcc4\ub3c4 scope)","notes":["\uc6d0\ubb38 \uc778\uaddc\u2192\uc778\ud050, \ub3c8\uacf5\u2192\ub3c8\uad81, A\ubc29/B\ubc29\uc758 \ubc88\uc2dd\uad6c\uc5ed \uba85\uce6d\uc740 \uae30\uc874 \ubc30\uce58\uc640 \ub300\uc870 \ud544\uc694","\uc790\ub3c81 \uccab \uc22b\uc790 37, B4 \ub450 \ubc88\uc9f8 \ud589 \uccab \uc22b\uc790 16\uc740 \ud655\ub300 \uac80\uc218\ud568","\ubd84\ub9cc\uc0ac \uc22b\uc790\ub294 \ubaa8\ub3c8 \uc218\ub85c \ubcf4\uc774\uba70 \ud3ec\uc720\uc790\ub3c8 \uc218\ub294 \uc0ac\uc9c4\uc5d0 \ubcc4\ub3c4 \uae30\uc7ac\ub418\uc5b4 \uc788\uc9c0 \uc54a\uc74c. \uae30\uc874 \ub370\uc774\ud130\uc640 \ub300\uc870 \ud6c4 \uc804\uccb4 \ubc94\uc704 \ud45c\uae30","\uc774 \uc2e4\uc0ac\uc640 \uc7a5\ubd80\uc758 \ucc28\uc774\ub97c \ud3d0\uc0ac\ub098 \ucd9c\ud558\ub85c \uc784\uc758 \uc804\ud658\ud558\uc9c0 \uc54a\uc74c","\ub3c8\uc0ac \ucd1d\ub450\uc218\ub294 \ud655\uc815 \uac00\ub2a5\ud574\ub3c4 GID\ubcc4 \ubc30\ubd84\uc740 \uc774\ub3d9 \uc6d0\ucc9c\uacfc \ub300\uc870 \uc804 \ud655\uc815\ud558\uc9c0 \uc54a\uc74c"],"display_label":"\ub300\ud45c \uc81c\uacf5 \uc2e4\uc0ac 5,100\ub450 \u00b7 \ub300\ud45c \uc81c\uacf5 \uae30\uc900\uc77c 2026-11-14 \u00b7 \uc2e4\uce21\uc77c\uc2dc \ubbf8\ud655\uc778(\uce21\uc815\uc2dc\uac01 \ubbf8\uae30\uc7ac)"}};
+// stock_snapshot_view.js — 순수 표시 helper. ES5(index 호환).
+function _ssvFmt(n) { return (n === null || n === undefined) ? "—" : Number(n).toLocaleString("ko-KR"); }
+function ssvAgeDays(stockDate, todayStr) {
+  var a = Date.parse(stockDate + "T00:00:00Z"), b = Date.parse(todayStr + "T00:00:00Z");
+  return (isNaN(a) || isNaN(b)) ? null : Math.round((b - a) / 86400000);
+}
+function _ssvSectionsValid(sections, total) {
+  if (!sections || typeof sections !== 'object' || Array.isArray(sections)) return false;
+  var keys = ['beef', 'jadan', 'incu', 'special', 'breeding'], sum = 0;
+  for (var i = 0; i < keys.length; i++) {
+    var value = sections[keys[i]];
+    if (typeof value !== 'number' || !isFinite(value) || value < 0 ||
+        Math.floor(value) !== value || value > 9007199254740991) return false;
+    sum += value;
+  }
+  return sum <= 9007199254740991 && sum === total;
+}
+function stockSnapshotView(p, ledgerField, todayStr) {
+  var s = (p && p.stock_snapshot) || null, ledger = p ? p[ledgerField] : null;
+  // The representative-approved physical baseline is canonical when the old ledger API has no snapshot block.
+  // Never invent history, silently accept an invalid API block, or promote the unreconciled ledger count.
+  if (!s && typeof DOBANG_APPROVED_PHYSICAL_BASIS !== 'undefined') {
+    var b = DOBANG_APPROVED_PHYSICAL_BASIS, bs = b && b.stock_snapshot;
+    var sd = bs && bs.stock_date;
+    var td = Date.parse(todayStr + 'T00:00:00Z'), bd = Date.parse(sd + 'T00:00:00Z');
+    if (b && b.schema === 'dobang-approved-physical-stock-basis-v1' && b.approved_primary_basis === true &&
+        /^[0-9a-f]{64}$/.test(b.source_snapshot_sha256 || '') &&
+        typeof sd === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(sd) &&
+        Number.isFinite(td) && Number.isFinite(bd) && bd <= td &&
+        new Date(bd).toISOString().slice(0,10) === sd && (!p || !p.date || p.date === todayStr)) {
+      s = JSON.parse(JSON.stringify(bs));
+      s.ledger_total = ledger;
+      s.age_days = Math.floor((td - bd) / 86400000);
+      s.age_warning = '대표 제공 기준일 ' + sd + ' (' + s.age_days + '일 경과) — 실측일시 미확인. 오늘 실측이나 실시간 두수가 아닙니다.';
+    }
+  }
+  if (!s) return { total: null, sections: null, label: '실사 기준자료 미확인',
+                   ledgerNote: '정리 전 원장 ' + _ssvFmt(ledger) + '두(부정확·현재 두수 기준 제외)',
+                   delta: null, deltaText: '실사 기준 연결 전 — 장부값으로 대체하지 않음', warn: '승인된 실사 기준자료 확인 필요' };
+  var ledgerNote = "정리 전 원장 " + _ssvFmt(s.ledger_total) + "두(부정확·실사 아님·현재 두수 기준 제외)";
+  var inactiveStatuses = ['snapshot_invalid', 'not_applied_non_today', 'not_applied_invalid_date'];
+  if ((s.applied !== true && s.applied !== false) ||
+      (s.applied === true && s.status !== 'applied') ||
+      (s.applied === false && inactiveStatuses.indexOf(s.status) === -1)) {
+    return { total: null, sections: null, label: '실사 상태 검증 실패 — 원장값으로 대체하지 않음',
+             ledgerNote: ledgerNote, delta: null, deltaText: '비교보류', warn: '실사 적용 상태 확인 필요' };
+  }
+  if (s.applied === true) {
+    var age = ssvAgeDays(s.stock_date, todayStr);  // 정적 JSON 생성일과 열람일 차이 보정
+    if (typeof s.physical_total !== 'number' || !isFinite(s.physical_total) ||
+        Math.floor(s.physical_total) !== s.physical_total || s.physical_total < 0 ||
+        !_ssvSectionsValid(s.physical_sections, s.physical_total) || age === null || age < 0) {
+      return { total: null, sections: null, label: '실사값 검증 실패 — 원장값으로 대체하지 않음',
+               ledgerNote: ledgerNote, delta: null, deltaText: '비교보류', warn: '실사 합계 또는 기준일 확인 필요' };
+    }
+    return { total: s.physical_total, sections: s.physical_sections, label: s.display_label, ledgerNote: ledgerNote,
+             delta: null, deltaText: "실사↔장부 비교보류",
+             warn: "대표 제공 기준일 " + s.stock_date + " (" + age + "일 경과) — 실측일시 미확인 · 오늘 실측 아님" };
+  }
+  if (s.status === "snapshot_invalid")
+    return { total: null, sections: null, label: s.display_label, ledgerNote: ledgerNote,
+             delta: null, deltaText: "비교보류", warn: "오류: " + (s.errors || []).join(",") };
+  return { total: ledger, sections: null, label: s.display_label, ledgerNote: "",
+           delta: p.delta, deltaText: null, warn: "" };  // 과거일·날짜오류 조회: legacy 그대로
+}
+if (typeof module !== "undefined") module.exports = { stockSnapshotView: stockSnapshotView, ssvAgeDays: ssvAgeDays };
+
+</script>
+<script>
+const fmt = n => (n === null || n === undefined) ? "—" : Number(n).toLocaleString("ko-KR");
+const qs = s => document.querySelector(s);
+
+async function getJson(path) {
+  const r = await fetch(path + "?_=" + Date.now(), { cache: "no-store" });
+  if (!r.ok) throw new Error(path + " " + r.status);
+  return r.json();
+}
+
+function renderHerd(h) {
+  const v = stockSnapshotView(h, "current_total", new Date().toLocaleDateString("sv-SE", {timeZone:"Asia/Seoul"}));
+  qs("#total").textContent = v.total == null ? "미확인" : fmt(v.total) + "두";
+  const el = qs("#delta"), d = v.delta;
+  if (v.deltaText) { el.textContent = v.deltaText; el.style.color = "var(--dim)"; }
+  else { el.textContent = d == null ? "" : (d > 0 ? "+" : "") + fmt(d) + " (기준 " + (h.base_date || "?") + ")";
+         el.style.color = d < 0 ? "var(--red)" : "var(--green)"; }
+  const s = h.sections || {}, p = v.sections;
+  const items = p ? [["번식돈", p.breeding], ["자돈사", p.jadan], ["인큐", p.incu], ["비육", p.beef], ["돈궁", p.special]]
+                  : [["기존 원장 모돈", (s.modon || {}).count], ["기존 원장 자돈사", (s.jadan || {}).count],
+                     ["기존 원장 인큐", (s.incu || {}).count], ["기존 원장 비육", (s.beef || {}).count]];
+  qs("#sections").innerHTML = items.map(([k, x]) =>
+    `<div class="cell"><div class="k">${k}</div><div class="v">${fmt(v.total == null ? null : x)}</div></div>`).join("");
+  const m = qs("#herdMeta"); m.style.whiteSpace = "pre-line";
+  m.textContent = [v.label, v.warn, v.ledgerNote,
+    `누적 폐사 ${fmt(h.death_total)} · 누적 출하 ${fmt(h.ship_total)} (기존 원장의 별도 출처·기간, 실사 미대조)`,
+    "포유자돈 별도 미기재 · 현재 군 연결 및 군별 백신 대조 미완료"]
+    .filter(Boolean).join("\n");
+}
+
+function renderBarns(l) {
+  const rows = (l.barns || []).slice(0, 6).map(b =>
+    `<tr><td>${b.name}</td><td class="num" style="color:var(--red)">${fmt(b.deaths)}두</td></tr>`);
+  qs("#barns").innerHTML = rows.join("") || `<tr><td class="err">데이터 없음</td></tr>`;
+  qs("#barnMeta").textContent = "분석 갱신: " + (l.analysis_updated || "?");
+}
+
+function renderVax(v) {
+  const list = (v.vaccines || []).filter(x => x.status !== "done");
+  list.sort((a, b) => (a.d_day ?? 999) - (b.d_day ?? 999));
+  const rows = list.slice(0, 10).map(x => {
+    const d = x.d_day;
+    const cls = d < 0 ? "overdue" : (d <= 3 ? "soon" : "later");
+    const label = d < 0 ? `지연 ${-d}일` : (d === 0 ? "오늘" : `D-${d}`);
+    return `<tr><td>${x.name || "?"}</td><td style="color:var(--dim)">${x.target || ""}</td>
+            <td class="num"><span class="tag ${cls}">${label}</span></td></tr>`;
+  });
+  qs("#vax").innerHTML = rows.join("") || `<tr><td colspan="3" style="color:var(--green)">미완료 백신 없음 ✓</td></tr>`;
+  const overdue = list.filter(x => (x.d_day ?? 0) < 0).length;
+  qs("#vaxMeta").textContent =
+    `미완료 ${list.length}건 (지연 ${overdue}건) · 생성 ${String(v.generated_at || "?").slice(5, 16).replace("T", " ")}`;
+}
+
+async function loadAll(manual) {
+  try {
+    const [h, l, v] = await Promise.all([
+      getJson("headcount.json"), getJson("livestock_summary.json"), getJson("vaccines.json"),
+    ]);
+    renderHerd(h); renderBarns(l); renderVax(v);
+    qs("#stamp").textContent = new Date().toLocaleTimeString("ko-KR", { hour: "2-digit", minute: "2-digit" }) + " 갱신";
+  } catch (e) {
+    qs("#stamp").textContent = "갱신 실패";
+    if (manual) alert("데이터 로드 실패: " + e.message);
+  }
+}
+loadAll(false);
+setInterval(() => loadAll(false), 60000);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) loadAll(false); });
+</script>
+</body>
+</html>
