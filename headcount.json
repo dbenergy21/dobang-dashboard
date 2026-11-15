@@ -3,7 +3,7 @@
   "base_total": 5072,
   "current_total": 4691,
   "date": "2026-11-15",
-  "death_record_count": 578,
+  "death_record_count": 579,
   "death_total": 657,
   "delta": -381,
   "sections": {
@@ -31,9 +31,68 @@
   },
   "ship_record_count": 76,
   "ship_total": 2881,
+  "stock_snapshot": {
+    "age_days": 1,
+    "age_warning": "대표 제공 기준일 2026-11-14 (1일 경과) — 실측일시 미확인. 오늘 실측이나 실시간 두수라는 뜻이 아닙니다.",
+    "applied": true,
+    "breeding_detail": {
+      "boars": 5,
+      "gilts": 35,
+      "sows": 463
+    },
+    "category_notes": {
+      "beef": {
+        "includes": {
+          "B4": 222
+        },
+        "note": "B4 = 일령 무관 잔여돈·환돈사. 일반 비육군 일령순 제외; 원자료 비육 합계에는 포함",
+        "source": "스냅샷 sections.beef의 B4 원행; 관리 구분은 대표 직접 정정"
+      }
+    },
+    "cumulative_flows_note": "누적 폐사·출하는 기존 원장의 별도 출처·기간에 따른 값이며 실사와 대조되지 않음. 실사-장부 차이를 폐사·출하로 전환하지 않음",
+    "date_basis": "대표가 현재 실사로 제공. 수첩 자체에 측정일시 표기 없음",
+    "delta_status": "comparison_withheld_data_level_mismatch",
+    "display_label": "대표 제공 실사 5,100두 · 대표 제공 기준일 2026-11-14 · 실측일시 미확인(측정시각 미기재)",
+    "errors": [],
+    "freshness_verified": false,
+    "gid_allocation": "미확정 — 이동원천 대조 전(별도 scope)",
+    "historical_difference_is_not_loss": true,
+    "ledger_delta_note": "장부 현재합계−BASE 기준일 장부. 실사 증감 아님",
+    "ledger_delta_vs_base_legacy": -381,
+    "ledger_label": "기존 원장(군관리.json 현재두수 합계) — 실사 아님",
+    "ledger_total": 4691,
+    "notes": [
+      "원문 인규→인큐, 돈공→돈궁, A방/B방의 번식구역 명칭은 기존 배치와 대조 필요",
+      "자돈1 첫 숫자 37, B4 두 번째 행 첫 숫자 16은 확대 검수함",
+      "분만사 숫자는 모돈 수로 보이며 포유자돈 수는 사진에 별도 기재되어 있지 않음. 기존 데이터와 대조 후 전체 범위 표기",
+      "이 실사와 장부의 차이를 폐사나 출하로 임의 전환하지 않음",
+      "돈사 총두수는 확정 가능해도 GID별 배분은 이동 원천과 대조 전 확정하지 않음"
+    ],
+    "physical_delta": null,
+    "physical_sections": {
+      "beef": 2236,
+      "breeding": 503,
+      "incu": 748,
+      "jadan": 1495,
+      "special": 118
+    },
+    "physical_total": 5100,
+    "reconciliation": {
+      "cohort_identity_status": "unresolved_pending_dated_movement_replay",
+      "flow_reconciliation_status": "incomplete",
+      "vaccine_reconciliation_status": "incomplete"
+    },
+    "recorded_at": "2026-11-15T00:04:04+09:00",
+    "scope": "제공 수첩에 적힌 번식돈·후보돈·웅돈 및 인큐·자돈·비육·돈궁 합계. 포유자돈 수는 별도 미기재.",
+    "source_type": "representative_supplied_current_physical_count_photo",
+    "stale": null,
+    "status": "applied",
+    "stock_date": "2026-11-14",
+    "stock_time": null
+  },
   "target_pigs": 5200,
-  "updated": "18:20",
+  "updated": "19:20",
   "window_end": "2026-11-15",
   "window_start": "2026-04-22",
-  "_synced": "2026-11-15 18:20:17"
+  "_synced": "2026-11-15 19:20:17"
 }
