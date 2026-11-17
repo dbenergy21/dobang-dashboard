@@ -3,7 +3,7 @@
   "base_total": 5072,
   "current_total": 4691,
   "date": "2026-11-17",
-  "death_record_count": 579,
+  "death_record_count": 580,
   "death_total": 657,
   "delta": -381,
   "sections": {
@@ -91,8 +91,8 @@
     "stock_time": null
   },
   "target_pigs": 5200,
-  "updated": "09:20",
+  "updated": "10:20",
   "window_end": "2026-11-17",
   "window_start": "2026-04-22",
-  "_synced": "2026-11-17 09:20:31"
+  "_synced": "2026-11-17 10:20:17"
 }
