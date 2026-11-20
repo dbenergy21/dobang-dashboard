@@ -3,8 +3,8 @@
   "base_total": 5072,
   "current_total": 4691,
   "date": "2026-11-20",
-  "death_record_count": 583,
-  "death_total": 657,
+  "death_record_count": 0,
+  "death_total": 0,
   "delta": -381,
   "sections": {
     "beef": {
@@ -91,8 +91,8 @@
     "stock_time": null
   },
   "target_pigs": 5200,
-  "updated": "22:20",
+  "updated": "23:20",
   "window_end": "2026-11-20",
   "window_start": "2026-04-22",
-  "_synced": "2026-11-20 22:20:15"
+  "_synced": "2026-11-20 23:20:16"
 }
