@@ -2,7 +2,7 @@
   "base_date": "2026-04-21",
   "base_total": 5072,
   "current_total": 4691,
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "death_record_count": 584,
   "death_total": 657,
   "delta": -381,
@@ -32,8 +32,8 @@
   "ship_record_count": 76,
   "ship_total": 2881,
   "stock_snapshot": {
-    "age_days": 7,
-    "age_warning": "대표 제공 기준일 2026-11-14 (7일 경과) — 실측일시 미확인. 오늘 실측이나 실시간 두수라는 뜻이 아닙니다.",
+    "age_days": 8,
+    "age_warning": "대표 제공 기준일 2026-11-14 (8일 경과) — 실측일시 미확인. 오늘 실측이나 실시간 두수라는 뜻이 아닙니다.",
     "applied": true,
     "breeding_detail": {
       "boars": 5,
@@ -91,8 +91,8 @@
     "stock_time": null
   },
   "target_pigs": 5200,
-  "updated": "23:20",
-  "window_end": "2026-11-21",
+  "updated": "00:20",
+  "window_end": "2026-11-22",
   "window_start": "2026-04-22",
-  "_synced": "2026-11-21 23:20:17"
+  "_synced": "2026-11-22 00:20:18"
 }
