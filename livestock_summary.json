@@ -46,8 +46,8 @@
   "month_weaning": 459,
   "psy": "집계중",
   "stock_snapshot": {
-    "age_days": 10,
-    "age_warning": "대표 제공 기준일 2026-11-14 (10일 경과) — 실측일시 미확인. 오늘 실측이나 실시간 두수라는 뜻이 아닙니다.",
+    "age_days": 11,
+    "age_warning": "대표 제공 기준일 2026-11-14 (11일 경과) — 실측일시 미확인. 오늘 실측이나 실시간 두수라는 뜻이 아닙니다.",
     "applied": true,
     "breeding_detail": {
       "boars": 5,
@@ -101,9 +101,9 @@
     "stock_time": null
   },
   "target_pigs": 5200,
-  "today_death": 1,
+  "today_death": 0,
   "total_pigs": 4691,
-  "updated": "23:20",
+  "updated": "00:20",
   "verified_patch": "단체방 원문/Notion 재대조 최신 반영",
   "week_death": 270,
   "week_deaths": [
@@ -164,5 +164,5 @@
       "date": "06-27"
     }
   ],
-  "_synced": "2026-11-24 23:20:21"
+  "_synced": "2026-11-25 00:20:21"
 }
