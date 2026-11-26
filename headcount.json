@@ -3,7 +3,7 @@
   "base_total": 5072,
   "current_total": 4691,
   "date": "2026-11-26",
-  "death_record_count": 585,
+  "death_record_count": 587,
   "death_total": 657,
   "delta": -381,
   "sections": {
@@ -29,8 +29,8 @@
       "count": 52
     }
   },
-  "ship_record_count": 76,
-  "ship_total": 2881,
+  "ship_record_count": 77,
+  "ship_total": 2950,
   "stock_snapshot": {
     "age_days": 12,
     "age_warning": "대표 제공 기준일 2026-11-14 (12일 경과) — 실측일시 미확인. 오늘 실측이나 실시간 두수라는 뜻이 아닙니다.",
@@ -91,8 +91,8 @@
     "stock_time": null
   },
   "target_pigs": 5200,
-  "updated": "17:20",
+  "updated": "18:20",
   "window_end": "2026-11-26",
   "window_start": "2026-04-22",
-  "_synced": "2026-11-26 17:20:17"
+  "_synced": "2026-11-26 18:20:18"
 }
